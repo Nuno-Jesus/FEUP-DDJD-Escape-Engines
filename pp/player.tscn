@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ig3u12x0tth"]
+
+[ext_resource type="Texture2D" uid="uid://bswi1ny8coxte" path="res://art/playerGrey_walk1.png" id="1_l16ap"]
+[ext_resource type="Texture2D" uid="uid://d3q6fwht6us46" path="res://art/playerGrey_walk2.png" id="2_ty7vi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4md7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l16ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ty7vi")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cl71d"]
+radius = 57.0
+height = 136.0
+
+[node name="Engineer" type="RigidBody2D"]
+input_pickable = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4md7n")
+animation = &"walk"
+frame = 1
+frame_progress = 0.47106
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_cl71d")

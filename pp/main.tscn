@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7iqs72qxwva4"]
+
+[ext_resource type="PackedScene" uid="uid://6ig3u12x0tth" path="res://player.tscn" id="1_rwwm4"]
+[ext_resource type="Script" path="res://player.gd" id="2_vcivo"]
+
+[node name="main" type="Node"]
+
+[node name="background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.709804, 1, 1, 1)
+
+[node name="Engineer" parent="." instance=ExtResource("1_rwwm4")]
+position = Vector2(280, 176)
+freeze = true
+script = ExtResource("2_vcivo")
+
+[connection signal="input_event" from="Engineer" to="Engineer" method="_on_RigidBody2D_input_event"]
+[connection signal="mouse_entered" from="Engineer" to="Engineer" method="_on_mouse_entered"]
