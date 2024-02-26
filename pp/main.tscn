@@ -17,11 +17,11 @@ mouse_filter = 2
 texture = ExtResource("1_r686e")
 stretch_mode = 1
 
-[node name="Level" parent="." instance=ExtResource("2_a8ir8")]
-
 [node name="Engineer" parent="." instance=ExtResource("1_rwwm4")]
-position = Vector2(183, 79)
+position = Vector2(94, 103)
 script = ExtResource("2_vcivo")
+
+[node name="Level" parent="." instance=ExtResource("2_a8ir8")]
 
 [connection signal="input_event" from="Engineer" to="Engineer" method="_on_RigidBody2D_input_event"]
 [connection signal="mouse_entered" from="Engineer" to="Engineer" method="_on_mouse_entered"]
