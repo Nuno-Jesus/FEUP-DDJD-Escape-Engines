@@ -1,22 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7iqs72qxwva4"]
+[gd_scene load_steps=5 format=3 uid="uid://c7iqs72qxwva4"]
 
+[ext_resource type="Texture2D" uid="uid://bnpt2k1lbvnv6" path="res://art/backgrounds/Blue.png" id="1_r686e"]
 [ext_resource type="PackedScene" uid="uid://6ig3u12x0tth" path="res://player.tscn" id="1_rwwm4"]
+[ext_resource type="PackedScene" uid="uid://ccpg6ws74ilyq" path="res://level.tscn" id="2_a8ir8"]
 [ext_resource type="Script" path="res://player.gd" id="2_vcivo"]
 
 [node name="main" type="Node"]
 
-[node name="background" type="ColorRect" parent="."]
+[node name="background" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.709804, 1, 1, 1)
+texture = ExtResource("1_r686e")
+stretch_mode = 1
+
+[node name="TileMap" parent="." instance=ExtResource("2_a8ir8")]
 
 [node name="Engineer" parent="." instance=ExtResource("1_rwwm4")]
-position = Vector2(280, 176)
-freeze = true
+position = Vector2(183, 79)
 script = ExtResource("2_vcivo")
 
 [connection signal="input_event" from="Engineer" to="Engineer" method="_on_RigidBody2D_input_event"]
