@@ -20,6 +20,21 @@
 [ext_resource type="Texture2D" uid="uid://bhotc5tgte7q6" path="res://art/gear/gear320.png" id="17_0dgpd"]
 [ext_resource type="Texture2D" uid="uid://bbs15fjljjtls" path="res://art/gear/gear340.png" id="18_dd1dd"]
 
+[sub_resource type="Animation" id="Animation_eyguc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.35059]
+}
+
 [sub_resource type="Animation" id="Animation_v6rmy"]
 resource_name = "rotate"
 length = 3.6
@@ -47,21 +62,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [2.35059, 2.71292, 2.27076, 2.61284, 2.18159, 2.52939, 2.87438, 3.22842, 3.5772, 3.93275, 4.27869, 4.63295, 4.97572, 5.31585, 5.66915, 6.02278, 6.36548, 6.7263, 7.06134]
-}
-
-[sub_resource type="Animation" id="Animation_eyguc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D2:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2.35059]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jq1b5"]

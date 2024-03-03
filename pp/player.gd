@@ -10,3 +10,8 @@ func _on_RigidBody2D_input_event( viewport: Node, event: InputEvent, shape_idx: 
 		print("Clicked")
 	
 
+
+# On top of the platform
+func _on_area_2d_area_entered(area):
+	print("I'm on top of the platfrom\n")
+	pass # Replace with function body.
