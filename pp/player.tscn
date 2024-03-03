@@ -1,35 +1,63 @@
-[gd_scene load_steps=5 format=3 uid="uid://6ig3u12x0tth"]
+[gd_scene load_steps=12 format=3 uid="uid://6ig3u12x0tth"]
 
-[ext_resource type="Texture2D" uid="uid://bswi1ny8coxte" path="res://art/playerGrey_walk1.png" id="1_l16ap"]
-[ext_resource type="Texture2D" uid="uid://d3q6fwht6us46" path="res://art/playerGrey_walk2.png" id="2_ty7vi"]
+[ext_resource type="Script" path="res://player.gd" id="1_dpf8g"]
+[ext_resource type="Texture2D" uid="uid://bx2y6iuw38dfp" path="res://art/player/walk/walk_01.png" id="1_uw2cv"]
+[ext_resource type="Texture2D" uid="uid://d2y8i8j7aqsp2" path="res://art/player/walk/walk_02.png" id="2_5mpjp"]
+[ext_resource type="Texture2D" uid="uid://cr385xapfopkp" path="res://art/player/walk/walk_03.png" id="3_744v7"]
+[ext_resource type="Texture2D" uid="uid://5c5ffdyt7ljc" path="res://art/player/walk/walk_04.png" id="4_r8oa2"]
+[ext_resource type="Texture2D" uid="uid://db758lgibvhxy" path="res://art/player/walk/walk_05.png" id="5_h6e7i"]
+[ext_resource type="Texture2D" uid="uid://dbh4nx1xbqx3q" path="res://art/player/walk/walk_06.png" id="6_odsst"]
+[ext_resource type="Texture2D" uid="uid://f6v5tor5ipcm" path="res://art/player/walk/walk_07.png" id="7_e5bmu"]
+[ext_resource type="Texture2D" uid="uid://4q01s3ufsqds" path="res://art/player/walk/walk_08.png" id="8_6rru6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4md7n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_l16ap")
+"texture": ExtResource("1_uw2cv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_ty7vi")
+"texture": ExtResource("2_5mpjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_744v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r8oa2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h6e7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_odsst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e5bmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6rru6")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cl71d"]
-radius = 57.0
-height = 136.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohub6"]
+size = Vector2(16, 26.307)
 
-[node name="Engineer" type="RigidBody2D"]
+[node name="Engineer" type="CharacterBody2D"]
+position = Vector2(270, 17)
 input_pickable = true
+script = ExtResource("1_dpf8g")
+gravity = 10
+speed = 120
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4md7n")
 animation = &"walk"
-frame = 1
-frame_progress = 0.47106
+frame_progress = 0.389127
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-shape = SubResource("CapsuleShape2D_cl71d")
+position = Vector2(-1, 3)
+scale = Vector2(1, 0.988332)
+shape = SubResource("RectangleShape2D_ohub6")

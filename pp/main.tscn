@@ -21,9 +21,6 @@ mouse_filter = 2
 texture = ExtResource("1_r686e")
 stretch_mode = 1
 
-[node name="Engineer" parent="." instance=ExtResource("1_rwwm4")]
-position = Vector2(93, 74)
-script = ExtResource("2_vcivo")
 
 [node name="Level" parent="." instance=ExtResource("2_a8ir8")]
 
@@ -40,6 +37,11 @@ position = Vector2(-3.05176e-05, 0.952377)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0dwdw")
 
+[node name="Engineer" parent="." instance=ExtResource("1_rwwm4")]
+position = Vector2(1376, 124)
+gravity = 2
+
 [connection signal="input_event" from="Engineer" to="Engineer" method="_on_RigidBody2D_input_event"]
 [connection signal="mouse_entered" from="Engineer" to="Engineer" method="_on_mouse_entered"]
 [connection signal="area_entered" from="Gear Activation/Area2D" to="Engineer" method="_on_area_2d_area_entered"]
+
