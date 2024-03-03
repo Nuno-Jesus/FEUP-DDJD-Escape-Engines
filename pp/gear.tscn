@@ -25,7 +25,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D2:rotation")
+tracks/0/path = NodePath("StaticBody2D/CollisionPolygon2D2:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -42,7 +42,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("StaticBody2D/Sprite2D:texture")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -54,7 +54,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D2:rotation")
+tracks/1/path = NodePath("StaticBody2D/CollisionPolygon2D2:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -74,18 +74,17 @@ _data = {
 position = Vector2(141, 44)
 script = ExtResource("1_sy4aj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(710, 552)
+rotation = 2.35059
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(37.2547, -212.634, 51.8462, -166.589, 94.1689, -147.967, 138.823, -166.809, 178.182, -124.161, 156.021, -81.1512, 172.042, -37.9274, 216.49, -20.0002, 214.048, 37.2626, 168.003, 51.854, 149.381, 94.1768, 168.231, 137.417, 125.575, 178.19, 83.2765, 155.326, 40.0525, 171.347, 22.1255, 215.795, -35.8484, 214.056, -50.4399, 168.011, -92.0516, 148.686, -136.706, 167.528, -176.073, 126.294, -153.911, 83.2844, -169.933, 40.0604, -215.084, 21.4222, -212.642, -35.8406, -166.597, -50.432, -147.975, -92.7548, -166.817, -137.409, -123.466, -176.057, -81.1671, -153.192, -37.9352, -170.628, -20.7192, -214.373)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(709, 552)
 texture = ExtResource("1_ffepu")
-
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
-position = Vector2(5, -5)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/Area2D"]
-visible = false
-position = Vector2(-4, 5)
-rotation = 2.35059
-polygon = PackedVector2Array(38.5, -215.3, 52.9, -172, 88, -155, 90.7, -155, 92.9, -154.4, 138.5, -174, 138.5, -170.9, 156.5, -153.9, 156.5, -151.8, 180.5, -127.8, 180.5, -124.5, 159.3, -83, 174.9, -43, 175.9, -43, 216.5, -26.1, 216.5, 38, 215.9, 38, 171.5, 53.4, 164.5, 66.5, 164.5, 69.4, 154.2, 92.8, 172.5, 134.6, 172.5, 138.8, 169.3, 142, 167.3, 142, 127.3, 181, 124, 181, 83, 159, 81.9, 159, 43.5, 173.4, 43.5, 174.4, 26.6, 216, -38.7, 216, -55.9, 170, -58, 170, -91, 154, -94.1, 154, -135.1, 173, -138.3, 173, -149.5, 161.8, -149.5, 159.8, -180.5, 128.8, -180.5, 123.5, -159.5, 84.5, -159.5, 81.4, -173.9, 44, -216.5, 27.2, -216.5, -38.1, -214.6, -41, -209.8, -41, -171.5, -53.4, -171.5, -54.4, -154.2, -91.9, -174.5, -139, -171.3, -139, -128.3, -181, -125, -181, -82.5, -159.8, -43.5, -174.4, -43.5, -175.4, -27.5, -214.6, -27.5, -216, 38.5, -216)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
