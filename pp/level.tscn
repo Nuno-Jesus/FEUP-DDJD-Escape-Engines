@@ -578,7 +578,6 @@ texture = ExtResource("3_n45if")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gear Activation/Area2D"]
 position = Vector2(-3.05176e-05, 0.952377)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hgc32")
 
 [node name="Lever" type="AnimatedSprite2D" parent="."]
