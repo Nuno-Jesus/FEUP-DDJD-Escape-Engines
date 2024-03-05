@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgd5dq8dt4rk7"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_ss5hf"]
+[ext_resource type="Texture2D" uid="uid://bx2y6iuw38dfp" path="res://art/player/walk/walk_01.png" id="1_vgvyx"]
+[ext_resource type="FontFile" uid="uid://b1ya3qpy408dm" path="res://fonts/Xolonium-Regular.ttf" id="2_1icu5"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ss5hf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 965.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.639216, 1, 1, 1)
+
+[node name="PlayerCount" type="Node" parent="."]
+
+[node name="Button" type="Sprite2D" parent="PlayerCount"]
+z_index = 1
+texture_filter = 1
+position = Vector2(73, 993)
+scale = Vector2(4.46875, 4.60156)
+texture = ExtResource("1_vgvyx")
+
+[node name="Count" type="Label" parent="PlayerCount"]
+offset_left = 98.0
+offset_top = 948.0
+offset_right = 234.0
+offset_bottom = 1079.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_1icu5")
+theme_override_font_sizes/font_size = 50
+text = "11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Needed" type="Label" parent="PlayerCount"]
+offset_left = 191.0
+offset_top = 948.0
+offset_right = 327.0
+offset_bottom = 1079.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_1icu5")
+theme_override_font_sizes/font_size = 50
+text = "/ 8"
+horizontal_alignment = 1
+vertical_alignment = 1

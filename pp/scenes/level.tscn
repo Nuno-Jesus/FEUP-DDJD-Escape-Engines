@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://coqfirkosbw23" path="res://scenes/gear.tscn" id="1_r8u7r"]
 [ext_resource type="PackedScene" uid="uid://c6ihin0rdw26m" path="res://scenes/platform.tscn" id="3_cja7t"]
 [ext_resource type="PackedScene" uid="uid://dcqkqvt801owy" path="res://scenes/spawner.tscn" id="3_l4x8n"]
-[ext_resource type="PackedScene" uid="uid://bcn7kawnpg5aj" path="res://scenes/exit.tscn" id="4_fjads"]
+[ext_resource type="PackedScene" path="res://scenes/exit.tscn" id="4_fjads"]
 [ext_resource type="Texture2D" uid="uid://cuqblfkhhbhwh" path="res://art/checkpoints/Checkpoint (Flag Out) (64x64).png" id="4_ltf0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tk2l"]
@@ -580,8 +580,7 @@ frame = 10
 frame_progress = 0.947023
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("3_l4x8n")]
-position = Vector2(98, 477)
-player_ammount = 10
+position = Vector2(53, 463)
 
 [node name="Exit" parent="." instance=ExtResource("4_fjads")]
 z_index = -1

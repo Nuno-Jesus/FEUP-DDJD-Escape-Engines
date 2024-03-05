@@ -49,7 +49,7 @@ size = Vector2(16, 26.307)
 input_pickable = true
 script = ExtResource("1_dpf8g")
 gravity = 10
-speed = 60
+speed = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4md7n")
@@ -60,3 +60,5 @@ frame_progress = 0.389127
 position = Vector2(-1, 3)
 scale = Vector2(1, 0.988332)
 shape = SubResource("RectangleShape2D_ohub6")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
