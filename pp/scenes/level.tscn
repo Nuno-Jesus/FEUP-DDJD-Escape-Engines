@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf86ov45lre5y"]
+[gd_scene load_steps=8 format=3 uid="uid://bf86ov45lre5y"]
 
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="1_lgwq8"]
-[ext_resource type="PackedScene" uid="uid://coqfirkosbw23" path="res://gear.tscn" id="1_r8u7r"]
+[ext_resource type="PackedScene" uid="uid://coqfirkosbw23" path="res://scenes/gear.tscn" id="1_r8u7r"]
+[ext_resource type="PackedScene" uid="uid://dcqkqvt801owy" path="res://scenes/player_spawner.tscn" id="3_l4x8n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tk2l"]
 texture = ExtResource("1_lgwq8")
@@ -484,3 +485,6 @@ shape = SubResource("RectangleShape2D_i68d3")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(1056, 404)
 shape = SubResource("RectangleShape2D_ychjm")
+
+[node name="PlayerSpawner" parent="." instance=ExtResource("3_l4x8n")]
+position = Vector2(49, 25)
