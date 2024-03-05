@@ -6,7 +6,7 @@ var screen_size
 var direction = Direction.RIGHT
 
 @export var gravity = 1
-@export var speed = 70
+@export var speed = 1
 
 func _ready():
 	screen_size = get_viewport_rect().size

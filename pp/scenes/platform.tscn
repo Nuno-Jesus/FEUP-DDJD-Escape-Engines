@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ihin0rdw26m"]
+
+[ext_resource type="Script" path="res://scripts/platform.gd" id="1_lrjjp"]
+[ext_resource type="Texture2D" uid="uid://rs178a8gqxab" path="res://art/platform/Grey Off.png" id="1_r8f02"]
+
+[node name="Gear Activation" type="RigidBody2D"]
+script = ExtResource("1_lrjjp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(864, 626.5)
+scale = Vector2(2.93905, 2.60715)
+polygon = PackedVector2Array(16.3333, 3.61903, -16.3318, 3.64383, -16.3318, -2.10959, 16.3318, -2.87671)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(864, 625.5)
+scale = Vector2(3, 2.62501)
+
+[node name="Platform" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("1_r8f02")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-0.0162231, 1.58094)
+scale = Vector2(0.979158, 0.867043)
+polygon = PackedVector2Array(20.755, 5.94519, -19.0538, 5.94519, -19.0538, -5.94519, 20.755, -5.94519)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]
