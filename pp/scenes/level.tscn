@@ -1,7 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://bf86ov45lre5y"]
 
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="1_lgwq8"]
-[ext_resource type="PackedScene" uid="uid://coqfirkosbw23" path="res://scenes/gear.tscn" id="1_r8u7r"]
+[ext_resource type="PackedScene" uid="uid://coqfirkosbw23" path="res://scenes/scenes/gear.tscn" id="1_r8u7r"]
+[ext_resource type="PackedScene" uid="uid://dcqkqvt801owy" path="res://scenes/spawner.tscn" id="3_l4x8n"]
+[ext_resource type="PackedScene" uid="uid://bcn7kawnpg5aj" path="res://scenes/exit.tscn" id="4_fjads"]
 [ext_resource type="PackedScene" uid="uid://c6ihin0rdw26m" path="res://scenes/platform.tscn" id="3_cja7t"]
 [ext_resource type="Texture2D" uid="uid://cuqblfkhhbhwh" path="res://art/checkpoints/Checkpoint (Flag Out) (64x64).png" id="4_ltf0s"]
 
@@ -576,3 +578,11 @@ sprite_frames = SubResource("SpriteFrames_4lqls")
 animation = &"waving"
 frame = 10
 frame_progress = 0.947023
+
+[node name="PlayerSpawner" parent="." instance=ExtResource("3_l4x8n")]
+position = Vector2(33, 39)
+player_ammount = 1
+
+[node name="Exit" parent="." instance=ExtResource("4_fjads")]
+z_index = -1
+position = Vector2(400, 100)
