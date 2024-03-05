@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="1_lgwq8"]
 [ext_resource type="PackedScene" uid="uid://coqfirkosbw23" path="res://scenes/gear.tscn" id="1_r8u7r"]
 [ext_resource type="PackedScene" uid="uid://c6ihin0rdw26m" path="res://scenes/platform.tscn" id="3_cja7t"]
-[ext_resource type="PackedScene" path="res://scenes/spawner.tscn" id="3_l4x8n"]
-[ext_resource type="PackedScene" path="res://scenes/exit.tscn" id="4_fjads"]
+[ext_resource type="PackedScene" uid="uid://dcqkqvt801owy" path="res://scenes/spawner.tscn" id="3_l4x8n"]
+[ext_resource type="PackedScene" uid="uid://bcn7kawnpg5aj" path="res://scenes/exit.tscn" id="4_fjads"]
 [ext_resource type="Texture2D" uid="uid://cuqblfkhhbhwh" path="res://art/checkpoints/Checkpoint (Flag Out) (64x64).png" id="4_ltf0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tk2l"]

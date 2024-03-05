@@ -13,13 +13,11 @@ func _ready():
 	velocity.x = speed
 	$AnimatedSprite2D.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _physics_process(delta):
 	velocity.y += gravity
 	velocity.x = direction * speed
+	
+	move_and_slide()
 	
 	if position.x > screen_size.x:
 		direction = Direction.LEFT
@@ -27,8 +25,7 @@ func _physics_process(delta):
 	if position.x < 0:
 		direction = Direction.RIGHT
 		$AnimatedSprite2D.flip_h = false
-		
-	move_and_slide()
+
 
 ## Check if the player has been clicked on
 #func _on_RigidBody2D_input_event( viewport: Node, event: InputEvent, shape_idx: int ):
