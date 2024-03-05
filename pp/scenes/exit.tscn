@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://bcn7kawnpg5aj"]
+
+[ext_resource type="Script" path="res://scripts/exit.gd" id="1_couhc"]
+[ext_resource type="Texture2D" uid="uid://dye7wka2ccqs5" path="res://art/exit/closing/door_closing_01.png" id="1_ns1h0"]
+[ext_resource type="Texture2D" uid="uid://51u3k44ggf8t" path="res://art/exit/closing/door_closing_02.png" id="2_6wi7g"]
+[ext_resource type="Texture2D" uid="uid://c3hol2hd1rugl" path="res://art/exit/closing/door_closing_03.png" id="3_f5bda"]
+[ext_resource type="Texture2D" uid="uid://cs5qksgm5en3i" path="res://art/exit/opening/door_opening_01.png" id="4_hfynr"]
+[ext_resource type="Texture2D" uid="uid://c0erpii1ot4we" path="res://art/exit/opening/door_opening_02.png" id="5_q53hn"]
+[ext_resource type="Texture2D" uid="uid://qh780eicy5us" path="res://art/exit/opening/door_opening_03.png" id="6_inruf"]
+[ext_resource type="Texture2D" uid="uid://bkgw7pj17qulx" path="res://art/exit/opening/door_opening_04.png" id="7_kupkt"]
+[ext_resource type="Texture2D" uid="uid://8xw0jopydlmd" path="res://art/exit/opening/door_opening_05.png" id="8_30kmg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xujr2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ns1h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6wi7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f5bda")
+}],
+"loop": false,
+"name": &"closing",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hfynr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q53hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_inruf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kupkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_30kmg")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vndsg"]
+size = Vector2(67, 67)
+
+[node name="Exit" type="Node2D"]
+script = ExtResource("1_couhc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_xujr2")
+animation = &"closing"
+frame = 2
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 5.5)
+shape = SubResource("RectangleShape2D_vndsg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

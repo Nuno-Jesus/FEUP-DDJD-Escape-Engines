@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var player_scene: PackedScene
-@export var player_ammount = 10
+@export var player_ammount = 0
 
 var spawned_players = 0
 var spawn_offset = Vector2(0, 0)
