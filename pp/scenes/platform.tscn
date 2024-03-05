@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c6ihin0rdw26m"]
 
-[ext_resource type="Script" path="res://scripts/platform.gd" id="1_lrjjp"]
+[ext_resource type="Script" path="res://scripts/platform.gd" id="1_kidls"]
 [ext_resource type="Texture2D" uid="uid://rs178a8gqxab" path="res://art/platform/Grey Off.png" id="1_r8f02"]
 
 [node name="Gear Activation" type="RigidBody2D"]
-script = ExtResource("1_lrjjp")
+script = ExtResource("1_kidls")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(864, 626.5)

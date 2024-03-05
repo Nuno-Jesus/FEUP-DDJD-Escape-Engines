@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://coqfirkosbw23"]
 
+[ext_resource type="Script" path="res://scripts/gear.gd" id="1_33aui"]
 [ext_resource type="Texture2D" uid="uid://bt8gsibdykngg" path="res://art/gear/gear0.png" id="1_ffepu"]
-[ext_resource type="Script" path="res://scripts/gear.gd" id="1_sy4aj"]
 [ext_resource type="Texture2D" uid="uid://b3kcdc7sfdlm7" path="res://art/gear/gear20.png" id="2_skdun"]
 [ext_resource type="Texture2D" uid="uid://c1lfx2caf7xb5" path="res://art/gear/gear40.png" id="3_qjj7r"]
 [ext_resource type="Texture2D" uid="uid://cs17ueyvd45sb" path="res://art/gear/gear60.png" id="4_olekr"]
@@ -72,7 +72,7 @@ _data = {
 
 [node name="Gear" type="Node2D"]
 position = Vector2(141, 44)
-script = ExtResource("1_sy4aj")
+script = ExtResource("1_33aui")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
