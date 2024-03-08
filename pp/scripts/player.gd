@@ -1,17 +1,22 @@
+class_name Player
 extends CharacterBody2D
 
 enum Direction { LEFT = -1, RIGHT = 1 }
 
 var screen_size
 var direction = Direction.RIGHT
+var exit
 
 @export var gravity = 1
 @export var speed = 0
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	exit = get_parent().get_node("Exit")
+	
 	velocity.x = speed
 	$AnimatedSprite2D.play()
+	
 
 func _physics_process(delta):
 	velocity.y += gravity
@@ -26,11 +31,14 @@ func _physics_process(delta):
 		direction = Direction.RIGHT
 		$AnimatedSprite2D.flip_h = false
 
-
 func _on_input_event(viewport, event, shape_idx):
 	## Check if the player has been clicked on
 	if (event is InputEventMouseButton && event.pressed):
 		print("Clicked")
+		
+func _on_exit_entered():
+	print("Goodbye")
+	queue_free()
 
 
 # On top of the platform

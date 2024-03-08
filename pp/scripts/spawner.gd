@@ -1,3 +1,4 @@
+class_name Spawner
 extends Node2D
 
 @export var player_scene: PackedScene
@@ -20,10 +21,12 @@ func _on_spawner_timer_timeout():
 		return
 	
 	var player = player_scene.instantiate()
-	player.position += spawn_offset
+	var format = "Engineer_%d"
+	player.name = format % spawned_players
+	player.position += self.position + spawn_offset
 	spawned_players += 1
 	
 	# update HUD
 	hud_node._updatePlayers(spawned_players)
 	
-	add_child(player)
+	get_parent().add_child(player)
