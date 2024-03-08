@@ -40,11 +40,10 @@ func _physics_process(delta):
 	velocity.x = direction * speed
 	
 	move_and_slide()
-	
-	if position.x > screen_size.x:
+	if is_on_wall() and velocity.x >= 0:
 		direction = Macros.Direction.LEFT
 		$AnimatedSprite2D.flip_h = true
-	if position.x < 0:
+	elif is_on_wall() and velocity.x < 0:
 		direction = Macros.Direction.RIGHT
 		$AnimatedSprite2D.flip_h = false
 
