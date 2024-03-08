@@ -3,6 +3,8 @@ extends CanvasLayer
 const neededPlayers = 8
 const red = Color(1.0, 0.0, 0.0, 1.0)
 
+var powerups
+
 var time_elapsed: float = 0
 
 # dark green
@@ -21,6 +23,13 @@ func _ready():
 
 	# Start time
 	$Time/Timer.start()
+
+	powerups = {
+		"Electrical": false,
+		"Mechanical": false,
+		"Chemical": false,
+		"Civil": false
+	}
 
 func _updatePlayers(playerCount):
 	currPlayerCount = playerCount
@@ -61,3 +70,20 @@ func _format_time(time: float) -> String:
 	var secs = int(time)
 
 	return _format_number(mins) + ":" + _format_number(secs)
+
+# only 1 powerup can be active at a time
+func _on_PowerupButton_pressed(button: TextureButton, state: bool):
+	var powerup = button.name
+
+	# turn off any powerup that might be on
+	for key in powerups:
+		if powerups[key] and key != powerup:
+			powerups[key] = false
+			_force_turn_off_powerup(key)
+
+	# set the current to true
+	powerups[powerup] = true
+
+func _force_turn_off_powerup(powerUpName: String):
+	var button = get_node(powerUpName).get_node(powerUpName)
+	button.button_pressed = false
