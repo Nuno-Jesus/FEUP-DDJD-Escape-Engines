@@ -1578,6 +1578,7 @@ texture = ExtResource("2_a5cvi")
 
 [sub_resource type="TileSet" id="TileSet_eb4aq"]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_ycmoa")
 sources/2 = SubResource("TileSetAtlasSource_lptp5")
 
@@ -1631,13 +1632,14 @@ remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Path2D"]
 rotation = -1.5708
+collision_mask = 2
 
 [node name="TileMap" type="TileMap" parent="Path2D/AnimatableBody2D"]
 position = Vector2(-63, -2.75382e-06)
 rotation = 1.5708
 tile_set = SubResource("TileSet_eb4aq")
 format = 2
-layer_0/tile_data = PackedInt32Array(-2, 131074, 7, -1, 196610, 7, -65536, 393218, 7, -65535, 458754, 7, -65538, 131074, 6, -65537, 196610, 6, -131072, 393218, 6, -131071, 458754, 6, -196610, 131074, 4, -131074, 131074, 5, -196609, 196610, 4, -131073, 196610, 5, -327682, 131074, 4, -262146, 131074, 5, -327681, 196610, 4, -262145, 196610, 5, -262144, 393218, 4, -196608, 393218, 5, -262143, 458754, 4, -196607, 458754, 5, -393216, 393218, 4, -327680, 393218, 5, -393215, 458754, 4, -327679, 458754, 5, -458754, 131074, 2, -393218, 131074, 3, -458753, 196610, 2, -393217, 196610, 3, -524288, 393218, 2, -458752, 393218, 3, -524287, 458754, 2, -458751, 458754, 3)
+layer_0/tile_data = PackedInt32Array(-327682, 131074, 4, -262146, 131074, 5, -327681, 196610, 4, -262145, 196610, 5, -393216, 393218, 4, -327680, 393218, 5, -393215, 458754, 4, -327679, 458754, 5, -393218, 131074, 3, -458753, 196610, 2, -393217, 196610, 3, -524288, 393218, 2, -458752, 393218, 3, -524287, 458754, 2, -458751, 458754, 3, -196610, 131074, 4, -131074, 131074, 5, -196609, 196610, 4, -131073, 196610, 5, -262144, 393218, 4, -196608, 393218, 5, -262143, 458754, 4, -196607, 458754, 5, -131072, 393218, 6, -65536, 393218, 7, -131071, 458754, 6, -65535, 458754, 7, -65538, 131074, 6, -2, 131074, 7, -65537, 196610, 6, -1, 196610, 7, -458754, 131074, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/AnimatableBody2D"]
 position = Vector2(1, -9.09963e-07)
@@ -1647,6 +1649,7 @@ debug_color = Color(1, 0, 0.286275, 0.419608)
 [node name="Area2D" type="Area2D" parent="Path2D/AnimatableBody2D"]
 position = Vector2(-182, -7.95547e-06)
 rotation = 1.5708
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/AnimatableBody2D/Area2D"]
 position = Vector2(0, -133.5)

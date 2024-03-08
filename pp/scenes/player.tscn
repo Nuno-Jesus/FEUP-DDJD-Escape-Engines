@@ -46,6 +46,8 @@ animations = [{
 size = Vector2(16, 26.307)
 
 [node name="Engineer" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 input_pickable = true
 script = ExtResource("1_dpf8g")
 gravity = 10

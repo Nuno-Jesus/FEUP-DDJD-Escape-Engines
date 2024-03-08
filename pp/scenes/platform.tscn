@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://rs178a8gqxab" path="res://art/platform/Grey Off.png" id="1_r8f02"]
 
 [node name="Gear Activation" type="RigidBody2D"]
+collision_mask = 3
 script = ExtResource("1_kidls")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
