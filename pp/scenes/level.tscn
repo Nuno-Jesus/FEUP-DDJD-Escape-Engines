@@ -590,4 +590,4 @@ position = Vector2(342, 100)
 
 [node name="Eletric Door" parent="." instance=ExtResource("7_l3w0m")]
 z_index = -1
-position = Vector2(248, 141)
+position = Vector2(250, 78)

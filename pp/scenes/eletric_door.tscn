@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://q1vm138cn4k2"]
+[gd_scene load_steps=12 format=3 uid="uid://q1vm138cn4k2"]
 
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="1_ldkj1"]
 [ext_resource type="Script" path="res://scripts/eletric_door.gd" id="1_wdn7i"]
 [ext_resource type="Texture2D" uid="uid://b88qhpq7dxrh7" path="res://art/Kings and Pigs Terrain 32x32.png" id="2_a5cvi"]
+
+[sub_resource type="Curve2D" id="Curve2D_kdblh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -183)
+}
+point_count = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycmoa"]
 texture = ExtResource("1_ldkj1")
@@ -535,25 +541,72 @@ sources/1 = SubResource("TileSetAtlasSource_ycmoa")
 sources/2 = SubResource("TileSetAtlasSource_lptp5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwjc"]
-size = Vector2(66, 126)
+size = Vector2(65, 126)
+
+[sub_resource type="Animation" id="Animation_aar43"]
+resource_name = "lifting"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_0oqen"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q32wr"]
+_data = {
+"RESET": SubResource("Animation_0oqen"),
+"lifting": SubResource("Animation_aar43")
+}
 
 [node name="Eletric Door" type="Node2D"]
 script = ExtResource("1_wdn7i")
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_eb4aq")
-format = 2
-layer_0/tile_data = PackedInt32Array(-2, 131074, 7, -1, 196610, 7, -65536, 393218, 7, -65535, 458754, 7, -65538, 131074, 6, -65537, 196610, 6, -131072, 393218, 6, -131071, 458754, 6, -196610, 131074, 4, -131074, 131074, 5, -196609, 196610, 4, -131073, 196610, 5, -327682, 131074, 4, -262146, 131074, 5, -327681, 196610, 4, -262145, 196610, 5, -262144, 393218, 4, -196608, 393218, 5, -262143, 458754, 4, -196607, 458754, 5, -393216, 393218, 4, -327680, 393218, 5, -393215, 458754, 4, -327679, 458754, 5, -458754, 131074, 2, -393218, 131074, 3, -458753, 196610, 2, -393217, 196610, 3, -524288, 393218, 2, -458752, 393218, 3, -524287, 458754, 2, -458751, 458754, 3)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -64)
-shape = SubResource("RectangleShape2D_lmwjc")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_kdblh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotation = -1.5708
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Path2D"]
+rotation = -1.5708
+
+[node name="TileMap" type="TileMap" parent="Path2D/AnimatableBody2D"]
+position = Vector2(-63, -2.75382e-06)
+rotation = 1.5708
+tile_set = SubResource("TileSet_eb4aq")
+format = 2
+layer_0/tile_data = PackedInt32Array(-2, 131074, 7, -1, 196610, 7, -65536, 393218, 7, -65535, 458754, 7, -65538, 131074, 6, -65537, 196610, 6, -131072, 393218, 6, -131071, 458754, 6, -196610, 131074, 4, -131074, 131074, 5, -196609, 196610, 4, -131073, 196610, 5, -327682, 131074, 4, -262146, 131074, 5, -327681, 196610, 4, -262145, 196610, 5, -262144, 393218, 4, -196608, 393218, 5, -262143, 458754, 4, -196607, 458754, 5, -393216, 393218, 4, -327680, 393218, 5, -393215, 458754, 4, -327679, 458754, 5, -458754, 131074, 2, -393218, 131074, 3, -458753, 196610, 2, -393217, 196610, 3, -524288, 393218, 2, -458752, 393218, 3, -524287, 458754, 2, -458751, 458754, 3)
+
+[node name="Area2D" type="Area2D" parent="Path2D/AnimatableBody2D"]
+position = Vector2(-182, -7.95547e-06)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/AnimatableBody2D/Area2D"]
+position = Vector2(-0.5, -183)
+shape = SubResource("RectangleShape2D_lmwjc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q32wr")
+}
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Path2D/AnimatableBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
