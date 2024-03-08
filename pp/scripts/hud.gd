@@ -1,22 +1,28 @@
 extends CanvasLayer
 
 var currPlayerCount = 0
-var curr_player_count_node
+var finishedPlayerCount = 0
+const neededPlayers = 8
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$PlayerCount/InScene.text =  "00"
-	curr_player_count_node = get_node("PlayerCount").get_node("Count")
+	$PlayerCount/InScene.text = "00"
+	$PlayerCount/Needed.text = "/ 0" + str(neededPlayers)
+
+func _format_number(num: int) -> String:
+	if num >= 0 and num < 10:
+		return "0" + str(num)
+	else:
+		return str(num)
 
 func _updatePlayers(playerCount):
-	currPlayerCount = str(playerCount)
+	$PlayerCount/InScene.text = _format_number(playerCount)
 
-	# add leading 0s if less than 10 players
-	if playerCount < 10:
-		currPlayerCount = "0" + currPlayerCount
-
-	$PlayerCount/InScene.text = currPlayerCount
+func _updateFinishedPlayers():
+	finishedPlayerCount += 1
+	$PlayerCount/Finished.text = _format_number(finishedPlayerCount)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
