@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bf86ov45lre5y"]
+[gd_scene load_steps=23 format=3 uid="uid://bf86ov45lre5y"]
 
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="1_lgwq8"]
 [ext_resource type="PackedScene" uid="uid://coqfirkosbw23" path="res://scenes/gear.tscn" id="1_r8u7r"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dcqkqvt801owy" path="res://scenes/spawner.tscn" id="3_l4x8n"]
 [ext_resource type="PackedScene" uid="uid://bcn7kawnpg5aj" path="res://scenes/exit.tscn" id="4_fjads"]
 [ext_resource type="Texture2D" uid="uid://cuqblfkhhbhwh" path="res://art/checkpoints/Checkpoint (Flag Out) (64x64).png" id="4_ltf0s"]
+[ext_resource type="PackedScene" uid="uid://q1vm138cn4k2" path="res://scenes/eletric_door.tscn" id="7_l3w0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tk2l"]
 texture = ExtResource("1_lgwq8")
@@ -581,7 +582,12 @@ frame_progress = 0.947023
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("3_l4x8n")]
 position = Vector2(29, 54)
+player_ammount = 2
 
 [node name="Exit" parent="." instance=ExtResource("4_fjads")]
 z_index = -1
 position = Vector2(342, 100)
+
+[node name="Eletric Door" parent="." instance=ExtResource("7_l3w0m")]
+z_index = -1
+position = Vector2(248, 141)

@@ -15,6 +15,11 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://art/player/walk/walk_03.png"
 
+[autoload]
+
+Signals="*res://scripts/signals.gd"
+Macros="*res://scripts/macros.gd"
+
 [display]
 
 window/size/viewport_width=1920

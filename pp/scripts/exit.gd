@@ -10,9 +10,6 @@ func _on_animation_area_body_entered(body):
 		isOpen = true
 	else:	
 		$CloseAnimationTimer.start()
-		
-func _process(_delta):
-	print($CloseAnimationTimer.wait_time)
 	
 func _on_remove_player_area_body_entered(body):
 	if body.name.left(8) != "Engineer":
