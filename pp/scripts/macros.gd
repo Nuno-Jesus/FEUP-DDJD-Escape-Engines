@@ -1,14 +1,16 @@
 extends Node
 
 enum Direction
-{ 
-	LEFT = -1, 
-	RIGHT = 1 
+{
+	LEFT = -1,
+	RIGHT = 1
 }
 
-enum PowerUp 
+enum PowerUp
 {
 	ELETRICAL,
 	MECHANICAL,
+	CIVIL,
+	CHEMICAL
 	#others...
 }

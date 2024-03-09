@@ -1,17 +1,31 @@
 extends CanvasLayer
 
+# CONSTANTS
 const neededPlayers = 8
 const red = Color(1.0, 0.0, 0.0, 1.0)
-
-var powerups
-
-var time_elapsed: float = 0
-
-# dark green
 const green = Color(0.0, 0.5, 0.0, 1.0)
+
+var powerupsState = {
+	"Eletrical": false,
+	"Mechanical": false,
+	"Chemical": false,
+	"Civil": false
+}
+
+var powerupsCount = {
+	"Eletrical": 1,
+	"Mechanical": 3,
+	"Chemical": 1,
+	"Civil": 1
+}
+
+var time_elapsed: float = 0 #
 
 var currPlayerCount = 0
 var finishedPlayerCount = 0
+
+var currPowerUp = null # Will have format: Macros.PowerUp.X
+var currPowerUpName = null # Will have format: "Eletrical, ..."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,12 +38,9 @@ func _ready():
 	# Start time
 	$Time/Timer.start()
 
-	powerups = {
-		"Electrical": false,
-		"Mechanical": false,
-		"Chemical": false,
-		"Civil": false
-	}
+	currPowerUp = null
+
+	_set_powerup_count()
 
 func _updatePlayers(playerCount):
 	currPlayerCount = playerCount
@@ -55,9 +66,6 @@ func _process(delta):
 func _updateTimeLabel():
 	$Time/TimeString.text = _format_time(time_elapsed)
 
-func _on_timer_timeout():
-	pass # Replace with function body.
-
 func _format_number(num: int) -> String:
 	if num >= 0 and num < 10:
 		return "0" + str(num)
@@ -76,14 +84,52 @@ func _on_PowerupButton_pressed(button: TextureButton, state: bool):
 	var powerup = button.name
 
 	# turn off any powerup that might be on
-	for key in powerups:
-		if powerups[key] and key != powerup:
-			powerups[key] = false
+	for key in powerupsState:
+		if powerupsState[key]:
+			powerupsState[key] = false
 			_force_turn_off_powerup(key)
 
-	# set the current to true
-	powerups[powerup] = true
+	# set the current to true only if it was turned on
+	if state:
+		powerupsState[powerup] = true
+		_set_current_powerup(powerup)
+		currPowerUpName = powerup
+	else:
+		currPowerUp = null
+		currPowerUpName = null
 
-func _force_turn_off_powerup(powerUpName: String):
-	var button = get_node(powerUpName).get_node(powerUpName)
+func _force_turn_off_powerup(powerup: String):
+	var button = get_node(powerup).get_node(powerup)
 	button.button_pressed = false
+
+func _set_current_powerup(powerUpName: String):
+	match powerUpName:
+		"Eletrical":
+			currPowerUp = Macros.PowerUp.ELETRICAL
+		"Mechanical":
+			currPowerUp = Macros.PowerUp.MECHANICAL
+		"Chemical":
+			currPowerUp = Macros.PowerUp.CHEMICAL
+		"Civil":
+			currPowerUp = Macros.PowerUp.CIVIL
+
+func _set_powerup_count():
+	for p in powerupsCount:
+		var count = get_node(p).get_node("Count")
+		count.text = str(powerupsCount[p])
+
+func _decrease_powerup_count():
+	var currentButtonNode = get_node(NodePath(currPowerUpName))
+
+	# decrease powerup count
+	if powerupsCount[currPowerUpName] > 0:
+		powerupsCount[currPowerUpName] -= 1
+
+	# get its count label and update it
+	var count_node = currentButtonNode.get_node("Count")
+	count_node.text = str(powerupsCount[currPowerUpName])
+
+	# if the count is 0, set its texture to disabled
+	if powerupsCount[currPowerUpName] == 0:
+		var button = currentButtonNode.get_node(NodePath(currPowerUpName))
+		button.disabled = true
