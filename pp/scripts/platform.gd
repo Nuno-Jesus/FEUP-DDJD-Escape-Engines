@@ -9,15 +9,22 @@ var gear_node
 func _ready():
 	parent_node = get_parent()
 	gear_node = parent_node.get_node("Gear")
+	Signals.connect("platform_body_is_mechanical", _on_activate)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if (body.get_name().begins_with("Engineer")):
-		gear_node._startRotation()
+	# If the body is a player
+	if body.is_in_group("Player"):
+		Signals.emit_signal("platform_spotted_engineer", body.name)
 
 func _on_area_2d_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
-	if (body.get_name() == "Engineer"):
-		gear_node._stopRotation()
+	#if body.is_in_group("Player"):
+		#gear_node._stopRotation()
+	pass
+
+func _on_activate(_name):
+	print("Gonna activate bitch")
+	gear_node._startRotation()

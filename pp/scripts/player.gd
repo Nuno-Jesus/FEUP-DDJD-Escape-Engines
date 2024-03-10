@@ -8,6 +8,7 @@ var direction = Macros.Direction.RIGHT
 var powerups = []
 
 var isFixingDoor: bool = false
+var isOnPlatform: bool = false
 var hud_node
 
 @export var speed = 0
@@ -17,6 +18,9 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	Signals.connect("eletric_door_spotted_engineer", _on_trying_to_fix_door)
 	Signals.connect("eletric_door_is_fixed", _on_stopping_fixing_door)
+	
+	Signals.connect("platform_spotted_engineer", _on_trying_to_activate_gear)
+	
 	velocity.x = speed
 	$AnimatedSprite2D.play()
 
@@ -44,7 +48,7 @@ func _on_stopping_fixing_door(name):
 	powerups.clear()
 
 func _physics_process(delta):
-	if isFixingDoor:
+	if isFixingDoor or isOnPlatform:
 		return
 	velocity.y += gravity
 	velocity.x = direction * speed
@@ -70,17 +74,25 @@ func _on_input_event(viewport, event, shape_idx):
 		# get active powerup from HUD
 		var currPowerUp = hud_node.currPowerUp
 
-		#print("Current powerup: ", currPowerUp)
+		print("Current powerup: ", currPowerUp)
 
 		if currPowerUp == null:
 			return
 
 		# TESTING: make the clicked player bigger
-		$AnimatedSprite2D.scale.x = 3
-		$AnimatedSprite2D.scale.y = 3
+		#$AnimatedSprite2D.scale.x = 3
+		#$AnimatedSprite2D.scale.y = 3
 
 		# Add the powerup to the player
 		powerups.append(currPowerUp)
 
 		hud_node._decrease_powerup_count()
 
+func _on_trying_to_activate_gear(name):	
+	if name != self.name:
+		return
+	
+	# check if it has powerup
+	if powerups.has(Macros.PowerUp.MECHANICAL):
+		isOnPlatform = true
+		Signals.emit_signal("platform_body_is_mechanical", "null")

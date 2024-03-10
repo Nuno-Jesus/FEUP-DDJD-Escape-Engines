@@ -21,8 +21,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(-0.666674, 0.219047)
-scale = Vector2(0.826869, 0.683823)
+position = Vector2(3.73985, 0.219042)
+scale = Vector2(0.1099, 0.683823)
 polygon = PackedVector2Array(20.755, 5.94519, -19.0538, 5.94519, -18.947, -8.95523, 20.5595, -8.95523)
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

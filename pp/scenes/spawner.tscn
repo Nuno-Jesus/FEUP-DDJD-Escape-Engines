@@ -10,6 +10,7 @@ player_scene = ExtResource("2_77ytv")
 player_ammount = 100
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [node name="Spawner" type="Sprite2D" parent="."]

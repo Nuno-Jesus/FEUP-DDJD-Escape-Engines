@@ -466,7 +466,7 @@ sources/0 = SubResource("TileSetAtlasSource_0tk2l")
 [node name="Node" type="Node"]
 
 [node name="Gear" parent="." instance=ExtResource("1_r8u7r")]
-position = Vector2(726, 369)
+position = Vector2(726, 367)
 scale = Vector2(0.5, 0.5)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -479,7 +479,7 @@ layer_0/tile_data = PackedInt32Array(720867, 393216, 0, 786403, 393216, 1, 85193
 [node name="Gear Activation" parent="." instance=ExtResource("3_cja7t")]
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("3_l4x8n")]
-position = Vector2(703, 512)
+position = Vector2(555, 504)
 
 [node name="Exit" parent="." instance=ExtResource("4_fjads")]
 z_index = -1
@@ -489,7 +489,7 @@ position = Vector2(512, 340)
 z_index = -1
 position = Vector2(385, 322)
 
-[node name="Button" parent="Eletric Door" index="3"]
+[node name="Button" parent="Eletric Door" index="1"]
 position = Vector2(-216, -194)
 
 [node name="Area2D" parent="Eletric Door/Button" index="0"]
