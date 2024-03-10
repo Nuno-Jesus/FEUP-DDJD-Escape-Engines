@@ -22,7 +22,6 @@ func _ready():
 
 	# get hud_node to retrieve active powerup
 	hud_node = get_parent().get_parent().get_node("HUD")
-	#print("HUD-node: ", hud_node)
 
 func _on_trying_to_fix_door(name, door_name):
 	if name != self.name:
@@ -41,7 +40,8 @@ func _on_stopping_fixing_door(name):
 	isFixingDoor = false
 
 	# remove the powerup from the player, after using it
-	powerups.remove_at(powerups.find(Macros.PowerUp.ELETRICAL))
+	#powerups.remove_at(powerups.find(Macros.PowerUp.ELETRICAL))
+	powerups.clear()
 
 func _physics_process(delta):
 	if isFixingDoor:
@@ -79,7 +79,3 @@ func _on_input_event(viewport, event, shape_idx):
 
 		hud_node._decrease_powerup_count()
 
-# On top of the platform
-func _on_area_2d_area_entered(area):
-	print("I'm on top of the platfrom\n")
-	pass # Replace with function body.

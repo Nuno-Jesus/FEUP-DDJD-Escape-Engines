@@ -1,6 +1,6 @@
-extends RigidBody2D
+extends StaticBody2D
 
-#@export var gear_scene: PackedScene 
+#@export var gear_scene: PackedScene
 
 var parent_node
 var gear_node
@@ -15,9 +15,8 @@ func _process(delta):
 	pass
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if (body.get_name() == "Engineer"):
+	if (body.get_name().begins_with("Engineer")):
 		gear_node._startRotation()
-		
 
 func _on_area_2d_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
 	if (body.get_name() == "Engineer"):

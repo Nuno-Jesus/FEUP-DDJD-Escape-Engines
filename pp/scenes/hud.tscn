@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgd5dq8dt4rk7"]
+[gd_scene load_steps=13 format=3 uid="uid://bgd5dq8dt4rk7"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_ss5hf"]
 [ext_resource type="Texture2D" uid="uid://bx2y6iuw38dfp" path="res://art/player/walk/walk_01.png" id="1_vgvyx"]
@@ -6,9 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dt7vo7x04bc8u" path="res://art/checkpoints/finish.png" id="4_o2lxs"]
 [ext_resource type="Texture2D" uid="uid://c6sqewe7mx1m1" path="res://art/clock.png" id="5_d7hah"]
 [ext_resource type="Script" path="res://scripts/powerup.gd" id="6_1l406"]
-[ext_resource type="Texture2D" uid="uid://b50dvwtxop1qd" path="res://art/powerups/plug-normal.png" id="7_s00eu"]
-[ext_resource type="Texture2D" uid="uid://dhir333qtm5w8" path="res://art/powerups/plug-pressed.png" id="8_3ytf3"]
-[ext_resource type="Texture2D" uid="uid://bx7ppur0ala7y" path="res://art/powerups/plug-disabled.png" id="9_sv7c5"]
+[ext_resource type="Texture2D" uid="uid://dq30k5tlaerou" path="res://art/powerups/plug/plug.png" id="7_nmpk0"]
+[ext_resource type="Texture2D" uid="uid://7chsemf1v1c2" path="res://art/powerups/plug/plug-pressed.png" id="8_lp4g6"]
+[ext_resource type="Texture2D" uid="uid://b70wrx6brlncn" path="res://art/powerups/plug/plug-disabled.png" id="9_pk6uh"]
+[ext_resource type="Texture2D" uid="uid://baxx2jcdatl57" path="res://art/powerups/gear/gear.png" id="10_yuvbn"]
+[ext_resource type="Texture2D" uid="uid://bvrvv8w4kpdue" path="res://art/powerups/gear/gear-pressed.png" id="11_b4cto"]
+[ext_resource type="Texture2D" uid="uid://b3dl347am3ufn" path="res://art/powerups/gear/gear-disabled.png" id="12_tcifa"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ss5hf")
@@ -32,9 +35,9 @@ scale = Vector2(3, 3.09)
 texture = ExtResource("1_vgvyx")
 
 [node name="InScene" type="Label" parent="PlayerCount"]
-offset_left = 85.0
+offset_left = 88.0
 offset_top = 965.0
-offset_right = 157.0
+offset_right = 160.0
 offset_bottom = 1079.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -119,9 +122,9 @@ offset_right = 1245.0
 offset_bottom = 1736.0
 scale = Vector2(0.169, 0.169)
 toggle_mode = true
-texture_normal = ExtResource("7_s00eu")
-texture_pressed = ExtResource("8_3ytf3")
-texture_disabled = ExtResource("9_sv7c5")
+texture_normal = ExtResource("7_nmpk0")
+texture_pressed = ExtResource("8_lp4g6")
+texture_disabled = ExtResource("9_pk6uh")
 stretch_mode = 3
 
 [node name="Count" type="Label" parent="Eletrical"]
@@ -141,13 +144,14 @@ script = ExtResource("6_1l406")
 
 [node name="Mechanical" type="TextureButton" parent="Mechanical"]
 offset_left = 888.0
-offset_top = 956.0
-offset_right = 1180.0
-offset_bottom = 1338.0
+offset_top = 978.0
+offset_right = 1413.0
+offset_bottom = 1505.0
 scale = Vector2(0.169, 0.169)
 toggle_mode = true
-texture_normal = ExtResource("7_s00eu")
-texture_pressed = ExtResource("8_3ytf3")
+texture_normal = ExtResource("10_yuvbn")
+texture_pressed = ExtResource("11_b4cto")
+texture_disabled = ExtResource("12_tcifa")
 stretch_mode = 3
 
 [node name="Count" type="Label" parent="Mechanical"]
@@ -167,13 +171,14 @@ script = ExtResource("6_1l406")
 
 [node name="Chemical" type="TextureButton" parent="Chemical"]
 offset_left = 1127.0
-offset_top = 956.0
-offset_right = 1419.0
-offset_bottom = 1338.0
+offset_top = 977.0
+offset_right = 1651.0
+offset_bottom = 1501.0
 scale = Vector2(0.169, 0.169)
 toggle_mode = true
-texture_normal = ExtResource("7_s00eu")
-texture_pressed = ExtResource("8_3ytf3")
+texture_normal = ExtResource("7_nmpk0")
+texture_pressed = ExtResource("8_lp4g6")
+texture_disabled = ExtResource("9_pk6uh")
 stretch_mode = 3
 
 [node name="Count" type="Label" parent="Chemical"]
@@ -193,13 +198,14 @@ script = ExtResource("6_1l406")
 
 [node name="Civil" type="TextureButton" parent="Civil"]
 offset_left = 1369.0
-offset_top = 956.0
-offset_right = 1661.0
-offset_bottom = 1338.0
+offset_top = 978.0
+offset_right = 1894.0
+offset_bottom = 1505.0
 scale = Vector2(0.169, 0.169)
 toggle_mode = true
-texture_normal = ExtResource("7_s00eu")
-texture_pressed = ExtResource("8_3ytf3")
+texture_normal = ExtResource("10_yuvbn")
+texture_pressed = ExtResource("11_b4cto")
+texture_disabled = ExtResource("12_tcifa")
 stretch_mode = 3
 
 [node name="Count" type="Label" parent="Civil"]
