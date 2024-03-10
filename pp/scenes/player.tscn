@@ -91,7 +91,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohub6"]
 size = Vector2(16, 26.307)
 
-[node name="Engineer" type="CharacterBody2D"]
+[node name="Engineer" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
 input_pickable = true

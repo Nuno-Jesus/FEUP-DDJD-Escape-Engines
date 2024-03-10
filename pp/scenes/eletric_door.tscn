@@ -1,8 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://q1vm138cn4k2"]
+[gd_scene load_steps=15 format=3 uid="uid://q1vm138cn4k2"]
 
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="1_ldkj1"]
 [ext_resource type="Script" path="res://scripts/eletric_door.gd" id="1_wdn7i"]
 [ext_resource type="Texture2D" uid="uid://b88qhpq7dxrh7" path="res://art/Kings and Pigs Terrain 32x32.png" id="2_a5cvi"]
+[ext_resource type="Texture2D" uid="uid://cy35ek5oyona4" path="res://art/eletric_power_up/button/button_fixed_0.png" id="2_sf4yb"]
+[ext_resource type="Texture2D" uid="uid://cm4wxi68f2ipa" path="res://art/eletric_power_up/button/button_broken_0.png" id="4_256it"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwjc"]
+size = Vector2(16, 16)
 
 [sub_resource type="Curve2D" id="Curve2D_kdblh"]
 _data = {
@@ -1585,11 +1590,20 @@ sources/2 = SubResource("TileSetAtlasSource_lptp5")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngkhe"]
 size = Vector2(126, 62)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwjc"]
-size = Vector2(68, 27)
-
 [sub_resource type="Animation" id="Animation_0oqen"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_256it")]
+}
 
 [sub_resource type="Animation" id="Animation_aar43"]
 resource_name = "lifting"
@@ -1606,6 +1620,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_sf4yb")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q32wr"]
 _data = {
@@ -1619,6 +1645,20 @@ script = ExtResource("1_wdn7i")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Button" type="Sprite2D" parent="."]
+position = Vector2(-91, -2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_256it")
+
+[node name="Area2D" type="Area2D" parent="Button"]
+position = Vector2(182, 368)
+scale = Vector2(2, 2)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Area2D"]
+position = Vector2(-91.0006, -184)
+shape = SubResource("RectangleShape2D_lmwjc")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_kdblh")
@@ -1646,19 +1686,10 @@ position = Vector2(1, -9.09963e-07)
 shape = SubResource("RectangleShape2D_ngkhe")
 debug_color = Color(1, 0, 0.286275, 0.419608)
 
-[node name="Area2D" type="Area2D" parent="Path2D/AnimatableBody2D"]
-position = Vector2(-182, -7.95547e-06)
-rotation = 1.5708
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/AnimatableBody2D/Area2D"]
-position = Vector2(0, -133.5)
-shape = SubResource("RectangleShape2D_lmwjc")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_q32wr")
 }
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Path2D/AnimatableBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Button/Area2D" to="." method="_on_area_2d_body_entered"]

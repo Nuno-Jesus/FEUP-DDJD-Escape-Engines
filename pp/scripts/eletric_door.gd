@@ -9,7 +9,7 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body):
-	if body.name.left(8) != "Engineer" or isFixed or isBeingFixed:
+	if !body.is_in_group("Player") or isFixed or isBeingFixed:
 		return
 	fixer_name = body.name
 	Signals.emit_signal("eletric_door_spotted_engineer", fixer_name, self.name)

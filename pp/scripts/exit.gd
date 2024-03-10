@@ -9,7 +9,7 @@ func _ready():
 	hudNode = mainNode.get_node("HUD")
 
 func _on_animation_area_body_entered(body):
-	if body.name.left(8) != "Engineer":
+	if !body.is_in_group("Player"):
 		return
 	if !isOpen:
 		$AnimatedSprite2D.play("opening")
@@ -18,7 +18,7 @@ func _on_animation_area_body_entered(body):
 		$CloseAnimationTimer.start()
 	
 func _on_remove_player_area_body_entered(body):
-	if body.name.left(8) != "Engineer":
+	if !body.is_in_group("Player"):
 		return
 	body.queue_free()
 	

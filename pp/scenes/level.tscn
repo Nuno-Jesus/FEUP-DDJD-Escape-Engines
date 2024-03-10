@@ -488,3 +488,11 @@ position = Vector2(512, 340)
 [node name="Eletric Door" parent="." instance=ExtResource("7_l3w0m")]
 z_index = -1
 position = Vector2(385, 322)
+
+[node name="Button" parent="Eletric Door" index="3"]
+position = Vector2(-216, -194)
+
+[node name="Area2D" parent="Eletric Door/Button" index="0"]
+collision_mask = 2
+
+[editable path="Eletric Door"]

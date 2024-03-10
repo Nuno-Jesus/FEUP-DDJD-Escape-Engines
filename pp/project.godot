@@ -35,6 +35,6 @@ mouse_left_click={
 
 [layer_names]
 
-2d_physics/layer_1="Player"
-2d_physics/layer_2="Environment"
+2d_physics/layer_1="Environment"
+2d_physics/layer_2="Player"
 2d_physics/layer_3="Exit"
