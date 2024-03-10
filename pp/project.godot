@@ -24,7 +24,6 @@ Macros="*res://scripts/macros.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 
 [input]
 
@@ -36,6 +35,6 @@ mouse_left_click={
 
 [layer_names]
 
-2d_physics/layer_1="Player"
-2d_physics/layer_2="Environment"
+2d_physics/layer_1="Environment"
+2d_physics/layer_2="Player"
 2d_physics/layer_3="Exit"
