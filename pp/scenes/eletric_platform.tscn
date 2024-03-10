@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://q1vm138cn4k2"]
 
-[ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="1_ldkj1"]
-[ext_resource type="Script" path="res://scripts/eletric_door.gd" id="1_wdn7i"]
-[ext_resource type="Texture2D" uid="uid://b88qhpq7dxrh7" path="res://art/Kings and Pigs Terrain 32x32.png" id="2_a5cvi"]
-[ext_resource type="Texture2D" uid="uid://cy35ek5oyona4" path="res://art/eletric_power_up/button/button_fixed_0.png" id="2_sf4yb"]
-[ext_resource type="Texture2D" uid="uid://cm4wxi68f2ipa" path="res://art/eletric_power_up/button/button_broken_0.png" id="4_256it"]
+[ext_resource type="Script" path="res://scripts/eletric_door.gd" id="1_72wji"]
+[ext_resource type="Texture2D" uid="uid://cm4wxi68f2ipa" path="res://art/eletric_power_up/button/button_broken_0.png" id="2_dsygn"]
+[ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="3_euhs3"]
+[ext_resource type="Texture2D" uid="uid://b88qhpq7dxrh7" path="res://art/Kings and Pigs Terrain 32x32.png" id="4_5papb"]
+[ext_resource type="Texture2D" uid="uid://cy35ek5oyona4" path="res://art/eletric_power_up/button/button_fixed_0.png" id="5_4fg87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwjc"]
 size = Vector2(16, 16)
@@ -16,7 +16,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycmoa"]
-texture = ExtResource("1_ldkj1")
+texture = ExtResource("3_euhs3")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -451,7 +451,7 @@ texture = ExtResource("1_ldkj1")
 20:10/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptp5"]
-texture = ExtResource("2_a5cvi")
+texture = ExtResource("4_5papb")
 2:2/0 = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
@@ -1602,7 +1602,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_256it")]
+"values": [ExtResource("2_dsygn")]
 }
 
 [sub_resource type="Animation" id="Animation_aar43"]
@@ -1630,7 +1630,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_sf4yb")]
+"values": [ExtResource("5_4fg87")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q32wr"]
@@ -1639,8 +1639,8 @@ _data = {
 "lifting": SubResource("Animation_aar43")
 }
 
-[node name="Eletric Door" type="Node2D"]
-script = ExtResource("1_wdn7i")
+[node name="EletricPlatform" type="Node2D"]
+script = ExtResource("1_72wji")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -1649,7 +1649,7 @@ one_shot = true
 [node name="Button" type="Sprite2D" parent="."]
 position = Vector2(-91, -2)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_256it")
+texture = ExtResource("2_dsygn")
 
 [node name="Area2D" type="Area2D" parent="Button"]
 position = Vector2(182, 368)
@@ -1684,7 +1684,7 @@ layer_0/tile_data = PackedInt32Array(-327682, 131074, 4, -262146, 131074, 5, -32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/AnimatableBody2D"]
 position = Vector2(1, -9.09963e-07)
 shape = SubResource("RectangleShape2D_ngkhe")
-debug_color = Color(1, 0, 0.286275, 0.419608)
+debug_color = Color(0, 0.580392, 0.843137, 0.419608)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

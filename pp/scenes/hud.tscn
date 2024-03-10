@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://b3dl347am3ufn" path="res://art/powerups/gear/gear-disabled.png" id="12_tcifa"]
 
 [node name="HUD" type="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 script = ExtResource("1_ss5hf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
