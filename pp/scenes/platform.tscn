@@ -3,30 +3,27 @@
 [ext_resource type="Script" path="res://scripts/platform.gd" id="1_kidls"]
 [ext_resource type="Texture2D" uid="uid://rs178a8gqxab" path="res://art/platform/Grey Off.png" id="1_r8f02"]
 
-[node name="Gear Activation" type="RigidBody2D"]
+[node name="Gear Activation" type="StaticBody2D"]
+disable_mode = 2
 collision_mask = 3
 script = ExtResource("1_kidls")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(864, 626.5)
-scale = Vector2(2.93905, 2.60715)
-polygon = PackedVector2Array(16.3333, 3.61903, -16.3318, 3.64383, -16.3318, -2.10959, 16.3318, -2.87671)
+[node name="Platform" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(864, 625.5)
+scale = Vector2(3, 2.62501)
+texture = ExtResource("1_r8f02")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(864, 625.5)
 scale = Vector2(3, 2.62501)
-
-[node name="Platform" type="Sprite2D" parent="Area2D"]
-texture_filter = 1
-texture = ExtResource("1_r8f02")
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(-0.0162231, 1.58094)
-scale = Vector2(0.979158, 0.867043)
-polygon = PackedVector2Array(20.755, 5.94519, -19.0538, 5.94519, -19.0538, -5.94519, 20.755, -5.94519)
+position = Vector2(-0.666674, 0.219047)
+scale = Vector2(0.826869, 0.683823)
+polygon = PackedVector2Array(20.755, 5.94519, -19.0538, 5.94519, -18.947, -8.95523, 20.5595, -8.95523)
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]
