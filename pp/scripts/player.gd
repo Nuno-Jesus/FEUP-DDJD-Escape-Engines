@@ -7,8 +7,8 @@ var powerups = [Macros.PowerUp.ELETRICAL]
 
 var isFixingDoor: bool = false
 
-@export var gravity = 1
 @export var speed = 0
+@export var gravity = 5
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -24,7 +24,7 @@ func _on_trying_to_fix_door(name, door_name):
 		return
 	velocity.x = 0
 	isFixingDoor = true
-	#Play another animation
+	$AnimatedSprite2D.play("busy")
 	Signals.emit_signal("eletric_door_is_being_fixed", door_name)
 	
 func _on_stopping_fixing_door(name):
@@ -40,6 +40,11 @@ func _physics_process(delta):
 	velocity.x = direction * speed
 	
 	move_and_slide()
+	if velocity.y > gravity:
+		$AnimatedSprite2D.play("fall")
+	else:
+		$AnimatedSprite2D.play("walk")
+		
 	if is_on_wall() and velocity.x >= 0:
 		direction = Macros.Direction.LEFT
 		$AnimatedSprite2D.flip_h = true

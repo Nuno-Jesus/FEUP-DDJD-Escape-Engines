@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c6ihin0rdw26m" path="res://scenes/platform.tscn" id="3_cja7t"]
 [ext_resource type="PackedScene" uid="uid://dcqkqvt801owy" path="res://scenes/spawner.tscn" id="3_l4x8n"]
 [ext_resource type="PackedScene" uid="uid://bcn7kawnpg5aj" path="res://scenes/exit.tscn" id="4_fjads"]
-[ext_resource type="PackedScene" path="res://scenes/eletric_door.tscn" id="7_l3w0m"]
+[ext_resource type="PackedScene" uid="uid://q1vm138cn4k2" path="res://scenes/eletric_door.tscn" id="7_l3w0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tk2l"]
 texture = ExtResource("1_lgwq8")
@@ -487,4 +487,4 @@ position = Vector2(512, 340)
 
 [node name="Eletric Door" parent="." instance=ExtResource("7_l3w0m")]
 z_index = -1
-position = Vector2(371, 319)
+position = Vector2(385, 322)

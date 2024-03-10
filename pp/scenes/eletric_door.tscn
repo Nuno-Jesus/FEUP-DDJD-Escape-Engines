@@ -1588,6 +1588,9 @@ size = Vector2(126, 62)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwjc"]
 size = Vector2(68, 27)
 
+[sub_resource type="Animation" id="Animation_0oqen"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_aar43"]
 resource_name = "lifting"
 length = 2.0
@@ -1603,9 +1606,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
-
-[sub_resource type="Animation" id="Animation_0oqen"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q32wr"]
 _data = {
