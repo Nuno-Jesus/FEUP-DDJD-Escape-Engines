@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+var cursor = preload("res://art/cursor/onPlayer.png")
+
 var screen_size
 var direction = Macros.Direction.RIGHT
 
@@ -65,9 +67,10 @@ func _physics_process(delta):
 	elif is_on_wall() and velocity.x < 0:
 		direction = Macros.Direction.RIGHT
 		$AnimatedSprite2D.flip_h = false
+		
 
 func _on_input_event(viewport, event, shape_idx):
-	## Check if the player has been clicked on
+		## Check if the player has been clicked on
 	if (event is InputEventMouseButton&&event.pressed):
 		#print("I've been clicked on")
 
@@ -96,3 +99,9 @@ func _on_trying_to_activate_gear(name):
 	if powerups.has(Macros.PowerUp.MECHANICAL):
 		isOnPlatform = true
 		Signals.emit_signal("platform_body_is_mechanical", "null")
+
+func _on_mouse_entered():
+	Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(16, 16))
+
+func _on_mouse_exited():
+	Input.set_custom_mouse_cursor(null)

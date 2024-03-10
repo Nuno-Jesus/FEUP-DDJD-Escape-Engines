@@ -4,6 +4,7 @@ var hud_node
 var button
 
 var count
+var cursor = preload("res://art/cursor/mouse.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,3 +24,9 @@ func _setCount(newCount: int):
 
 func _getCount() -> int:
 	return count
+
+func _on_mouse_entered():
+	Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(16, 16))
+
+func _on_mouse_exited():
+	Input.set_custom_mouse_cursor(null)

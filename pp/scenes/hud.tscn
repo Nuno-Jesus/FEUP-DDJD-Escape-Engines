@@ -17,6 +17,7 @@
 script = ExtResource("1_ss5hf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -221,7 +222,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="timeout" from="Time/Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Eletrical/Eletrical" to="Eletrical" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Eletrical/Eletrical" to="Eletrical" method="_on_mouse_exited"]
 [connection signal="toggled" from="Eletrical/Eletrical" to="Eletrical" method="_on_texture_button_toggled"]
+[connection signal="mouse_entered" from="Mechanical/Mechanical" to="Mechanical" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Mechanical/Mechanical" to="Mechanical" method="_on_mouse_exited"]
 [connection signal="toggled" from="Mechanical/Mechanical" to="Mechanical" method="_on_texture_button_toggled"]
+[connection signal="mouse_entered" from="Chemical/Chemical" to="Chemical" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Chemical/Chemical" to="Chemical" method="_on_mouse_exited"]
 [connection signal="toggled" from="Chemical/Chemical" to="Chemical" method="_on_texture_button_toggled"]
+[connection signal="mouse_entered" from="Civil/Civil" to="Civil" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Civil/Civil" to="Civil" method="_on_mouse_exited"]
 [connection signal="toggled" from="Civil/Civil" to="Civil" method="_on_texture_button_toggled"]

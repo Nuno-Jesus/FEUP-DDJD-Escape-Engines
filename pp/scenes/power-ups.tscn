@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://cgd25y456chaa"]
-
-[node name="PowerUps" type="Node"]
-
-[node name="PU-Eletric" type="Node" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="PU-Eletric"]
