@@ -8,9 +8,9 @@ var direction = Macros.Direction.RIGHT
 
 # initially, the player has no powerups
 var powerups = []
+var currPowerUp = null
 
-var isFixingDoor: bool = false
-var isOnPlatform: bool = false
+var isStuck: bool = false
 var hud_node
 
 @export var speed = 0
@@ -26,7 +26,6 @@ func _ready():
 	velocity.x = speed
 	$AnimatedSprite2D.play()
 
-	# get hud_node to retrieve active powerup
 	hud_node = get_parent().get_parent().get_node("HUD")
 
 func _on_trying_to_fix_door(name, door_name):
@@ -35,7 +34,7 @@ func _on_trying_to_fix_door(name, door_name):
 	if !powerups.has(Macros.PowerUp.ELETRICAL):
 		return
 	velocity.x = 0
-	isFixingDoor = true
+	set_physics_process(false)
 	$AnimatedSprite2D.play("busy")
 	Signals.emit_signal("eletric_door_is_being_fixed", door_name)
 
@@ -43,15 +42,10 @@ func _on_stopping_fixing_door(name):
 	if name != self.name:
 		return
 	$AnimatedSprite2D.play("walk")
-	isFixingDoor = false
-
-	# remove the powerup from the player, after using it
-	#powerups.remove_at(powerups.find(Macros.PowerUp.ELETRICAL))
+	set_physics_process(true)
 	powerups.clear()
 
 func _physics_process(delta):
-	if isFixingDoor or isOnPlatform:
-		return
 	velocity.y += gravity
 	velocity.x = direction * speed
 
@@ -61,47 +55,59 @@ func _physics_process(delta):
 	else:
 		$AnimatedSprite2D.play("walk")
 		
-	if is_on_wall() and velocity.x >= 0:
-		direction = Macros.Direction.LEFT
-		$AnimatedSprite2D.flip_h = true
-	elif is_on_wall() and velocity.x < 0:
-		direction = Macros.Direction.RIGHT
-		$AnimatedSprite2D.flip_h = false
+	if is_on_wall():
+		direction = -direction
+		print("HIT wall with speed: ", velocity)
+		$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 		
 
 func _on_input_event(viewport, event, shape_idx):
-		## Check if the player has been clicked on
-	if (event is InputEventMouseButton&&event.pressed):
-		#print("I've been clicked on")
-
-		# get active powerup from HUD
-		var currPowerUp = hud_node.currPowerUp
-
-		print("Current powerup: ", currPowerUp)
-
-		if currPowerUp == null:
+	if event is InputEventMouseButton&&event.pressed:
+		if isStuck or hud_node.currPowerUp == null:
 			return
 
-		# TESTING: make the clicked player bigger
-		#$AnimatedSprite2D.scale.x = 3
-		#$AnimatedSprite2D.scale.y = 3
+		currPowerUp = hud_node.currPowerUp
+		print("Current powerup: ", currPowerUp)
 
-		# Add the powerup to the player
+		match currPowerUp:
+			Macros.PowerUp.CHEMICAL:
+				$PowerUpsTimer.stop()
+				$PowerUpsTimer.start()
+				$AnimationPlayer.play("shrink")
+			Macros.PowerUp.CIVIL:
+				$PowerUpsTimer.stop()
+				$PowerUpsTimer.start()
+				$AnimationPlayer.play("expand")
+
 		powerups.append(currPowerUp)
-
 		hud_node._decrease_powerup_count()
 
 func _on_trying_to_activate_gear(name):	
 	if name != self.name:
 		return
-	
-	# check if it has powerup
-	if powerups.has(Macros.PowerUp.MECHANICAL):
-		isOnPlatform = true
-		Signals.emit_signal("platform_body_is_mechanical", "null")
+	if !powerups.has(Macros.PowerUp.MECHANICAL):
+		return
+		
+	set_physics_process(false)
+	Signals.emit_signal("platform_body_is_mechanical", "null")
 
 func _on_mouse_entered():
 	Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(16, 16))
 
 func _on_mouse_exited():
 	Input.set_custom_mouse_cursor(null)
+
+func _on_power_ups_timer_timeout():
+	if isStuck and currPowerUp == Macros.PowerUp.CHEMICAL:
+		$PowerUpsTimer.start(0.1)
+		return
+	currPowerUp = null
+	$AnimationPlayer.play_backwards()
+
+func _on_area_2d_body_entered(body):
+	isStuck = true
+	print("IM STUCK")
+	
+func _on_area_2d_body_exited(body):
+	isStuck = false
+	print("IM FREE")

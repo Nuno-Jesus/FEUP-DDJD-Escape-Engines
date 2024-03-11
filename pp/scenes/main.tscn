@@ -31,8 +31,6 @@ mouse_filter = 2
 texture = ExtResource("1_r686e")
 stretch_mode = 1
 
-[node name="HUD" parent="." instance=ExtResource("2_dxgju")]
-scale = Vector2(0.8, 0.8)
-transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
-
 [node name="Level" parent="." instance=ExtResource("2_a8ir8")]
+
+[node name="HUD" parent="." instance=ExtResource("2_dxgju")]

@@ -14,16 +14,17 @@
 [ext_resource type="Texture2D" uid="uid://b3dl347am3ufn" path="res://art/powerups/gear/gear-disabled.png" id="12_tcifa"]
 
 [node name="HUD" type="CanvasLayer"]
-scale = Vector2(0.5, 0.5)
-transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+scale = Vector2(0.75, 0.75)
+transform = Transform2D(0.75, 0, 0, 0.75, 0, 0)
 script = ExtResource("1_ss5hf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 965.0
+offset_top = 847.0
+offset_right = 424.0
+offset_bottom = 238.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.639216, 1, 1, 1)
@@ -33,15 +34,15 @@ color = Color(0.639216, 1, 1, 1)
 [node name="Button" type="Sprite2D" parent="PlayerCount"]
 z_index = 1
 texture_filter = 1
-position = Vector2(57, 1010)
+position = Vector2(48.6667, 886.213)
 scale = Vector2(3, 3.09)
 texture = ExtResource("1_vgvyx")
 
 [node name="InScene" type="Label" parent="PlayerCount"]
-offset_left = 88.0
-offset_top = 965.0
-offset_right = 160.0
-offset_bottom = 1079.0
+offset_left = 79.6667
+offset_top = 841.213
+offset_right = 151.667
+offset_bottom = 955.213
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
@@ -55,10 +56,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Finished" type="Label" parent="PlayerCount"]
-offset_left = 283.0
-offset_top = 965.0
-offset_right = 355.0
-offset_bottom = 1079.0
+offset_left = 274.667
+offset_top = 841.213
+offset_right = 346.667
+offset_bottom = 955.213
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
@@ -71,10 +72,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Needed" type="Label" parent="PlayerCount"]
-offset_left = 356.0
-offset_top = 965.0
-offset_right = 492.0
-offset_bottom = 1080.0
+offset_left = 347.667
+offset_top = 841.213
+offset_right = 483.667
+offset_bottom = 956.213
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1icu5")
 theme_override_font_sizes/font_size = 50
@@ -84,7 +85,7 @@ vertical_alignment = 1
 
 [node name="FinishFlag" type="Sprite2D" parent="PlayerCount"]
 texture_filter = 1
-position = Vector2(243, 1014)
+position = Vector2(234.667, 890.212)
 scale = Vector2(0.12, 0.144)
 texture = ExtResource("4_o2lxs")
 
@@ -93,7 +94,7 @@ texture = ExtResource("4_o2lxs")
 [node name="Timer" type="Timer" parent="Time"]
 
 [node name="Clock" type="Sprite2D" parent="Time"]
-position = Vector2(1671, 1022)
+position = Vector2(1662.67, 898.213)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_d7hah")
 
@@ -103,10 +104,10 @@ anchor_left = 0.336
 anchor_top = 0.183
 anchor_right = 0.336
 anchor_bottom = 0.183
-offset_left = 1046.88
-offset_top = 767.36
-offset_right = 1274.88
-offset_bottom = 882.36
+offset_left = 1038.55
+offset_top = 643.574
+offset_right = 1266.55
+offset_bottom = 758.574
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("2_1icu5")
@@ -119,10 +120,10 @@ vertical_alignment = 1
 script = ExtResource("6_1l406")
 
 [node name="Eletrical" type="TextureButton" parent="Eletrical"]
-offset_left = 649.0
-offset_top = 957.0
-offset_right = 1245.0
-offset_bottom = 1736.0
+offset_left = 548.667
+offset_top = 833.213
+offset_right = 1144.67
+offset_bottom = 1612.21
 scale = Vector2(0.169, 0.169)
 toggle_mode = true
 texture_normal = ExtResource("7_nmpk0")
@@ -131,10 +132,10 @@ texture_disabled = ExtResource("9_pk6uh")
 stretch_mode = 3
 
 [node name="Count" type="Label" parent="Eletrical"]
-offset_left = 712.0
-offset_top = 1029.0
-offset_right = 744.0
-offset_bottom = 1084.0
+offset_left = 611.667
+offset_top = 905.214
+offset_right = 643.667
+offset_bottom = 960.214
 theme_override_colors/font_color = Color(0.282353, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("2_1icu5")
@@ -146,10 +147,10 @@ vertical_alignment = 1
 script = ExtResource("6_1l406")
 
 [node name="Mechanical" type="TextureButton" parent="Mechanical"]
-offset_left = 888.0
-offset_top = 978.0
-offset_right = 1413.0
-offset_bottom = 1505.0
+offset_left = 787.667
+offset_top = 854.213
+offset_right = 1312.67
+offset_bottom = 1381.21
 scale = Vector2(0.169, 0.169)
 toggle_mode = true
 texture_normal = ExtResource("10_yuvbn")
@@ -158,10 +159,10 @@ texture_disabled = ExtResource("12_tcifa")
 stretch_mode = 3
 
 [node name="Count" type="Label" parent="Mechanical"]
-offset_left = 952.0
-offset_top = 1029.0
-offset_right = 984.0
-offset_bottom = 1084.0
+offset_left = 851.667
+offset_top = 905.214
+offset_right = 883.667
+offset_bottom = 960.214
 theme_override_colors/font_color = Color(0.282353, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("2_1icu5")
@@ -173,10 +174,10 @@ vertical_alignment = 1
 script = ExtResource("6_1l406")
 
 [node name="Chemical" type="TextureButton" parent="Chemical"]
-offset_left = 1127.0
-offset_top = 977.0
-offset_right = 1651.0
-offset_bottom = 1501.0
+offset_left = 1026.67
+offset_top = 853.213
+offset_right = 1550.67
+offset_bottom = 1377.21
 scale = Vector2(0.169, 0.169)
 toggle_mode = true
 texture_normal = ExtResource("7_nmpk0")
@@ -185,10 +186,10 @@ texture_disabled = ExtResource("9_pk6uh")
 stretch_mode = 3
 
 [node name="Count" type="Label" parent="Chemical"]
-offset_left = 1190.0
-offset_top = 1029.0
-offset_right = 1222.0
-offset_bottom = 1084.0
+offset_left = 1089.67
+offset_top = 905.214
+offset_right = 1121.67
+offset_bottom = 960.214
 theme_override_colors/font_color = Color(0.282353, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("2_1icu5")
@@ -200,10 +201,10 @@ vertical_alignment = 1
 script = ExtResource("6_1l406")
 
 [node name="Civil" type="TextureButton" parent="Civil"]
-offset_left = 1369.0
-offset_top = 978.0
-offset_right = 1894.0
-offset_bottom = 1505.0
+offset_left = 1268.67
+offset_top = 854.213
+offset_right = 1793.67
+offset_bottom = 1381.21
 scale = Vector2(0.169, 0.169)
 toggle_mode = true
 texture_normal = ExtResource("10_yuvbn")
@@ -212,10 +213,10 @@ texture_disabled = ExtResource("12_tcifa")
 stretch_mode = 3
 
 [node name="Count" type="Label" parent="Civil"]
-offset_left = 1431.0
-offset_top = 1029.0
-offset_right = 1463.0
-offset_bottom = 1084.0
+offset_left = 1330.67
+offset_top = 905.214
+offset_right = 1362.67
+offset_bottom = 960.214
 theme_override_colors/font_color = Color(0.282353, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("2_1icu5")
