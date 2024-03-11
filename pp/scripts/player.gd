@@ -68,7 +68,7 @@ func _physics_process(delta):
 	
 	if currPowerUp in [Macros.PowerUp.ELETRICAL, Macros.PowerUp.MECHANICAL]:
 		falling_animation = animations[currPowerUp]["fall"]
-		walking_animation = animations[currPowerUp]["walk"]		
+		walking_animation = animations[currPowerUp]["walk"]
 	else:
 		falling_animation = animations[null]["fall"]
 		walking_animation = animations[null]["walk"]
@@ -111,8 +111,10 @@ func _on_trying_to_activate_gear(name):
 	if currPowerUp != Macros.PowerUp.MECHANICAL:
 		return
 	
+	# stops on top of the platform, does not move anymore (sacrifice)
 	set_physics_process(false)
 	$AnimatedSprite2D.play("mechanical_idle")
+	
 	Signals.emit_signal("platform_body_is_mechanical", "null")
 
 func _on_mouse_entered():
@@ -135,6 +137,8 @@ func _on_area_2d_body_exited(body):
 	isStuck = false
 	
 func _on_trying_to_enter_gear(name):
+	print("Entering the gear")
+	
 	if name != self.name:
 		return
 	
