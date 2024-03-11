@@ -490,8 +490,8 @@ layer_0/tile_data = PackedInt32Array(720867, 458752, 1, 786403, 458752, 1, 85193
 position = Vector2(-510, -175)
 
 [node name="Spawner" parent="." instance=ExtResource("3_l4x8n")]
-position = Vector2(814, 544)
-player_ammount = 1
+position = Vector2(460, 223)
+player_ammount = 10
 
 [node name="Exit" parent="." instance=ExtResource("4_fjads")]
 z_index = -1
@@ -504,7 +504,7 @@ z_index = -1
 position = Vector2(384, 254)
 
 [node name="Button" parent="EletricPlatformMiddle" index="1"]
-position = Vector2(229, 42)
+position = Vector2(445, 36)
 
 [node name="Area2D" parent="EletricPlatformMiddle/Button" index="0"]
 collision_mask = 2

@@ -60,8 +60,15 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	var falling_animation = animations[currPowerUp]["fall"]
-	var walking_animation = animations[currPowerUp]["walk"]
+	var falling_animation
+	var walking_animation
+	
+	if currPowerUp in [Macros.PowerUp.ELETRICAL, Macros.PowerUp.MECHANICAL]:
+		falling_animation = animations[currPowerUp]["fall"]
+		walking_animation = animations[currPowerUp]["walk"]
+	else:
+		falling_animation = animations[null]["fall"]
+		walking_animation = animations[null]["walk"]
 	
 	if velocity.y > gravity:
 		$AnimatedSprite2D.play(falling_animation)
@@ -78,19 +85,20 @@ func _on_input_event(viewport, event, shape_idx):
 		if isStuck or hud_node.currPowerUp == null:
 			return
 
-		match currPowerUp:
-			Macros.PowerUp.PHYSICAL_SHRINK:
-				$PowerUpsTimer.stop()
-				$PowerUpsTimer.start()
-				$AnimationPlayer.play("shrink")
-			Macros.PowerUp.PHYSICAL_EXPAND:
-				$PowerUpsTimer.stop()
-				$PowerUpsTimer.start()
-				$AnimationPlayer.play("expand")
-
 		currPowerUp = hud_node.currPowerUp
 		print("Current powerup: ", currPowerUp)
 		hud_node._decrease_powerup_count()
+		
+		match currPowerUp:
+			Macros.PowerUp.PHYSICAL_SHRINK:
+				$Timer.stop()
+				$Timer.start()
+				$AnimationPlayer.play("shrink")
+			Macros.PowerUp.PHYSICAL_EXPAND:
+				$Timer.stop()
+				$Timer.start()
+				$AnimationPlayer.play("expand")
+
 
 func _on_trying_to_activate_gear(name):	
 	if name != self.name:
@@ -110,7 +118,7 @@ func _on_mouse_exited():
 
 func _on_power_ups_timer_timeout():
 	if isStuck and currPowerUp == Macros.PowerUp.PHYSICAL_SHRINK:
-		$PowerUpsTimer.start(0.1)
+		$Timer.start(0.1)
 		return
 	currPowerUp = null
 	$AnimationPlayer.play_backwards()
