@@ -21,8 +21,9 @@ var powerupsCount = {
 
 var time_elapsed: float = 0 #
 
-var currPlayerCount = 0
-var finishedPlayerCount = 0
+var currPlayerCount : int = 0
+var finishedPlayerCount : int = 0
+var deathPlayerCount : int = 0
 
 var currPowerUp = null # Will have format: Macros.PowerUp.X
 var currPowerUpName = null # Will have format: "Eletrical, ..."
@@ -31,6 +32,7 @@ var currPowerUpName = null # Will have format: "Eletrical, ..."
 func _ready():
 	$PlayerCount/InScene.text = "00"
 	$PlayerCount/Needed.text = "/ 0" + str(neededPlayers)
+	$PlayerCount/Dead.text = "00"
 
 	# Change text color to red
 	$PlayerCount/Finished.set("theme_override_colors/font_color", red)
@@ -135,3 +137,10 @@ func _decrease_powerup_count():
 		var button = currentButtonNode.get_node(NodePath(currPowerUpName))
 		button.disabled = true
 		currPowerUp = null
+
+func _decrease_player_count():
+	currPlayerCount -= 1
+	$PlayerCount/InScene.text = _format_number(currPlayerCount)
+	
+	deathPlayerCount+=1
+	$PlayerCount/Dead.text = _format_number(deathPlayerCount)

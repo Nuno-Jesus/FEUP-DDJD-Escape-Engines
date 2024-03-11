@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://bgd5dq8dt4rk7"]
+[gd_scene load_steps=20 format=3 uid="uid://bgd5dq8dt4rk7"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_ss5hf"]
 [ext_resource type="Texture2D" uid="uid://bx2y6iuw38dfp" path="res://art/player/walk/walk_01.png" id="1_vgvyx"]
 [ext_resource type="FontFile" uid="uid://b1ya3qpy408dm" path="res://fonts/Xolonium-Regular.ttf" id="2_1icu5"]
+[ext_resource type="Texture2D" uid="uid://c77lslljsv365" path="res://art/player/dead.png" id="3_tgfwg"]
 [ext_resource type="Texture2D" uid="uid://dt7vo7x04bc8u" path="res://art/checkpoints/finish.png" id="4_o2lxs"]
 [ext_resource type="Texture2D" uid="uid://c6sqewe7mx1m1" path="res://art/clock.png" id="5_d7hah"]
 [ext_resource type="Script" path="res://scripts/powerup.gd" id="6_1l406"]
@@ -38,18 +39,25 @@ color = Color(0.639216, 1, 1, 1)
 
 [node name="PlayerCount" type="Node" parent="."]
 
-[node name="Button" type="Sprite2D" parent="PlayerCount"]
+[node name="AliveIcon" type="Sprite2D" parent="PlayerCount"]
 z_index = 1
 texture_filter = 1
-position = Vector2(48.6667, 886.213)
-scale = Vector2(3, 3.09)
+position = Vector2(56, 885.333)
+scale = Vector2(2, 2.06)
 texture = ExtResource("1_vgvyx")
 
+[node name="DeadIcon" type="Sprite2D" parent="PlayerCount"]
+z_index = 1
+texture_filter = 1
+position = Vector2(46.6667, 920)
+scale = Vector2(2, 2.06)
+texture = ExtResource("3_tgfwg")
+
 [node name="InScene" type="Label" parent="PlayerCount"]
-offset_left = 79.6667
-offset_top = 841.213
-offset_right = 151.667
-offset_bottom = 955.213
+offset_left = 84.0
+offset_top = 866.667
+offset_right = 136.0
+offset_bottom = 913.667
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
@@ -57,8 +65,25 @@ theme_override_constants/outline_size = 15
 theme_override_constants/shadow_outline_size = 0
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_1icu5")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 37
 text = "11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dead" type="Label" parent="PlayerCount"]
+offset_left = 84.0
+offset_top = 913.333
+offset_right = 136.0
+offset_bottom = 960.333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_1icu5")
+theme_override_font_sizes/font_size = 37
+text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 

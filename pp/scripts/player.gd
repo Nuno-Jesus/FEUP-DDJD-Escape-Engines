@@ -137,8 +137,6 @@ func _on_area_2d_body_exited(body):
 	isStuck = false
 	
 func _on_trying_to_enter_gear(name):
-	print("Entering the gear")
-	
 	if name != self.name:
 		return
 	
@@ -149,3 +147,6 @@ func _on_trying_to_exit_gear(name):
 		return
 	
 	onGear = false
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	hud_node._decrease_player_count()
