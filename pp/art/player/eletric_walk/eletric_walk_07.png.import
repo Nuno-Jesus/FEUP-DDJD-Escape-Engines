@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ldkcdw0pf77"
-path="res://.godot/imported/busy_07.png-a5f2a0c36b57e3bde0a03f9cec4b3a08.ctex"
+uid="uid://dfdhq30kej3u2"
+path="res://.godot/imported/eletric_walk_07.png-ce79d0466bdd00f1c6f84a1f32f3732d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/busy/busy_07.png"
-dest_files=["res://.godot/imported/busy_07.png-a5f2a0c36b57e3bde0a03f9cec4b3a08.ctex"]
+source_file="res://art/player/eletric_walk/eletric_walk_07.png"
+dest_files=["res://.godot/imported/eletric_walk_07.png-ce79d0466bdd00f1c6f84a1f32f3732d.ctex"]
 
 [params]
 

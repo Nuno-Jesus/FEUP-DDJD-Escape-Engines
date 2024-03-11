@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnqiyh0qqnoeo"
-path="res://.godot/imported/busy_04.png-208832d5f96d76a776e23d0797ce921c.ctex"
+uid="uid://7rsnbkwo3pq6"
+path="res://.godot/imported/eletric_fixing_05.png-457ea20015bdea5735b0ddb50eac56ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/busy/busy_04.png"
-dest_files=["res://.godot/imported/busy_04.png-208832d5f96d76a776e23d0797ce921c.ctex"]
+source_file="res://art/player/eletric_fixing/eletric_fixing_05.png"
+dest_files=["res://.godot/imported/eletric_fixing_05.png-457ea20015bdea5735b0ddb50eac56ed.ctex"]
 
 [params]
 

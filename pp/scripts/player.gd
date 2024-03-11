@@ -13,27 +13,43 @@ var currPowerUp = null
 var isStuck: bool = false
 var hud_node
 
+var normal_animations = {
+	"walk": "walk",
+	"fall": "fall"
+}
+
+var eletric_animations = {
+	"walk": "eletric_walk",
+	"fall": "fall",
+	"busy": "eletric_fixing"
+}
+
+var mechanical_animations = {
+	"walk": "eletric_walk",
+	"fall": "fall",
+	"busy": "eletric_fixing"
+}
+
+
 @export var speed = 0
 @export var gravity = 5
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	hud_node = get_parent().get_parent().get_node("HUD")
+	
 	Signals.connect("eletric_door_spotted_engineer", _on_trying_to_fix_door)
 	Signals.connect("eletric_door_is_fixed", _on_stopping_fixing_door)
-	
 	Signals.connect("platform_spotted_engineer", _on_trying_to_activate_gear)
 	
-	velocity.x = speed
 	$AnimatedSprite2D.play()
-
-	hud_node = get_parent().get_parent().get_node("HUD")
 
 func _on_trying_to_fix_door(name, door_name):
 	if name != self.name:
 		return
 	if !powerups.has(Macros.PowerUp.ELETRICAL):
 		return
-	velocity.x = 0
+		
 	set_physics_process(false)
 	$AnimatedSprite2D.play("busy")
 	Signals.emit_signal("eletric_door_is_being_fixed", door_name)
@@ -41,6 +57,7 @@ func _on_trying_to_fix_door(name, door_name):
 func _on_stopping_fixing_door(name):
 	if name != self.name:
 		return
+		
 	$AnimatedSprite2D.play("walk")
 	set_physics_process(true)
 	powerups.clear()
@@ -57,7 +74,6 @@ func _physics_process(delta):
 		
 	if is_on_wall():
 		direction = -direction
-		print("HIT wall with speed: ", velocity)
 		$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 		
 
@@ -106,8 +122,6 @@ func _on_power_ups_timer_timeout():
 
 func _on_area_2d_body_entered(body):
 	isStuck = true
-	print("IM STUCK")
 	
 func _on_area_2d_body_exited(body):
 	isStuck = false
-	print("IM FREE")
