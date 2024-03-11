@@ -1656,12 +1656,12 @@ collision_mask = 2
 curve = SubResource("Curve2D_rt4ys")
 
 [node name="PathFollow2D" parent="SpawnPlatform/Path2D" index="0"]
-position = Vector2(1, -25)
+position = Vector2(-48, -25)
 rotation = 3.14159
 
 [node name="AnimatableBody2D" parent="SpawnPlatform/Path2D" index="1"]
-position = Vector2(1, -25)
-rotation = -3.14159
+position = Vector2(-48, -25)
+rotation = 3.14159
 
 [node name="CollisionShape2D" parent="SpawnPlatform/Path2D/AnimatableBody2D" index="1"]
 position = Vector2(1, -6.10352e-05)
@@ -1683,12 +1683,13 @@ position = Vector2(0, 1)
 curve = SubResource("Curve2D_tvmwj")
 
 [node name="PathFollow2D" parent="PlatformElevator/Path2D" index="0"]
-position = Vector2(3, -25)
+position = Vector2(-511, -25)
 rotation = 4.71239
+progress = 514.0
 rotates = false
 
 [node name="AnimatableBody2D" parent="PlatformElevator/Path2D" index="1"]
-position = Vector2(3, -25)
+position = Vector2(-511, -25)
 
 [node name="TileMap" parent="PlatformElevator/Path2D/AnimatableBody2D" index="0"]
 layer_0/tile_data = PackedInt32Array(-327682, 1310722, 9, -262146, 1310722, 8, -327681, 196610, 4, -262145, 196610, 4, -393216, 393218, 4, -327680, 393218, 4, -393215, 1507330, 9, -327679, 1507330, 8, -393218, 1310722, 8, -458753, 196610, 4, -393217, 196610, 4, -524288, 393218, 4, -458752, 393218, 4, -524287, 458754, 4, -458751, 1507330, 8, -196610, 1310722, 9, -131074, 1310722, 10, -196609, 196610, 4, -131073, 196610, 4, -262144, 393218, 4, -196608, 393218, 4, -262143, 1507330, 9, -196607, 1507330, 10, -131072, 393218, 6, -65536, 327682, 7, -131071, 1507330, 11, -65535, 458754, 7, -65538, 1310722, 11, -2, 131074, 7, -65537, 196610, 6, -1, 262146, 7, -458754, 131074, 4, -589823, 458754, 4, -655359, 458754, 4, -524290, 131074, 4, -589826, 131074, 4, -655362, 131074, 2, -720895, 458754, 2, -720896, 327682, 2, -655361, 327682, 2, -655360, 393218, 3, -589825, 196610, 3, -524289, 196610, 4, -589824, 393218, 4)
