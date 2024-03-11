@@ -8,15 +8,15 @@ const green = Color(0.0, 0.5, 0.0, 1.0)
 var powerupsState = {
 	"Eletrical": false,
 	"Mechanical": false,
-	"Chemical": false,
-	"Civil": false
+	"Physical_Shrink": false,
+	"Physical_Expand": false
 }
 
 var powerupsCount = {
 	"Eletrical": 1,
 	"Mechanical": 3,
-	"Chemical": 1,
-	"Civil": 1
+	"Physical_Shrink": 1,
+	"Physical_Expand": 1
 }
 
 var time_elapsed: float = 0 #
@@ -82,6 +82,8 @@ func _format_time(time: float) -> String:
 # only 1 powerup can be active at a time
 func _on_PowerupButton_pressed(button: TextureButton, state: bool):
 	var powerup = button.name
+	
+	print("Powerup: ", powerup)
 
 	# turn off any powerup that might be on
 	for key in powerupsState:
@@ -108,10 +110,10 @@ func _set_current_powerup(powerUpName: String):
 			currPowerUp = Macros.PowerUp.ELETRICAL
 		"Mechanical":
 			currPowerUp = Macros.PowerUp.MECHANICAL
-		"Chemical":
-			currPowerUp = Macros.PowerUp.CHEMICAL
-		"Civil":
-			currPowerUp = Macros.PowerUp.CIVIL
+		"Physical_Shrink":
+			currPowerUp = Macros.PowerUp.PHYSICAL_SHRINK
+		"Physical_Expand":
+			currPowerUp = Macros.PowerUp.PHYSICAL_EXPAND
 
 func _set_powerup_count():
 	for p in powerupsCount:

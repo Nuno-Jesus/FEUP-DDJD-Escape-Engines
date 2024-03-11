@@ -70,11 +70,11 @@ func _on_input_event(viewport, event, shape_idx):
 		print("Current powerup: ", currPowerUp)
 
 		match currPowerUp:
-			Macros.PowerUp.CHEMICAL:
+			Macros.PowerUp.PHYSICAL_SHRINK:
 				$PowerUpsTimer.stop()
 				$PowerUpsTimer.start()
 				$AnimationPlayer.play("shrink")
-			Macros.PowerUp.CIVIL:
+			Macros.PowerUp.PHYSICAL_EXPAND:
 				$PowerUpsTimer.stop()
 				$PowerUpsTimer.start()
 				$AnimationPlayer.play("expand")
@@ -98,7 +98,7 @@ func _on_mouse_exited():
 	Input.set_custom_mouse_cursor(null)
 
 func _on_power_ups_timer_timeout():
-	if isStuck and currPowerUp == Macros.PowerUp.CHEMICAL:
+	if isStuck and currPowerUp == Macros.PowerUp.PHYSICAL_SHRINK:
 		$PowerUpsTimer.start(0.1)
 		return
 	currPowerUp = null

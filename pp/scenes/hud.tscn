@@ -94,7 +94,7 @@ texture = ExtResource("4_o2lxs")
 [node name="Timer" type="Timer" parent="Time"]
 
 [node name="Clock" type="Sprite2D" parent="Time"]
-position = Vector2(1662.67, 898.213)
+position = Vector2(1485.33, 900)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_d7hah")
 
@@ -104,14 +104,14 @@ anchor_left = 0.336
 anchor_top = 0.183
 anchor_right = 0.336
 anchor_bottom = 0.183
-offset_left = 1038.55
-offset_top = 643.574
-offset_right = 1266.55
-offset_bottom = 758.574
+offset_left = 1081.92
+offset_top = 716.24
+offset_right = 1273.92
+offset_bottom = 824.24
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("2_1icu5")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -170,10 +170,10 @@ theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Chemical" type="Node" parent="."]
+[node name="Physical_Shrink" type="Node" parent="."]
 script = ExtResource("6_1l406")
 
-[node name="Chemical" type="TextureButton" parent="Chemical"]
+[node name="Physical_Shrink" type="TextureButton" parent="Physical_Shrink"]
 offset_left = 1026.67
 offset_top = 853.213
 offset_right = 1550.67
@@ -185,7 +185,7 @@ texture_pressed = ExtResource("8_lp4g6")
 texture_disabled = ExtResource("9_pk6uh")
 stretch_mode = 3
 
-[node name="Count" type="Label" parent="Chemical"]
+[node name="Count" type="Label" parent="Physical_Shrink"]
 offset_left = 1089.67
 offset_top = 905.214
 offset_right = 1121.67
@@ -197,10 +197,10 @@ theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Civil" type="Node" parent="."]
+[node name="Physical_Expand" type="Node" parent="."]
 script = ExtResource("6_1l406")
 
-[node name="Civil" type="TextureButton" parent="Civil"]
+[node name="Physical_Expand" type="TextureButton" parent="Physical_Expand"]
 offset_left = 1268.67
 offset_top = 854.213
 offset_right = 1793.67
@@ -212,7 +212,7 @@ texture_pressed = ExtResource("11_b4cto")
 texture_disabled = ExtResource("12_tcifa")
 stretch_mode = 3
 
-[node name="Count" type="Label" parent="Civil"]
+[node name="Count" type="Label" parent="Physical_Expand"]
 offset_left = 1330.67
 offset_top = 905.214
 offset_right = 1362.67
@@ -231,9 +231,9 @@ vertical_alignment = 1
 [connection signal="mouse_entered" from="Mechanical/Mechanical" to="Mechanical" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Mechanical/Mechanical" to="Mechanical" method="_on_mouse_exited"]
 [connection signal="toggled" from="Mechanical/Mechanical" to="Mechanical" method="_on_texture_button_toggled"]
-[connection signal="mouse_entered" from="Chemical/Chemical" to="Chemical" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Chemical/Chemical" to="Chemical" method="_on_mouse_exited"]
-[connection signal="toggled" from="Chemical/Chemical" to="Chemical" method="_on_texture_button_toggled"]
-[connection signal="mouse_entered" from="Civil/Civil" to="Civil" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Civil/Civil" to="Civil" method="_on_mouse_exited"]
-[connection signal="toggled" from="Civil/Civil" to="Civil" method="_on_texture_button_toggled"]
+[connection signal="mouse_entered" from="Physical_Shrink/Physical_Shrink" to="Physical_Shrink" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Physical_Shrink/Physical_Shrink" to="Physical_Shrink" method="_on_mouse_exited"]
+[connection signal="toggled" from="Physical_Shrink/Physical_Shrink" to="Physical_Shrink" method="_on_texture_button_toggled"]
+[connection signal="mouse_entered" from="Physical_Expand/Physical_Expand" to="Physical_Expand" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Physical_Expand/Physical_Expand" to="Physical_Expand" method="_on_mouse_exited"]
+[connection signal="toggled" from="Physical_Expand/Physical_Expand" to="Physical_Expand" method="_on_texture_button_toggled"]
