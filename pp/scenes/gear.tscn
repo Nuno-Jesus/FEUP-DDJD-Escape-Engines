@@ -1,38 +1,21 @@
-[gd_scene load_steps=23 format=3 uid="uid://coqfirkosbw23"]
+[gd_scene load_steps=6 format=3 uid="uid://coqfirkosbw23"]
 
 [ext_resource type="Script" path="res://scripts/gear.gd" id="1_33aui"]
 [ext_resource type="Texture2D" uid="uid://bt8gsibdykngg" path="res://art/gear/gear0.png" id="1_ffepu"]
-[ext_resource type="Texture2D" uid="uid://b3kcdc7sfdlm7" path="res://art/gear/gear20.png" id="2_skdun"]
-[ext_resource type="Texture2D" uid="uid://c1lfx2caf7xb5" path="res://art/gear/gear40.png" id="3_qjj7r"]
-[ext_resource type="Texture2D" uid="uid://cs17ueyvd45sb" path="res://art/gear/gear60.png" id="4_olekr"]
-[ext_resource type="Texture2D" uid="uid://b31bkblgl82tw" path="res://art/gear/gear80.png" id="5_uj8fq"]
-[ext_resource type="Texture2D" uid="uid://dot1lguu00dl0" path="res://art/gear/gear100.png" id="6_dmflh"]
-[ext_resource type="Texture2D" uid="uid://bxookuyoyd41e" path="res://art/gear/gear120.png" id="7_kcjml"]
-[ext_resource type="Texture2D" uid="uid://bk0clmhb766hh" path="res://art/gear/gear140.png" id="8_ctqyv"]
-[ext_resource type="Texture2D" uid="uid://61bq8dfkwmvk" path="res://art/gear/gear160.png" id="9_liuwe"]
-[ext_resource type="Texture2D" uid="uid://ioaojjwrhw4d" path="res://art/gear/gear180.png" id="10_4qyyk"]
-[ext_resource type="Texture2D" uid="uid://htoxgchhjcaa" path="res://art/gear/gear200.png" id="11_3emp4"]
-[ext_resource type="Texture2D" uid="uid://cblwugir5q5ij" path="res://art/gear/gear220.png" id="12_1rssp"]
-[ext_resource type="Texture2D" uid="uid://dqnv3xcsuobv" path="res://art/gear/gear240.png" id="13_vnykb"]
-[ext_resource type="Texture2D" uid="uid://cvgo2ejbsng6e" path="res://art/gear/gear260.png" id="14_mui6v"]
-[ext_resource type="Texture2D" uid="uid://c1qyh2qrw7mmq" path="res://art/gear/gear280.png" id="15_pmsc5"]
-[ext_resource type="Texture2D" uid="uid://cscfb4bhwy2ly" path="res://art/gear/gear300.png" id="16_bxfbv"]
-[ext_resource type="Texture2D" uid="uid://bhotc5tgte7q6" path="res://art/gear/gear320.png" id="17_0dgpd"]
-[ext_resource type="Texture2D" uid="uid://bbs15fjljjtls" path="res://art/gear/gear340.png" id="18_dd1dd"]
 
 [sub_resource type="Animation" id="Animation_eyguc"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StaticBody2D/CollisionPolygon2D2:rotation")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2.35059]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_v6rmy"]
@@ -42,26 +25,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StaticBody2D/Sprite2D:texture")
-tracks/0/interp = 0
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("1_ffepu"), ExtResource("2_skdun"), ExtResource("3_qjj7r"), ExtResource("4_olekr"), ExtResource("5_uj8fq"), ExtResource("6_dmflh"), ExtResource("7_kcjml"), ExtResource("8_ctqyv"), ExtResource("9_liuwe"), ExtResource("10_4qyyk"), ExtResource("11_3emp4"), ExtResource("12_1rssp"), ExtResource("13_vnykb"), ExtResource("14_mui6v"), ExtResource("15_pmsc5"), ExtResource("16_bxfbv"), ExtResource("17_0dgpd"), ExtResource("18_dd1dd"), ExtResource("1_ffepu")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("StaticBody2D/CollisionPolygon2D2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [2.35059, 2.71292, 2.27076, 2.61284, 2.18159, 2.52939, 2.87438, 3.22842, 3.5772, 3.93275, 4.27869, 4.63295, 4.97572, 5.31585, 5.66915, 6.02278, 6.36548, 6.7263, 7.06134]
+"times": PackedFloat32Array(0, 3.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jq1b5"]
@@ -71,19 +42,16 @@ _data = {
 }
 
 [node name="Gear" type="Node2D"]
-position = Vector2(141, 44)
 script = ExtResource("1_33aui")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(710, 552)
 rotation = 2.35059
 polygon = PackedVector2Array(37.2547, -212.634, 51.8462, -166.589, 94.1689, -147.967, 138.823, -166.809, 178.182, -124.161, 156.021, -81.1512, 172.042, -37.9274, 216.49, -20.0002, 214.048, 37.2626, 168.003, 51.854, 149.381, 94.1768, 168.231, 137.417, 125.575, 178.19, 83.2765, 155.326, 40.0525, 171.347, 22.1255, 215.795, -35.8484, 214.056, -50.4399, 168.011, -92.0516, 148.686, -136.706, 167.528, -176.073, 126.294, -153.911, 83.2844, -169.933, 40.0604, -215.084, 21.4222, -212.642, -35.8406, -166.597, -50.432, -147.975, -92.7548, -166.817, -137.409, -123.466, -176.057, -81.1671, -153.192, -37.9352, -170.628, -20.7192, -214.373)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(709, 552)
 texture = ExtResource("1_ffepu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
