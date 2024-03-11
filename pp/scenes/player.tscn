@@ -3,48 +3,48 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dpf8g"]
 [ext_resource type="Texture2D" uid="uid://bx2y6iuw38dfp" path="res://art/player/walk/walk_01.png" id="1_uw2cv"]
 [ext_resource type="Texture2D" uid="uid://d2y8i8j7aqsp2" path="res://art/player/walk/walk_02.png" id="2_5mpjp"]
-[ext_resource type="Texture2D" uid="uid://di8hteahhsmgp" path="res://art/player/busy/busy_01.png" id="2_mpke6"]
+[ext_resource type="Texture2D" uid="uid://ccay3lwxwityy" path="res://art/player/busy/pixil-frame-0.png" id="2_yqply"]
 [ext_resource type="Texture2D" uid="uid://cr385xapfopkp" path="res://art/player/walk/walk_03.png" id="3_744v7"]
-[ext_resource type="Texture2D" uid="uid://633hhfvrlrci" path="res://art/player/busy/busy_02.png" id="3_yfxdu"]
+[ext_resource type="Texture2D" uid="uid://cot0y27cbxihd" path="res://art/player/busy/pixil-frame-1.png" id="3_t5kvw"]
+[ext_resource type="Texture2D" uid="uid://c81140gxrxdmk" path="res://art/player/busy/pixil-frame-2.png" id="4_d2ito"]
 [ext_resource type="Texture2D" uid="uid://5c5ffdyt7ljc" path="res://art/player/walk/walk_04.png" id="4_r8oa2"]
-[ext_resource type="Texture2D" uid="uid://bka4fb4xaagnv" path="res://art/player/busy/busy_03.png" id="4_y12hh"]
-[ext_resource type="Texture2D" uid="uid://bnqiyh0qqnoeo" path="res://art/player/busy/busy_04.png" id="5_6jvfj"]
+[ext_resource type="Texture2D" uid="uid://bauratde5151k" path="res://art/player/busy/pixil-frame-3.png" id="5_bslob"]
 [ext_resource type="Texture2D" uid="uid://db758lgibvhxy" path="res://art/player/walk/walk_05.png" id="5_h6e7i"]
+[ext_resource type="Texture2D" uid="uid://co8w5ux8s177c" path="res://art/player/busy/pixil-frame-4.png" id="6_3fs76"]
 [ext_resource type="Texture2D" uid="uid://dbh4nx1xbqx3q" path="res://art/player/walk/walk_06.png" id="6_odsst"]
-[ext_resource type="Texture2D" uid="uid://b1hco17g2jts5" path="res://art/player/busy/busy_05.png" id="6_uxf4u"]
-[ext_resource type="Texture2D" uid="uid://buh561orjb6b8" path="res://art/player/busy/busy_06.png" id="7_6sifh"]
+[ext_resource type="Texture2D" uid="uid://2xkfwb25lauv" path="res://art/player/busy/pixil-frame-5.png" id="7_7kefq"]
 [ext_resource type="Texture2D" uid="uid://f6v5tor5ipcm" path="res://art/player/walk/walk_07.png" id="7_e5bmu"]
 [ext_resource type="Texture2D" uid="uid://4q01s3ufsqds" path="res://art/player/walk/walk_08.png" id="8_6rru6"]
-[ext_resource type="Texture2D" uid="uid://0ldkcdw0pf77" path="res://art/player/busy/busy_07.png" id="8_x7brb"]
-[ext_resource type="Texture2D" uid="uid://d1oreja0gqjxf" path="res://art/player/busy/busy_08.png" id="9_adk5x"]
+[ext_resource type="Texture2D" uid="uid://d4nl3l2xwtydp" path="res://art/player/busy/pixil-frame-6.png" id="8_rbeme"]
+[ext_resource type="Texture2D" uid="uid://vlk80jsf687u" path="res://art/player/busy/pixil-frame-7.png" id="9_b23lh"]
 [ext_resource type="Texture2D" uid="uid://bs0uuo7n2ibpp" path="res://art/player/fall/fall_01.png" id="10_0d5sp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4md7n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mpke6")
+"texture": ExtResource("2_yqply")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_yfxdu")
+"texture": ExtResource("3_t5kvw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_y12hh")
+"texture": ExtResource("4_d2ito")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_6jvfj")
+"texture": ExtResource("5_bslob")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_uxf4u")
+"texture": ExtResource("6_3fs76")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_6sifh")
+"texture": ExtResource("7_7kefq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_x7brb")
+"texture": ExtResource("8_rbeme")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_adk5x")
+"texture": ExtResource("9_b23lh")
 }],
 "loop": true,
 "name": &"busy",
@@ -157,6 +157,7 @@ speed = 10
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4md7n")
 animation = &"busy"
+frame_progress = 0.898267
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 3)
