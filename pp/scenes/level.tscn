@@ -1618,7 +1618,7 @@ size = Vector2(176, 64.0001)
 [node name="Node" type="Node"]
 
 [node name="Gear" parent="." instance=ExtResource("1_r8u7r")]
-position = Vector2(259, 279)
+position = Vector2(540, 501)
 scale = Vector2(0.4, 0.4)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1656,12 +1656,12 @@ collision_mask = 2
 curve = SubResource("Curve2D_rt4ys")
 
 [node name="PathFollow2D" parent="SpawnPlatform/Path2D" index="0"]
-position = Vector2(-48, -25)
+position = Vector2(1, -25)
 rotation = 3.14159
 
 [node name="AnimatableBody2D" parent="SpawnPlatform/Path2D" index="1"]
-position = Vector2(-48, -25)
-rotation = 3.14159
+position = Vector2(1, -25)
+rotation = -3.14159
 
 [node name="CollisionShape2D" parent="SpawnPlatform/Path2D/AnimatableBody2D" index="1"]
 position = Vector2(1, -6.10352e-05)

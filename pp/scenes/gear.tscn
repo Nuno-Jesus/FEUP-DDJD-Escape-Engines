@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://coqfirkosbw23"]
+[gd_scene load_steps=7 format=3 uid="uid://coqfirkosbw23"]
 
 [ext_resource type="Script" path="res://scripts/gear.gd" id="1_33aui"]
 [ext_resource type="Texture2D" uid="uid://bt8gsibdykngg" path="res://art/gear/gear0.png" id="1_ffepu"]
@@ -67,7 +67,6 @@ speed_scale = 0.5
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entry"]
-position = Vector2(717, 532)
 shape = SubResource("RectangleShape2D_ac1c4")
 
 [connection signal="body_shape_entered" from="Entry" to="." method="_on_entry_body_shape_entered"]
