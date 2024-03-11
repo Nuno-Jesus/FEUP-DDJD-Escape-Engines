@@ -6,30 +6,25 @@ var cursor = preload("res://art/cursor/onPlayer.png")
 var screen_size
 var direction = Macros.Direction.RIGHT
 
-# initially, the player has no powerups
-var powerups = []
 var currPowerUp = null
 
 var isStuck: bool = false
 var hud_node
 
-var normal_animations = {
-	"walk": "walk",
-	"fall": "fall"
+var animations = {
+	null: {
+		"walk": "walk",
+		"fall": "fall"
+	},
+	Macros.PowerUp.ELETRICAL: {
+		"walk": "eletric_walk",
+		"fall": "eletric_fall"
+	},
+	Macros.PowerUp.MECHANICAL: {
+		"walk": "mechanical_walk",
+		"fall": "mechanical_fall"
+	},
 }
-
-var eletric_animations = {
-	"walk": "eletric_walk",
-	"fall": "fall",
-	"busy": "eletric_fixing"
-}
-
-var mechanical_animations = {
-	"walk": "eletric_walk",
-	"fall": "fall",
-	"busy": "eletric_fixing"
-}
-
 
 @export var speed = 0
 @export var gravity = 5
@@ -41,36 +36,37 @@ func _ready():
 	Signals.connect("eletric_door_spotted_engineer", _on_trying_to_fix_door)
 	Signals.connect("eletric_door_is_fixed", _on_stopping_fixing_door)
 	Signals.connect("platform_spotted_engineer", _on_trying_to_activate_gear)
-	
-	$AnimatedSprite2D.play()
 
 func _on_trying_to_fix_door(name, door_name):
 	if name != self.name:
 		return
-	if !powerups.has(Macros.PowerUp.ELETRICAL):
+	if currPowerUp != Macros.PowerUp.ELETRICAL:
 		return
 		
 	set_physics_process(false)
-	$AnimatedSprite2D.play("busy")
+	$AnimatedSprite2D.play("eletric_fix")
 	Signals.emit_signal("eletric_door_is_being_fixed", door_name)
 
 func _on_stopping_fixing_door(name):
 	if name != self.name:
 		return
 		
-	$AnimatedSprite2D.play("walk")
+	currPowerUp = null
 	set_physics_process(true)
-	powerups.clear()
 
 func _physics_process(delta):
 	velocity.y += gravity
 	velocity.x = direction * speed
 
 	move_and_slide()
+	
+	var falling_animation = animations[currPowerUp]["fall"]
+	var walking_animation = animations[currPowerUp]["walk"]
+	
 	if velocity.y > gravity:
-		$AnimatedSprite2D.play("fall")
+		$AnimatedSprite2D.play(falling_animation)
 	else:
-		$AnimatedSprite2D.play("walk")
+		$AnimatedSprite2D.play(walking_animation)
 		
 	if is_on_wall():
 		direction = -direction
@@ -82,9 +78,6 @@ func _on_input_event(viewport, event, shape_idx):
 		if isStuck or hud_node.currPowerUp == null:
 			return
 
-		currPowerUp = hud_node.currPowerUp
-		print("Current powerup: ", currPowerUp)
-
 		match currPowerUp:
 			Macros.PowerUp.PHYSICAL_SHRINK:
 				$PowerUpsTimer.stop()
@@ -95,16 +88,18 @@ func _on_input_event(viewport, event, shape_idx):
 				$PowerUpsTimer.start()
 				$AnimationPlayer.play("expand")
 
-		powerups.append(currPowerUp)
+		currPowerUp = hud_node.currPowerUp
+		print("Current powerup: ", currPowerUp)
 		hud_node._decrease_powerup_count()
 
 func _on_trying_to_activate_gear(name):	
 	if name != self.name:
 		return
-	if !powerups.has(Macros.PowerUp.MECHANICAL):
+	if currPowerUp != Macros.PowerUp.MECHANICAL:
 		return
-		
+	
 	set_physics_process(false)
+	$AnimatedSprite2D.play("mechanical_idle")
 	Signals.emit_signal("platform_body_is_mechanical", "null")
 
 func _on_mouse_entered():

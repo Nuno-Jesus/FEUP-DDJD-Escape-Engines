@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t63e72ysloa5"
-path="res://.godot/imported/fall_01.png-15d22acf26ee3625dede794fac5d0d89.ctex"
+uid="uid://ckdtgii7qgq1f"
+path="res://.godot/imported/eletric_fixing_02.png-4451bdb0a327b8db5210e655cf4cb2e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/mechanical_falling/fall_01.png"
-dest_files=["res://.godot/imported/fall_01.png-15d22acf26ee3625dede794fac5d0d89.ctex"]
+source_file="res://art/player/eletric_fix/eletric_fixing_02.png"
+dest_files=["res://.godot/imported/eletric_fixing_02.png-4451bdb0a327b8db5210e655cf4cb2e9.ctex"]
 
 [params]
 
