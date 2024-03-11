@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rgthls5u6k0y"
-path="res://.godot/imported/eletric_fixing_06.png-7569bd2f456ed762734ac9b99fe7f4c7.ctex"
+uid="uid://co56ojy5f573f"
+path="res://.godot/imported/walk_02.png-f33bcce69b2d37f4726371a887093218.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/eletric_fixing/eletric_fixing_06.png"
-dest_files=["res://.godot/imported/eletric_fixing_06.png-7569bd2f456ed762734ac9b99fe7f4c7.ctex"]
+source_file="res://art/player/mechanical_walk/walk_02.png"
+dest_files=["res://.godot/imported/walk_02.png-f33bcce69b2d37f4726371a887093218.ctex"]
 
 [params]
 

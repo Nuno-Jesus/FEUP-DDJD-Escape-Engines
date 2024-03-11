@@ -489,7 +489,7 @@ layer_0/tile_data = PackedInt32Array(720867, 458752, 1, 786403, 458752, 1, 85193
 position = Vector2(-510, -175)
 
 [node name="Spawner" parent="." instance=ExtResource("3_l4x8n")]
-position = Vector2(418, 220)
+position = Vector2(175, 369)
 player_ammount = 1
 
 [node name="Exit" parent="." instance=ExtResource("4_fjads")]
