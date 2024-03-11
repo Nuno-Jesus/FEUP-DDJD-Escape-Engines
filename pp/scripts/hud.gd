@@ -117,8 +117,8 @@ func _set_current_powerup(powerUpName: String):
 
 func _set_powerup_count():
 	for p in powerupsCount:
-		var count = get_node(p).get_node("Count")
-		count.text = str(powerupsCount[p])
+		var node = get_node(p)
+		node._setCount(powerupsCount[p])
 
 func _decrease_powerup_count():
 	var currentButtonNode = get_node(NodePath(currPowerUpName))
@@ -127,11 +127,11 @@ func _decrease_powerup_count():
 	if powerupsCount[currPowerUpName] > 0:
 		powerupsCount[currPowerUpName] -= 1
 
-	# get its count label and update it
-	var count_node = currentButtonNode.get_node("Count")
-	count_node.text = str(powerupsCount[currPowerUpName])
+	# decrement the count
+	currentButtonNode._decrementCount()
 
 	# if the count is 0, set its texture to disabled
 	if powerupsCount[currPowerUpName] == 0:
 		var button = currentButtonNode.get_node(NodePath(currPowerUpName))
 		button.disabled = true
+		currPowerUp = null

@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @export var neededPlayers = 8
 
@@ -16,8 +16,11 @@ func _process(delta):
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body.is_in_group("Player"):
 		playersCrossed+=1
-		
-	$Label.text = str(neededPlayers - playersCrossed)
+	
+	if (neededPlayers - playersCrossed) < 0:
+		$Label.text = "0"	
+	else:
+		$Label.text = str(neededPlayers - playersCrossed)
 	
 	print(playersCrossed, " have crossed the sensor")
 	
