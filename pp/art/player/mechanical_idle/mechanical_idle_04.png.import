@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3dl347am3ufn"
-path="res://.godot/imported/gear-disabled.png-3ef0e5c1185a6da76b5300084294907c.ctex"
+uid="uid://fx4e28nu5nr4"
+path="res://.godot/imported/mechanical_idle_04.png-98be23c3c214936a20045293566bdd74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/powerups/gear/gear-disabled.png"
-dest_files=["res://.godot/imported/gear-disabled.png-3ef0e5c1185a6da76b5300084294907c.ctex"]
+source_file="res://art/player/mechanical_idle/mechanical_idle_04.png"
+dest_files=["res://.godot/imported/mechanical_idle_04.png-98be23c3c214936a20045293566bdd74.ctex"]
 
 [params]
 
