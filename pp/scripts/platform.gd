@@ -21,10 +21,7 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 		Signals.emit_signal("platform_spotted_engineer", body.name)
 
 func _on_area_2d_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
-	#if body.is_in_group("Player"):
-		#gear_node._stopRotation()
 	pass
 
 func _on_activate(_name):
-	print("Gonna activate bitch")
 	gear_node._startRotation()

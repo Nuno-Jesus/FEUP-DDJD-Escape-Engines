@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://coqfirkosbw23"]
+[gd_scene load_steps=24 format=3 uid="uid://coqfirkosbw23"]
 
 [ext_resource type="Script" path="res://scripts/gear.gd" id="1_33aui"]
 [ext_resource type="Texture2D" uid="uid://bt8gsibdykngg" path="res://art/gear/gear0.png" id="1_ffepu"]
@@ -70,6 +70,9 @@ _data = {
 "rotate": SubResource("Animation_v6rmy")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ac1c4"]
+size = Vector2(450, 472)
+
 [node name="Gear" type="Node2D"]
 position = Vector2(141, 44)
 script = ExtResource("1_33aui")
@@ -90,3 +93,14 @@ texture = ExtResource("1_ffepu")
 libraries = {
 "": SubResource("AnimationLibrary_jq1b5")
 }
+speed_scale = 0.5
+
+[node name="Entry" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry"]
+position = Vector2(717, 532)
+shape = SubResource("RectangleShape2D_ac1c4")
+
+[connection signal="body_shape_entered" from="Entry" to="." method="_on_entry_body_shape_entered"]
+[connection signal="body_shape_exited" from="Entry" to="." method="_on_entry_body_shape_exited"]

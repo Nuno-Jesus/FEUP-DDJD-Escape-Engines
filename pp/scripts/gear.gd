@@ -18,3 +18,13 @@ func _stopRotation():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
+
+func _on_entry_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("Player"):
+		Signals.emit_signal("gear_spotted_engineer", body.name)
+
+func _on_entry_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("Player"):
+		Signals.emit_signal("gear_exiting_engineer", body.name)
+

@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-var cursor = preload("res://art/cursor/onPlayer.png")
+var cursor = preload("res://art/cursor/square.png")
 
 var screen_size
 var direction = Macros.Direction.RIGHT
@@ -9,6 +9,7 @@ var direction = Macros.Direction.RIGHT
 var currPowerUp = null
 
 var isStuck: bool = false
+var onGear: bool = false
 var hud_node
 
 var animations = {
@@ -36,6 +37,8 @@ func _ready():
 	Signals.connect("eletric_door_spotted_engineer", _on_trying_to_fix_door)
 	Signals.connect("eletric_door_is_fixed", _on_stopping_fixing_door)
 	Signals.connect("platform_spotted_engineer", _on_trying_to_activate_gear)
+	Signals.connect("gear_spotted_engineer", _on_trying_to_enter_gear)
+	Signals.connect("gear_exiting_engineer", _on_trying_to_exit_gear)
 
 func _on_trying_to_fix_door(name, door_name):
 	if name != self.name:
@@ -65,20 +68,22 @@ func _physics_process(delta):
 	
 	if currPowerUp in [Macros.PowerUp.ELETRICAL, Macros.PowerUp.MECHANICAL]:
 		falling_animation = animations[currPowerUp]["fall"]
-		walking_animation = animations[currPowerUp]["walk"]
+		walking_animation = animations[currPowerUp]["walk"]		
 	else:
 		falling_animation = animations[null]["fall"]
 		walking_animation = animations[null]["walk"]
 	
 	if velocity.y > gravity:
 		$AnimatedSprite2D.play(falling_animation)
+	elif onGear:
+		$AnimatedSprite2D.play("mechanical_idle")
 	else:
 		$AnimatedSprite2D.play(walking_animation)
 		
-	if is_on_wall():
+	if is_on_wall() and !onGear:
 		direction = -direction
 		$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
-		
+	
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton&&event.pressed:
@@ -111,7 +116,7 @@ func _on_trying_to_activate_gear(name):
 	Signals.emit_signal("platform_body_is_mechanical", "null")
 
 func _on_mouse_entered():
-	Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(16, 16))
+	Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(24, 24))
 
 func _on_mouse_exited():
 	Input.set_custom_mouse_cursor(null)
@@ -128,3 +133,15 @@ func _on_area_2d_body_entered(body):
 	
 func _on_area_2d_body_exited(body):
 	isStuck = false
+	
+func _on_trying_to_enter_gear(name):
+	if name != self.name:
+		return
+	
+	onGear = true
+
+func _on_trying_to_exit_gear(name):
+	if name != self.name:
+		return
+	
+	onGear = false
