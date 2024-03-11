@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bf86ov45lre5y"]
+[gd_scene load_steps=12 format=3 uid="uid://bf86ov45lre5y"]
 
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="1_lgwq8"]
 [ext_resource type="PackedScene" uid="uid://coqfirkosbw23" path="res://scenes/gear.tscn" id="1_r8u7r"]
 [ext_resource type="PackedScene" uid="uid://c6ihin0rdw26m" path="res://scenes/platform.tscn" id="3_cja7t"]
 [ext_resource type="PackedScene" uid="uid://dcqkqvt801owy" path="res://scenes/spawner.tscn" id="3_l4x8n"]
 [ext_resource type="PackedScene" uid="uid://bcn7kawnpg5aj" path="res://scenes/exit.tscn" id="4_fjads"]
+[ext_resource type="PackedScene" uid="uid://e7sp4hcep7l8" path="res://scenes/sensor.tscn" id="6_myk7q"]
 [ext_resource type="PackedScene" uid="uid://q1vm138cn4k2" path="res://scenes/eletric_platform.tscn" id="7_l3w0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tk2l"]
@@ -489,12 +490,14 @@ layer_0/tile_data = PackedInt32Array(720867, 458752, 1, 786403, 458752, 1, 85193
 position = Vector2(-510, -175)
 
 [node name="Spawner" parent="." instance=ExtResource("3_l4x8n")]
-position = Vector2(418, 220)
+position = Vector2(814, 544)
 player_ammount = 1
 
 [node name="Exit" parent="." instance=ExtResource("4_fjads")]
 z_index = -1
 position = Vector2(101, 100)
+
+[node name="Sensor" parent="." instance=ExtResource("6_myk7q")]
 
 [node name="EletricPlatformMiddle" parent="." instance=ExtResource("7_l3w0m")]
 z_index = -1

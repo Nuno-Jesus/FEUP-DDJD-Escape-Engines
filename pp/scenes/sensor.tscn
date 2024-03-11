@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://e7sp4hcep7l8"]
+
+[ext_resource type="Script" path="res://scripts/sensor.gd" id="1_5o6r4"]
+[ext_resource type="Texture2D" uid="uid://djj46l330c40k" path="res://art/sensor.png" id="2_xft7f"]
+[ext_resource type="FontFile" uid="uid://b1ya3qpy408dm" path="res://fonts/Xolonium-Regular.ttf" id="3_qjma7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twv33"]
+size = Vector2(14, 30)
+
+[node name="Sensor" type="Node"]
+script = ExtResource("1_5o6r4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(994, 530)
+rotation = 3.14159
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_xft7f")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(978, 631)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(19, -9)
+shape = SubResource("RectangleShape2D_twv33")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 979.0
+offset_top = 486.0
+offset_right = 1010.0
+offset_bottom = 513.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qjma7")
+theme_override_font_sizes/font_size = 20
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

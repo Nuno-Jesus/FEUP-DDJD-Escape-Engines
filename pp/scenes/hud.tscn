@@ -25,6 +25,7 @@ transform = Transform2D(0.75, 0, 0, 0.75, 0, 0)
 script = ExtResource("1_ss5hf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
