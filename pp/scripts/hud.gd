@@ -12,7 +12,7 @@ var powerupsState = {
 	"Physical_Expand": false
 }
 
-var powerupsCount = {
+@export var powerupsCount = {
 	"Eletrical": 1,
 	"Mechanical": 3,
 	"Physical_Shrink": 1,

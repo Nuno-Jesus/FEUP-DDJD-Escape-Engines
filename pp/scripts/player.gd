@@ -97,11 +97,11 @@ func _on_input_event(viewport, event, shape_idx):
 		match currPowerUp:
 			Macros.PowerUp.PHYSICAL_SHRINK:
 				$Timer.stop()
-				$Timer.start()
+				$Timer.start(3.0)
 				$AnimationPlayer.play("shrink")
 			Macros.PowerUp.PHYSICAL_EXPAND:
 				$Timer.stop()
-				$Timer.start()
+				$Timer.start(3.0)
 				$AnimationPlayer.play("expand")
 
 

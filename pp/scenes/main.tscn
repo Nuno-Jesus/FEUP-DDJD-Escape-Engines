@@ -34,3 +34,9 @@ stretch_mode = 1
 [node name="Level" parent="." instance=ExtResource("2_a8ir8")]
 
 [node name="HUD" parent="." instance=ExtResource("2_dxgju")]
+powerupsCount = {
+"Eletrical": 4,
+"Mechanical": 2,
+"Physical_Expand": 3,
+"Physical_Shrink": 4
+}
