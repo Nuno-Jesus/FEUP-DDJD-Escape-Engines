@@ -10,12 +10,10 @@ script = ExtResource("1_kidls")
 
 [node name="Platform" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(864, 625.5)
 scale = Vector2(3, 2.62501)
 texture = ExtResource("1_r8f02")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(864, 625.5)
 scale = Vector2(3, 2.62501)
 collision_layer = 0
 collision_mask = 2

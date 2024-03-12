@@ -25,6 +25,10 @@ Macros="*res://scripts/macros.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[editor]
+
+movie_writer/movie_file="/home/crypted/Desktop/demo.avi"
+
 [input]
 
 mouse_left_click={

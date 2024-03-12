@@ -15,15 +15,18 @@ var hud_node
 var animations = {
 	null: {
 		"walk": "walk",
-		"fall": "fall"
+		"fall": "fall",
+		"idle": "idle"
 	},
 	Macros.PowerUp.ELETRICAL: {
 		"walk": "eletric_walk",
-		"fall": "eletric_fall"
+		"fall": "eletric_fall",
+		"idle": "eletric_idle"
 	},
 	Macros.PowerUp.MECHANICAL: {
 		"walk": "mechanical_walk",
-		"fall": "mechanical_fall"
+		"fall": "mechanical_fall",
+		"idle": "mechanical_idle"
 	},
 }
 
@@ -76,7 +79,7 @@ func _physics_process(delta):
 	if velocity.y > gravity:
 		$AnimatedSprite2D.play(falling_animation)
 	elif onGear:
-		$AnimatedSprite2D.play("mechanical_idle")
+		$AnimatedSprite2D.play("idle")
 	else:
 		$AnimatedSprite2D.play(walking_animation)
 		
