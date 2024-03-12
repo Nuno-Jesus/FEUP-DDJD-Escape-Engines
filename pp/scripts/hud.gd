@@ -56,6 +56,8 @@ func _updateFinishedPlayers():
 
 	if finishedPlayerCount == neededPlayers:
 		$PlayerCount/Finished.set("theme_override_colors/font_color", green)
+		
+	# END GAME
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
