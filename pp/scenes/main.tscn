@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bgd5dq8dt4rk7" path="res://scenes/hud.tscn" id="2_dxgju"]
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="5_mjcrr"]
 [ext_resource type="FontFile" uid="uid://b1ya3qpy408dm" path="res://fonts/Xolonium-Regular.ttf" id="6_wxhqh"]
-[ext_resource type="Script" path="res://scenes/Camera2D.gd" id="7_k26jj"]
+[ext_resource type="Script" path="res://scenes/camera2D.gd" id="7_k26jj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddrin"]
 texture = ExtResource("5_mjcrr")
