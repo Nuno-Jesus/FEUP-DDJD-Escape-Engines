@@ -37,8 +37,7 @@ func _ready():
 	# Change text color to red
 	$PlayerCount/Finished.set("theme_override_colors/font_color", red)
 
-	# Start time
-	$Time/Timer.start()
+	$Time/Timer.stop()
 
 	currPowerUp = null
 
@@ -60,6 +59,8 @@ func _updateFinishedPlayers():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if $Time/Timer.is_stopped():
+		return
 	time_elapsed += delta
 
 	# Update time label

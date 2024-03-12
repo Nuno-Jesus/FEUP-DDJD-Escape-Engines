@@ -1,24 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7iqs72qxwva4"]
+[gd_scene load_steps=8 format=3 uid="uid://c7iqs72qxwva4"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_0f1rk"]
 [ext_resource type="Texture2D" uid="uid://bnpt2k1lbvnv6" path="res://art/backgrounds/Blue.png" id="1_r686e"]
 [ext_resource type="PackedScene" uid="uid://bf86ov45lre5y" path="res://scenes/level.tscn" id="2_a8ir8"]
 [ext_resource type="PackedScene" uid="uid://bgd5dq8dt4rk7" path="res://scenes/hud.tscn" id="2_dxgju"]
-
-[sub_resource type="GDScript" id="GDScript_ehuh5"]
-script/source = "extends Node
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	Input.set_custom_mouse_cursor(null)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[ext_resource type="Texture2D" uid="uid://dmpu27vrs0qrn" path="res://art/gradient.jpg" id="4_23nw3"]
+[ext_resource type="Texture2D" uid="uid://1d5oj52c0clb" path="res://art/button-gradient.jpg" id="5_qtdsw"]
+[ext_resource type="FontFile" uid="uid://b1ya3qpy408dm" path="res://fonts/Xolonium-Regular.ttf" id="6_wxhqh"]
 
 [node name="main" type="Node"]
-script = SubResource("GDScript_ehuh5")
+script = ExtResource("1_0f1rk")
+
+[node name="HUD" parent="." instance=ExtResource("2_dxgju")]
 
 [node name="background" type="TextureRect" parent="."]
 z_index = -2
@@ -33,4 +26,36 @@ stretch_mode = 1
 
 [node name="Level" parent="." instance=ExtResource("2_a8ir8")]
 
-[node name="HUD" parent="." instance=ExtResource("2_dxgju")]
+[node name="TextureRect" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(638.5, 360.5)
+scale = Vector2(1.99531, 2.01389)
+texture = ExtResource("4_23nw3")
+
+[node name="StartButton" type="TextureButton" parent="."]
+offset_left = 364.0
+offset_top = 304.0
+offset_right = 892.0
+offset_bottom = 430.0
+texture_normal = ExtResource("5_qtdsw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="StartButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_wxhqh")
+theme_override_font_sizes/font_size = 64
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="StartButton" to="." method="_on_start_button_mouse_exited"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
