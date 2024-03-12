@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://q1vm138cn4k2"]
 
 [ext_resource type="Script" path="res://scripts/eletric_platform.gd" id="1_a486f"]
-[ext_resource type="Texture2D" uid="uid://cm4wxi68f2ipa" path="res://art/eletric_power_up/button/button_broken_0.png" id="2_dsygn"]
+[ext_resource type="Texture2D" uid="uid://cv0g7ss1c6mwh" path="res://art/eletric_power_up/button/button.png" id="2_744b2"]
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="3_euhs3"]
 [ext_resource type="Texture2D" uid="uid://b88qhpq7dxrh7" path="res://art/Kings and Pigs Terrain 32x32.png" id="4_5papb"]
-[ext_resource type="Texture2D" uid="uid://cy35ek5oyona4" path="res://art/eletric_power_up/button/button_fixed_0.png" id="5_4fg87"]
+[ext_resource type="Texture2D" uid="uid://cnjmpnsgxi427" path="res://art/eletric_power_up/button/button_fixed.png" id="5_c17o8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwjc"]
-size = Vector2(16, 16)
+size = Vector2(8.00121, 8)
 
 [sub_resource type="Curve2D" id="Curve2D_kdblh"]
 _data = {
@@ -1602,7 +1602,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_dsygn")]
+"values": [ExtResource("2_744b2")]
 }
 
 [sub_resource type="Animation" id="Animation_aar43"]
@@ -1629,7 +1629,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_4fg87")]
+"values": [ExtResource("5_c17o8")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q32wr"]
@@ -1647,8 +1647,7 @@ one_shot = true
 
 [node name="Button" type="Sprite2D" parent="."]
 position = Vector2(-91, -2)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_dsygn")
+texture = ExtResource("2_744b2")
 
 [node name="Area2D" type="Area2D" parent="Button"]
 position = Vector2(182, 368)

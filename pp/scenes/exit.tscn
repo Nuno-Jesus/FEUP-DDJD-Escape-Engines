@@ -48,7 +48,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vndsg"]
-size = Vector2(67, 67)
+size = Vector2(45, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhoic"]
 size = Vector2(20, 30)
@@ -57,7 +57,6 @@ size = Vector2(20, 30)
 script = ExtResource("1_couhc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_xujr2")
 animation = &"closing"
 frame = 2
@@ -75,7 +74,7 @@ shape = SubResource("RectangleShape2D_vndsg")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RemovePlayerArea"]
-position = Vector2(0, 24)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_xhoic")
 debug_color = Color(0.988235, 0, 0.309804, 0.419608)
 

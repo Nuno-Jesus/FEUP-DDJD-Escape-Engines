@@ -93,6 +93,8 @@ func _physics_process(delta):
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton&&event.pressed:
+		if currPowerUp != null:
+			return
 		if isStuck or hud_node.currPowerUp == null:
 			return
 
@@ -111,7 +113,7 @@ func _on_input_event(viewport, event, shape_idx):
 				$AnimationPlayer.play("expand")
 
 
-func _on_trying_to_activate_gear(name):	
+func _on_trying_to_activate_gear(name):
 	if name != self.name:
 		return
 	if currPowerUp != Macros.PowerUp.MECHANICAL:
