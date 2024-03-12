@@ -68,18 +68,21 @@ func _physics_process(delta):
 	
 	var falling_animation
 	var walking_animation
+	var idle_animation
 	
 	if currPowerUp in [Macros.PowerUp.ELETRICAL, Macros.PowerUp.MECHANICAL]:
 		falling_animation = animations[currPowerUp]["fall"]
 		walking_animation = animations[currPowerUp]["walk"]
+		idle_animation = animations[currPowerUp]["idle"]
 	else:
 		falling_animation = animations[null]["fall"]
 		walking_animation = animations[null]["walk"]
+		idle_animation = animations[null]["idle"]
 	
 	if velocity.y > gravity:
 		$AnimatedSprite2D.play(falling_animation)
 	elif onGear:
-		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.play(idle_animation)
 	else:
 		$AnimatedSprite2D.play(walking_animation)
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://6ig3u12x0tth"]
+[gd_scene load_steps=56 format=3 uid="uid://6ig3u12x0tth"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dpf8g"]
 [ext_resource type="Texture2D" uid="uid://bx2y6iuw38dfp" path="res://art/player/walk/walk_01.png" id="1_uw2cv"]
@@ -19,10 +19,14 @@
 [ext_resource type="Texture2D" uid="uid://d3g5k3wvu850x" path="res://art/player/eletric_fix/eletric_fixing_07.png" id="9_1h210"]
 [ext_resource type="Texture2D" uid="uid://bs0uuo7n2ibpp" path="res://art/player/fall/fall_01.png" id="10_0d5sp"]
 [ext_resource type="Texture2D" uid="uid://ck6o8s4iru37" path="res://art/player/eletric_fix/eletric_fixing_08.png" id="10_odgyv"]
+[ext_resource type="Texture2D" uid="uid://dlhkv4dd7ln60" path="res://art/player/eletric_idle/eletric_idle_01.png" id="11_1r2if"]
 [ext_resource type="Texture2D" uid="uid://cjy87f7i6gmvd" path="res://art/player/eletric_walk/eletric_walk_01.png" id="11_72avc"]
+[ext_resource type="Texture2D" uid="uid://bfu02mw8jnd46" path="res://art/player/eletric_idle/eletric_idle_02.png" id="12_o3jyd"]
 [ext_resource type="Texture2D" uid="uid://yj1vl7sul288" path="res://art/player/eletric_walk/eletric_walk_02.png" id="12_o68yb"]
+[ext_resource type="Texture2D" uid="uid://bpfjhsurctvtd" path="res://art/player/eletric_idle/eletric_idle_03.png" id="13_2ulkk"]
 [ext_resource type="Texture2D" uid="uid://xr7wvnscewb5" path="res://art/player/eletric_walk/eletric_walk_03.png" id="13_digqd"]
 [ext_resource type="Texture2D" uid="uid://ddtrunooer6xf" path="res://art/player/eletric_walk/eletric_walk_04.png" id="14_bruaf"]
+[ext_resource type="Texture2D" uid="uid://crt0u2syfaf05" path="res://art/player/eletric_idle/eletric_idle_04.png" id="14_riocd"]
 [ext_resource type="Texture2D" uid="uid://bk1i8fgymucwi" path="res://art/player/eletric_walk/eletric_walk_05.png" id="15_c7yll"]
 [ext_resource type="Texture2D" uid="uid://damouctkm6t3n" path="res://art/player/eletric_walk/eletric_walk_06.png" id="16_kr4ut"]
 [ext_resource type="Texture2D" uid="uid://dfdhq30kej3u2" path="res://art/player/eletric_walk/eletric_walk_07.png" id="17_tl86o"]
@@ -83,6 +87,23 @@ animations = [{
 "loop": true,
 "name": &"eletric_fix",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_1r2if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_o3jyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2ulkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_riocd")
+}],
+"loop": true,
+"name": &"eletric_idle",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -292,8 +313,7 @@ speed = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4md7n")
-animation = &"idle"
-frame_progress = 0.65883
+animation = &"eletric_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 3)
