@@ -14,6 +14,7 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 	
 	if (neededPlayers - playersCrossed) <= 0:
 		$Label.text = "0"
+		$Area2D/CollisionShape2D.disabled = true
 		$Gate/Path2D/AnimationPlayer.play("close")
 	else:
 		$Label.text = str(neededPlayers - playersCrossed)
