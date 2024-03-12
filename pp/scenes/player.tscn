@@ -234,7 +234,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.203063, 3.4822),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+"values": [Vector2(1, 1), Vector2(2.5, 2.5)]
 }
 
 [sub_resource type="Animation" id="Animation_osxmg"]
