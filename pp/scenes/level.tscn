@@ -1648,7 +1648,7 @@ layer_0/tile_data = PackedInt32Array(720867, 393216, 0, 786403, 393216, 1, 85193
 position = Vector2(144, 300)
 
 [node name="Spawner" parent="." instance=ExtResource("3_l4x8n")]
-position = Vector2(853, 466)
+position = Vector2(422, 194)
 player_ammount = 10
 
 [node name="Exit" parent="." instance=ExtResource("4_fjads")]
@@ -1674,10 +1674,6 @@ offset_right = 12.2101
 [node name="Path2D" parent="Sensor/Gate" index="0"]
 z_index = -1
 position = Vector2(990, 615)
-
-[node name="PathFollow2D" parent="Sensor/Gate/Path2D" index="0"]
-position = Vector2(2, -0.00219447)
-progress = 0.00437927
 
 [node name="AnimatableBody2D" parent="Sensor/Gate/Path2D" index="1"]
 position = Vector2(2, -0.00219727)
