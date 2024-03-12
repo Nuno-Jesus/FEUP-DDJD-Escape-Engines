@@ -1,24 +1,169 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7iqs72qxwva4"]
+[gd_scene load_steps=11 format=3 uid="uid://c7iqs72qxwva4"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_0f1rk"]
 [ext_resource type="Texture2D" uid="uid://bnpt2k1lbvnv6" path="res://art/backgrounds/Blue.png" id="1_r686e"]
 [ext_resource type="PackedScene" uid="uid://bf86ov45lre5y" path="res://scenes/level.tscn" id="2_a8ir8"]
 [ext_resource type="PackedScene" uid="uid://bgd5dq8dt4rk7" path="res://scenes/hud.tscn" id="2_dxgju"]
+[ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="5_mjcrr"]
+[ext_resource type="FontFile" uid="uid://b1ya3qpy408dm" path="res://fonts/Xolonium-Regular.ttf" id="6_wxhqh"]
+[ext_resource type="Script" path="res://scenes/camera2D.gd" id="7_k26jj"]
 
-[sub_resource type="GDScript" id="GDScript_ehuh5"]
-script/source = "extends Node
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddrin"]
+texture = ExtResource("5_mjcrr")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
 
+[sub_resource type="TileSet" id="TileSet_bm526"]
+sources/1 = SubResource("TileSetAtlasSource_ddrin")
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	Input.set_custom_mouse_cursor(null)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxj7p"]
+size = Vector2(447, 79)
 
 [node name="main" type="Node"]
-script = SubResource("GDScript_ehuh5")
+script = ExtResource("1_0f1rk")
+
 
 [node name="background" type="TextureRect" parent="."]
 z_index = -2
@@ -30,6 +175,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("1_r686e")
 stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Level" parent="." instance=ExtResource("2_a8ir8")]
 
@@ -40,3 +186,51 @@ powerupsCount = {
 "Physical_Expand": 3,
 "Physical_Shrink": 4
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.686275)
+metadata/_edit_use_anchors_ = true
+
+[node name="StartButton" type="TileMap" parent="."]
+position = Vector2(464, 357)
+tile_set = SubResource("TileSet_bm526")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 786433, 4, -65536, 786433, 4, -65535, 786433, 4, -65534, 786433, 4, -65533, 786433, 4, -65532, 786433, 4, -65531, 786433, 4, -65530, 786433, 4, -65529, 786433, 4, -65528, 786433, 4, -65527, 786433, 4, -65526, 786433, 4, -65525, 786433, 4, -65524, 786433, 4, -65523, 786433, 4, -65522, 786433, 4, -65521, 786433, 4, -65520, 786433, 4, -65519, 786433, 4, -65518, 786433, 4, -65517, 786433, 4, -65516, 786433, 4, -65515, 786433, 4, -65514, 786433, 4, -65513, 786433, 4, -65512, 786433, 4, -65511, 786433, 4, -2, 786433, 4, -3, 786433, 4, 65533, 786433, 4, 131069, 786433, 4, 196605, 786433, 4, 262141, 786433, 4, 327677, 786433, 4, 393213, 786433, 4, 393214, 786433, 4, 393215, 786433, 4, 327680, 786433, 4, 327681, 786433, 4, 327682, 786433, 4, 327683, 786433, 4, 327684, 786433, 4, 327685, 786433, 4, 327686, 786433, 4, 327687, 786433, 4, 327688, 786433, 4, 327689, 786433, 4, 327690, 786433, 4, 327691, 786433, 4, 327692, 786433, 4, 327693, 786433, 4, 327694, 786433, 4, 327695, 786433, 4, 327696, 786433, 4, 327697, 786433, 4, 327698, 786433, 4, 327699, 786433, 4, 327700, 786433, 4, 327701, 786433, 4, 327702, 786433, 4, 327703, 786433, 4, 327704, 786433, 4, 327705, 786433, 4, 327706, 786433, 4, -65510, 786433, 4, 26, 786433, 4, 65562, 786433, 4, 131098, 786433, 4, 196634, 786433, 4, 262170, 786433, 4, 65534, 1, 8, 131070, 1, 9, 196606, 1, 9, 262142, 1, 9, 327678, 1, 10, 327679, 65537, 10, 262144, 65537, 10, 262145, 65537, 10, 262146, 65537, 10, 262147, 65537, 10, 262148, 65537, 10, 262149, 65537, 10, 262150, 65537, 10, 262151, 65537, 10, 262152, 65537, 10, 262153, 65537, 10, 262154, 65537, 10, 262155, 65537, 10, 262156, 65537, 10, 262157, 65537, 10, 262158, 65537, 10, 262159, 65537, 10, 262160, 65537, 10, 262161, 65537, 10, 262162, 65537, 10, 262163, 65537, 10, 262164, 65537, 10, 262165, 65537, 10, 262166, 65537, 10, 262167, 65537, 10, 262168, 65537, 10, 65535, 65537, 8, 0, 65537, 8, 1, 65537, 8, 2, 65537, 8, 3, 65537, 8, 4, 65537, 8, 5, 65537, 8, 6, 65537, 8, 7, 65537, 8, 8, 65537, 8, 9, 65537, 8, 10, 65537, 8, 11, 65537, 8, 12, 65537, 8, 13, 65537, 8, 14, 65537, 8, 15, 65537, 8, 16, 65537, 8, 17, 65537, 8, 18, 65537, 8, 19, 65537, 8, 20, 65537, 8, 21, 65537, 8, 22, 65537, 8, 23, 65537, 8, 24, 65537, 8, 25, 131073, 8, 65561, 131073, 9, 131097, 131073, 9, 196633, 131073, 9, 262169, 131073, 10, 131071, 65537, 9, 196607, 65537, 9, 262143, 65537, 9, 65536, 65537, 9, 131072, 65537, 9, 196608, 65537, 9, 65537, 65537, 9, 131073, 65537, 9, 196609, 65537, 9, 65538, 65537, 9, 131074, 65537, 9, 196610, 65537, 9, 65539, 65537, 9, 131075, 65537, 9, 196611, 65537, 9, 65540, 65537, 9, 131076, 65537, 9, 196612, 65537, 9, 65541, 65537, 9, 131077, 65537, 9, 196613, 65537, 9, 65542, 65537, 9, 131078, 65537, 9, 196614, 65537, 9, 65543, 65537, 9, 131079, 65537, 9, 196615, 65537, 9, 65544, 65537, 9, 131080, 65537, 9, 196616, 65537, 9, 65545, 65537, 9, 131081, 65537, 9, 196617, 65537, 9, 65546, 65537, 9, 131082, 65537, 9, 196618, 65537, 9, 65547, 65537, 9, 131083, 65537, 9, 196619, 65537, 9, 65548, 65537, 9, 131084, 65537, 9, 196620, 65537, 9, 65549, 65537, 9, 131085, 65537, 9, 196621, 65537, 9, 65550, 65537, 9, 131086, 65537, 9, 196622, 65537, 9, 65551, 65537, 9, 131087, 65537, 9, 196623, 65537, 9, 65552, 65537, 9, 131088, 65537, 9, 196624, 65537, 9, 65553, 65537, 9, 131089, 65537, 9, 196625, 65537, 9, 65554, 65537, 9, 131090, 65537, 9, 196626, 65537, 9, 65555, 65537, 9, 131091, 65537, 9, 196627, 65537, 9, 65556, 65537, 9, 131092, 65537, 9, 196628, 65537, 9, 65557, 65537, 9, 131093, 65537, 9, 196629, 65537, 9, 65558, 65537, 9, 131094, 65537, 9, 196630, 65537, 9, 65559, 65537, 9, 131095, 65537, 9, 196631, 65537, 9, 65560, 65537, 9, 131096, 65537, 9, 196632, 65537, 9)
+
+[node name="Label" type="Label" parent="StartButton"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -65.0
+offset_top = -24.0
+offset_right = 463.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_wxhqh")
+theme_override_font_sizes/font_size = 64
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="StartButton"]
+position = Vector2(-37, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartButton/Area2D"]
+position = Vector2(228.5, 49.5)
+shape = SubResource("RectangleShape2D_dxj7p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(639, 362)
+script = ExtResource("7_k26jj")
+
+[connection signal="input_event" from="StartButton/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="StartButton/Area2D" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="StartButton/Area2D" to="." method="_on_start_button_mouse_exited"]

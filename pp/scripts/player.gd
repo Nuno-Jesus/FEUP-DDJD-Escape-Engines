@@ -158,3 +158,4 @@ func _on_trying_to_exit_gear(name):
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	hud_node._decrease_player_count()
+	

@@ -11,10 +11,10 @@ var main_node
 var hud_node
 
 func _ready():
-	$SpawnTimer.start()
 	main_node = get_parent().get_parent()
 	hud_node = main_node.get_node("HUD")
-
+	$SpawnTimer.stop()
+	
 func _on_spawner_timer_timeout():
 	if spawned_players >= player_ammount:
 		$SpawnTimer.stop()

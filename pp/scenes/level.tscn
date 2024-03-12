@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="1_lgwq8"]
 [ext_resource type="PackedScene" uid="uid://coqfirkosbw23" path="res://scenes/gear.tscn" id="1_r8u7r"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_yu5j4"]
 [ext_resource type="PackedScene" uid="uid://c6ihin0rdw26m" path="res://scenes/platform.tscn" id="3_cja7t"]
 [ext_resource type="PackedScene" uid="uid://dcqkqvt801owy" path="res://scenes/spawner.tscn" id="3_l4x8n"]
 [ext_resource type="Texture2D" uid="uid://b88qhpq7dxrh7" path="res://art/Kings and Pigs Terrain 32x32.png" id="3_xhxh6"]
@@ -1628,6 +1629,7 @@ point_count = 2
 size = Vector2(176, 128)
 
 [node name="Node" type="Node"]
+script = ExtResource("1_yu5j4")
 
 [node name="Gear" parent="." instance=ExtResource("1_r8u7r")]
 position = Vector2(552, 597)
