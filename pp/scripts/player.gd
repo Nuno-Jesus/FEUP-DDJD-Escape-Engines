@@ -12,6 +12,7 @@ var isStuck: bool = false
 var onGear: bool = false
 var hud_node
 var isUsingButton: bool = false
+var needHintCount: int = 0
 
 var animations = {
 	null: {
@@ -45,6 +46,7 @@ func _ready():
 	Signals.connect("gear_exiting_engineer", _on_trying_to_exit_gear)
 	
 	$ProgressBar.visible = false
+	$Thinking.visible = false
 
 func _on_trying_to_fix_door(name, door_name):
 	if name != self.name:
@@ -130,12 +132,23 @@ func _on_input_event(viewport, event, shape_idx):
 func _on_trying_to_activate_gear(name):
 	if name != self.name:
 		return
+	
+	# does not have powerup, but it's still on top of platform
 	if currPowerUp != Macros.PowerUp.MECHANICAL:
+		needHintCount+=1
+		
+		print("Need hint: ", needHintCount)
+		
+		if (needHintCount >= 8):
+			$Thinking.visible = true
+		
 		return
 	
 	# stops on top of the platform, does not move anymore (sacrifice)
 	set_physics_process(false)
 	$AnimatedSprite2D.play("mechanical_idle")
+	if $Thinking.is_visible():
+		$Thinking.visible = false
 	
 	Signals.emit_signal("platform_body_is_mechanical", "null")
 

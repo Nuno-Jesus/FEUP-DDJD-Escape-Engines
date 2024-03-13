@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://6ig3u12x0tth"]
+[gd_scene load_steps=59 format=3 uid="uid://6ig3u12x0tth"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dpf8g"]
 [ext_resource type="Texture2D" uid="uid://bx2y6iuw38dfp" path="res://art/player/walk/walk_01.png" id="1_uw2cv"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://bi2ao2t36ttjn" path="res://art/player/mechanical_walk/walk_06.png" id="30_3xbty"]
 [ext_resource type="Texture2D" uid="uid://8a67xkteckyw" path="res://art/player/mechanical_walk/walk_07.png" id="31_0dof8"]
 [ext_resource type="Texture2D" uid="uid://cv4xh1s27u5ta" path="res://art/player/mechanical_walk/walk_08.png" id="32_r6ix4"]
+[ext_resource type="Texture2D" uid="uid://bhpssftpviaop" path="res://art/baloon.png" id="49_adp6t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4md7n"]
 animations = [{
@@ -347,6 +348,7 @@ libraries = {
 one_shot = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 offset_left = -13.0
 offset_top = -22.0
 offset_right = 13.0
@@ -358,6 +360,12 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_dfpxp")
 max_value = 3.0
 value = 1.0
 show_percentage = false
+
+[node name="Thinking" type="Sprite2D" parent="."]
+position = Vector2(22, -30)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("49_adp6t")
+flip_h = true
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
