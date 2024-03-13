@@ -7,15 +7,7 @@ var mainNode
 func _ready():
 	mainNode = get_parent().get_parent()
 	hudNode = mainNode.get_node("HUD")
-
-func _on_animation_area_body_entered(body):
-	if !body.is_in_group("Player"):
-		return
-	if !isOpen:
-		$AnimatedSprite2D.play("opening")
-		isOpen = true
-	else:	
-		$CloseAnimationTimer.start()
+	$AnimatedSprite2D.play("default")
 	
 func _on_remove_player_area_body_entered(body):
 	if !body.is_in_group("Player"):
@@ -24,8 +16,3 @@ func _on_remove_player_area_body_entered(body):
 	
 	# update finished player count
 	hudNode._updateFinishedPlayers()
-
-func _on_close_animation_timer_timeout():
-	if isOpen:
-		$AnimatedSprite2D.play("closing")
-		isOpen = false

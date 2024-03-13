@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dye7wka2ccqs5"
-path="res://.godot/imported/door_closing_01.png-d57dbf114804aa877db3cbc4f1b8c645.ctex"
+uid="uid://yuygit0md3u0"
+path="res://.godot/imported/spawner_default_01.png-36b3ffef954007cff4febc6d1ab2880a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/exit/closing/door_closing_01.png"
-dest_files=["res://.godot/imported/door_closing_01.png-d57dbf114804aa877db3cbc4f1b8c645.ctex"]
+source_file="res://art/spawner/spawner_default_01.png"
+dest_files=["res://.godot/imported/spawner_default_01.png-36b3ffef954007cff4febc6d1ab2880a.ctex"]
 
 [params]
 
