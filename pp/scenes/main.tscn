@@ -187,9 +187,11 @@ powerupsCount = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = -0.00703125
+anchor_top = -0.0125
+anchor_right = 1.00547
+anchor_bottom = 1.00972
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

@@ -1603,9 +1603,9 @@ sources/2 = SubResource("TileSetAtlasSource_q4i31")
 
 [sub_resource type="Curve2D" id="Curve2D_rt4ys"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1, -25, 38.3086, -1.67452e-06, -38.3086, 1.67452e-06, -48, -25)
+"points": PackedVector2Array(0, 0, 0, 0, 1, -25, 0, 0, 0, 0, -44.0001, -24.9998, 38.3086, -1.67452e-06, -38.3086, 1.67452e-06, -48, -25)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6tnk"]
 size = Vector2(128, 63.9999)
@@ -1679,7 +1679,7 @@ position = Vector2(878, 615)
 
 [node name="SpawnPlatform" parent="." instance=ExtResource("7_l3w0m")]
 z_index = -1
-position = Vector2(359, 214)
+position = Vector2(358, 214)
 rotation = 1.5708
 
 [node name="Button" parent="SpawnPlatform" index="1"]
@@ -1698,7 +1698,7 @@ rotation = 3.14159
 
 [node name="AnimatableBody2D" parent="SpawnPlatform/Path2D" index="1"]
 position = Vector2(1, -25)
-rotation = -3.14159
+rotation = 3.14159
 
 [node name="CollisionShape2D" parent="SpawnPlatform/Path2D/AnimatableBody2D" index="1"]
 position = Vector2(1.00006, -0.00012207)
