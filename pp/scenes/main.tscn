@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7iqs72qxwva4"]
+[gd_scene load_steps=10 format=3 uid="uid://c7iqs72qxwva4"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_0f1rk"]
-[ext_resource type="Texture2D" uid="uid://bnpt2k1lbvnv6" path="res://art/backgrounds/Blue.png" id="1_r686e"]
 [ext_resource type="PackedScene" uid="uid://bf86ov45lre5y" path="res://scenes/level.tscn" id="2_a8ir8"]
 [ext_resource type="PackedScene" uid="uid://bgd5dq8dt4rk7" path="res://scenes/hud.tscn" id="2_dxgju"]
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="5_mjcrr"]
@@ -163,18 +162,6 @@ size = Vector2(447, 79)
 
 [node name="main" type="Node"]
 script = ExtResource("1_0f1rk")
-
-[node name="background" type="TextureRect" parent="."]
-z_index = -2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("1_r686e")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Level" parent="." instance=ExtResource("2_a8ir8")]
 
