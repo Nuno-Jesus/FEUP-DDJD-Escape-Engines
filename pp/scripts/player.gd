@@ -90,6 +90,7 @@ func _physics_process(delta):
 		direction = -direction
 		$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 	
+	_check_is_dead()
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton&&event.pressed:
@@ -156,6 +157,7 @@ func _on_trying_to_exit_gear(name):
 	
 	onGear = false
 
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	hud_node._decrease_player_count()
-	
+func _check_is_dead():
+	if (position.y > get_viewport().size.y):
+		queue_free()
+		hud_node._decrease_player_count()	
