@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://6ig3u12x0tth"]
+[gd_scene load_steps=58 format=3 uid="uid://6ig3u12x0tth"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dpf8g"]
 [ext_resource type="Texture2D" uid="uid://bx2y6iuw38dfp" path="res://art/player/walk/walk_01.png" id="1_uw2cv"]
@@ -302,6 +302,17 @@ _data = {
 "shrink": SubResource("Animation_osxmg")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bop7n"]
+bg_color = Color(0, 0, 0, 0.615686)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfpxp"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
 [node name="Engineer" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
@@ -334,6 +345,19 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -13.0
+offset_top = -22.0
+offset_right = 13.0
+offset_bottom = -15.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_bop7n")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dfpxp")
+max_value = 3.0
+value = 1.0
+show_percentage = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

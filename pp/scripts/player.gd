@@ -11,6 +11,7 @@ var currPowerUp = null
 var isStuck: bool = false
 var onGear: bool = false
 var hud_node
+var isUsingButton: bool = false
 
 var animations = {
 	null: {
@@ -42,6 +43,8 @@ func _ready():
 	Signals.connect("platform_spotted_engineer", _on_trying_to_activate_gear)
 	Signals.connect("gear_spotted_engineer", _on_trying_to_enter_gear)
 	Signals.connect("gear_exiting_engineer", _on_trying_to_exit_gear)
+	
+	$ProgressBar.visible = false
 
 func _on_trying_to_fix_door(name, door_name):
 	if name != self.name:
@@ -49,17 +52,28 @@ func _on_trying_to_fix_door(name, door_name):
 	if currPowerUp != Macros.PowerUp.ELETRICAL:
 		return
 		
+	isUsingButton = true
 	set_physics_process(false)
 	$AnimatedSprite2D.play("eletric_fix")
 	Signals.emit_signal("eletric_door_is_being_fixed", door_name)
+	
+	$ProgressBar.visible = true
+	$Timer.start(3.0)
 
 func _on_stopping_fixing_door(name):
 	if name != self.name:
 		return
 		
+	$ProgressBar.visible = false
+	$Timer.stop()
 	currPowerUp = null
 	set_physics_process(true)
-
+	isUsingButton = false
+	
+func _process(delta):
+	if isUsingButton:
+		$ProgressBar.value = (3 - $Timer.get_time_left())
+		
 func _physics_process(delta):
 	velocity.y += gravity
 	velocity.x = direction * speed
@@ -112,7 +126,6 @@ func _on_input_event(viewport, event, shape_idx):
 				$Timer.stop()
 				$Timer.start(3.0)
 				$AnimationPlayer.play("expand")
-
 
 func _on_trying_to_activate_gear(name):
 	if name != self.name:

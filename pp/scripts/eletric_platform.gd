@@ -20,7 +20,7 @@ func _on_fix(name):
 		return
 	isBeingFixed = true
 	print("%s is being fixed!" % name)
-	$Timer.start()
+	$Timer.start(3.0)
 	
 
 func _on_timer_timeout():
