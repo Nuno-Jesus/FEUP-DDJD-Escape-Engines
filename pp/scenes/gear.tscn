@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://coqfirkosbw23"]
+[gd_scene load_steps=8 format=3 uid="uid://coqfirkosbw23"]
 
 [ext_resource type="Script" path="res://scripts/gear.gd" id="1_33aui"]
-[ext_resource type="Texture2D" uid="uid://bt8gsibdykngg" path="res://art/gear/gear0.png" id="1_ffepu"]
+[ext_resource type="Texture2D" uid="uid://doihpfejv4tgb" path="res://art/gear/gear0.png" id="1_ffepu"]
+[ext_resource type="AudioStream" uid="uid://b4fx6tqfsh2mr" path="res://sounds/gear-rotating.wav" id="3_lcsgl"]
 
 [sub_resource type="Animation" id="Animation_eyguc"]
 length = 0.001
@@ -68,6 +69,10 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entry"]
 shape = SubResource("RectangleShape2D_ac1c4")
+
+[node name="RotateSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lcsgl")
+volume_db = -25.0
 
 [connection signal="body_shape_entered" from="Entry" to="." method="_on_entry_body_shape_entered"]
 [connection signal="body_shape_exited" from="Entry" to="." method="_on_entry_body_shape_exited"]
