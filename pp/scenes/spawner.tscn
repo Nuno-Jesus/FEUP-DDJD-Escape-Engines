@@ -1,10 +1,91 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcqkqvt801owy"]
+[gd_scene load_steps=16 format=3 uid="uid://dcqkqvt801owy"]
 
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="1_evswd"]
 [ext_resource type="PackedScene" uid="uid://6ig3u12x0tth" path="res://scenes/player.tscn" id="2_77ytv"]
-[ext_resource type="Texture2D" uid="uid://y5nynlthetsr" path="res://art/spawner.png" id="3_vjcdl"]
+[ext_resource type="Texture2D" uid="uid://yuygit0md3u0" path="res://art/spawner/spawner_default_01.png" id="3_8l03e"]
+[ext_resource type="Texture2D" uid="uid://4w30dnjrfqk1" path="res://art/spawner/spawner_default_02.png" id="4_ev6fh"]
+[ext_resource type="Texture2D" uid="uid://btmd50gw7g4gx" path="res://art/spawner/spawner_default_03.png" id="5_fwh7b"]
+[ext_resource type="Texture2D" uid="uid://dw1x1map7shej" path="res://art/spawner/spawner_default_04.png" id="6_e6dw2"]
+[ext_resource type="Texture2D" uid="uid://f51y8vs7k7s3" path="res://art/spawner/spawner_default_05.png" id="7_47tcq"]
+[ext_resource type="Texture2D" uid="uid://dg6pu6cq6elnw" path="res://art/spawner/spawner_default_06.png" id="8_bsxm7"]
+[ext_resource type="Texture2D" uid="uid://d28wwo3bcex68" path="res://art/spawner/spawner_default_07.png" id="9_ckwv7"]
+[ext_resource type="Texture2D" uid="uid://bw4qvcsv0b7g8" path="res://art/spawner/spawner_default_08.png" id="10_7dc5y"]
+[ext_resource type="Texture2D" uid="uid://c7sfisx0vx8rj" path="res://art/spawner/spawner_default_09.png" id="11_m470c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k38cu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8l03e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ev6fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fwh7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e6dw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_47tcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bsxm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ckwv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7dc5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m470c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_ckhsp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_erqtu"]
+resource_name = "expand"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(3.4822, 4.14106),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y30kf"]
+_data = {
+"RESET": SubResource("Animation_ckhsp"),
+"expand": SubResource("Animation_erqtu")
+}
 
 [node name="PlayerSpawner" type="Node2D"]
+scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_evswd")
 player_scene = ExtResource("2_77ytv")
 player_ammount = 100
@@ -12,9 +93,17 @@ player_ammount = 100
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="Spawner" type="Sprite2D" parent="."]
-position = Vector2(50.9999, 38)
-scale = Vector2(0.121667, 0.121667)
-texture = ExtResource("3_vjcdl")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.843137, 0.372549, 0.839216, 1)
+scale = Vector2(0.2375, 0.2375)
+sprite_frames = SubResource("SpriteFrames_k38cu")
+frame = 7
+frame_progress = 0.939656
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y30kf")
+}
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawner_timer_timeout"]

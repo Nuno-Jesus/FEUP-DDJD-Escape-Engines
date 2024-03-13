@@ -5,7 +5,7 @@ extends Node2D
 @export var player_ammount = 0
 
 var spawned_players = 0
-var spawn_offset = Vector2(50, 50)
+var spawn_offset = Vector2(0, 0)
 
 var main_node
 var hud_node
@@ -15,14 +15,18 @@ func _ready():
 	hud_node = main_node.get_node("HUD")
 	$SpawnTimer.stop()
 	
+func start():
+	$SpawnTimer.start()
+	$AnimatedSprite2D.play()
+	$AnimationPlayer.play("expand")
+	
 func _on_spawner_timer_timeout():
 	if spawned_players >= player_ammount:
 		$SpawnTimer.stop()
+		$AnimationPlayer.play_backwards()
 		return
 	
 	var player = player_scene.instantiate()
-	var format = "Engineer_%d"
-	player.name = format % spawned_players
 	player.position += self.position + spawn_offset
 	spawned_players += 1
 	

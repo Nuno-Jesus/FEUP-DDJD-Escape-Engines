@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bf86ov45lre5y"]
+[gd_scene load_steps=20 format=3 uid="uid://bf86ov45lre5y"]
 
 [ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="1_lgwq8"]
 [ext_resource type="PackedScene" uid="uid://coqfirkosbw23" path="res://scenes/gear.tscn" id="1_r8u7r"]
@@ -1650,8 +1650,9 @@ layer_0/tile_data = PackedInt32Array(720867, 393216, 0, 786403, 393216, 1, 85193
 position = Vector2(144, 300)
 
 [node name="Spawner" parent="." instance=ExtResource("3_l4x8n")]
-position = Vector2(422, 194)
-player_ammount = 10
+position = Vector2(454, 221)
+scale = Vector2(1e-05, 1e-05)
+player_ammount = 3
 
 [node name="Exit" parent="." instance=ExtResource("4_fjads")]
 z_index = -1
