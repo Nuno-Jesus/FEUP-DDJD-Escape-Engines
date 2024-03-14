@@ -88,8 +88,6 @@ func _format_time(time: float) -> String:
 func _on_PowerupButton_pressed(button: TextureButton, state: bool):	
 	var powerup = button.name
 	
-	print("Powerup: ", powerup)
-
 	# turn off any powerup that might be on
 	for key in powerupsState:
 		if powerupsState[key]:

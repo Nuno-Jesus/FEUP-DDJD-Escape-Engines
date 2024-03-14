@@ -8,6 +8,7 @@ export_presets.cfg
 
 # all files ending with .import
 *.import
+*.tmp
 
 # Imported translations (automatically generated from CSV files)
 *.translation

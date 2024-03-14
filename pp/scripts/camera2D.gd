@@ -14,7 +14,6 @@ func _process(_delta):
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			print("Zoom: ", zoom)
 			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				if zoom > zoom_min:
 					if ((des_zoom - zoom_speed) > zoom_min):

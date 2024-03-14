@@ -114,7 +114,6 @@ func _on_input_event(viewport, event, shape_idx):
 			return
 
 		currPowerUp = hud_node.currPowerUp
-		print("Current powerup: ", currPowerUp)
 		hud_node._decrease_powerup_count()
 		
 		match currPowerUp:

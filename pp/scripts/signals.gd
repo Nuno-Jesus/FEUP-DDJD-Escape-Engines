@@ -15,3 +15,6 @@ signal gear_exiting_engineer
 
 # end game
 signal end_game
+
+# hud loaded
+signal hud_loaded

@@ -10,9 +10,12 @@ var hud_node
 
 func _ready():
 	main_node = get_parent().get_parent()
-	hud_node = main_node.get_node("HUD")
+	Signals.connect("hud_loaded", _on_hud_loaded)
 	$SpawnTimer.stop()
 
+func _on_hud_loaded():
+	hud_node = main_node.get_node("HUD")
+	
 func start():
 	$SpawnTimer.start()
 	$AnimatedSprite2D.play()

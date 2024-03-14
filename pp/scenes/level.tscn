@@ -3458,8 +3458,9 @@ position = Vector2(15, -8)
 position = Vector2(-20, 0)
 
 [node name="Label" parent="Sensor" index="3"]
-offset_left = -20.7899
-offset_right = 10.2101
+offset_left = -21.0
+offset_right = 11.0
+size_flags_horizontal = 4
 
 [node name="Path2D" parent="Sensor/Gate" index="0"]
 z_index = -2
