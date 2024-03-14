@@ -8,6 +8,7 @@ var isNewGameInstance: bool = false
 
 var new_hud
 var new_lvl
+var paused : bool = false
 
 func _ready():
 	Signals.connect("end_game", _on_end_game)
@@ -19,24 +20,11 @@ func _on_start_button_mouse_exited():
 	Input.set_custom_mouse_cursor(null)
 
 func _start_game():
-	if get_tree().paused:
-		get_tree().paused = false
-	
-	$ColorRect.visible = false
-	$StartButton.visible = false
-	$StartButton/Label.visible = false
-	$StartButton/DecorationSprites.visible = false
-	$ColorRect.visible = false
+	_unset_button()
 
 	if isNewGameInstance:
 		# remove old nodes
-		#get_node("HUD").free()
 		get_node("Level").free()
-
-		# add new ones
-		#new_hud = hud_scene.instantiate()
-		#new_hud.name = "HUD"
-		#add_child(new_hud, true)
 
 		new_lvl = level_scene.instantiate()
 		new_lvl.name = "Level"
@@ -45,6 +33,8 @@ func _start_game():
 	new_hud = hud_scene.instantiate()
 	add_child(new_hud, true)
 	new_hud.name = "HUD"
+	_set_correct_powerups()
+	
 	Signals.emit_signal("hud_loaded")
 
 	get_node("HUD/Time/Timer").start()
@@ -52,27 +42,54 @@ func _start_game():
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("mouse_left_click"):
-		_start_game()
+		if paused:
+			get_tree().paused = false
+			_unset_button()
+		else:
+			_start_game()
 
 func _on_end_game():
 	isNewGameInstance = true
 
-	$ColorRect.visible = true
-	$StartButton.visible = true
-	$StartButton/Label.visible = true
-	$StartButton/DecorationSprites.visible = true
-	$StartButton/Label.text = "Restart Game"
-	$ColorRect.visible = true
+	_set_button("Restart Game")
 
 	# Stop timers (updates)
 	$HUD/Time/Timer.stop()
 	$Level/Spawner/SpawnTimer.stop()
 	
-	get_tree().paused = true
-	
 	$HUD.free()
 
 func _input(event):
+	# Click on "R"
 	if event.is_action_pressed("restart"):
 		_on_end_game()
-		#_start_game()
+		_start_game()
+	
+	# Click on "P"
+	if event.is_action_pressed("pause"):
+		_set_button("Resume Game")
+		get_tree().paused = true
+		paused = true
+			
+func _set_correct_powerups():
+	get_node("HUD").powerupsCount = {
+		"Eletrical": 4,
+		"Mechanical": 2,
+		"Physical_Shrink": 3,
+		"Physical_Expand": 3
+	}
+
+func _set_button(text : String):
+	$ColorRect.visible = true
+	$StartButton.visible = true
+	$StartButton/Label.visible = true
+	$StartButton/DecorationSprites.visible = true
+	$StartButton/Label.text = text
+	$ColorRect.visible = true
+
+func _unset_button():
+	$ColorRect.visible = false
+	$StartButton.visible = false
+	$StartButton/Label.visible = false
+	$StartButton/DecorationSprites.visible = false
+	$ColorRect.visible = false

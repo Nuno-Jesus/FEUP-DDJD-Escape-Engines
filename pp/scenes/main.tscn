@@ -228,14 +228,12 @@ sources/1 = SubResource("TileSetAtlasSource_ddrin")
 sources/0 = SubResource("TileSetAtlasSource_l0dbt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxj7p"]
-size = Vector2(447, 80)
+size = Vector2(480, 111)
 
 [node name="main" type="Node"]
 script = ExtResource("1_0f1rk")
 hud_scene = ExtResource("2_dxgju")
 level_scene = ExtResource("2_a8ir8")
-
-[node name="Level" parent="." instance=ExtResource("2_a8ir8")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = -1
@@ -248,6 +246,8 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.686275)
 metadata/_edit_use_anchors_ = true
+
+[node name="Level" parent="." instance=ExtResource("2_a8ir8")]
 
 [node name="StartButton" type="TileMap" parent="."]
 process_mode = 3
@@ -262,29 +262,29 @@ layer_1/tile_data = PackedInt32Array(393215, 1441792, 10, 262144, 1507328, 9, 32
 [node name="DecorationSprites" type="Node2D" parent="StartButton"]
 
 [node name="MechanicalIdle01" type="Sprite2D" parent="StartButton/DecorationSprites"]
-position = Vector2(224, 7)
+position = Vector2(212, 12)
 scale = Vector2(0.563, 0.563)
 texture = ExtResource("7_mvtc6")
 
 [node name="EletricIdle01" type="Sprite2D" parent="StartButton/DecorationSprites"]
-position = Vector2(371.515, 81.024)
+position = Vector2(370.515, 81.024)
 rotation = -3.14159
 scale = Vector2(0.563, -0.563)
 texture = ExtResource("8_6b6gr")
 
 [node name="EletricFixing05" type="Sprite2D" parent="StartButton/DecorationSprites"]
-position = Vector2(28.5149, 7.02399)
+position = Vector2(39.5149, 13.024)
 scale = Vector2(0.563, 0.564)
 texture = ExtResource("9_a4di4")
 
 [node name="Button" type="Sprite2D" parent="StartButton/DecorationSprites"]
-position = Vector2(41.5149, 9.02399)
+position = Vector2(51.5149, 15.024)
 scale = Vector2(0.499992, 0.499992)
 texture = ExtResource("10_2ld1l")
 
 [node name="SpawnerDefault01" type="Sprite2D" parent="StartButton/DecorationSprites"]
 modulate = Color(0.866667, 0.337255, 0, 1)
-position = Vector2(-16.4851, 45.024)
+position = Vector2(-12.4851, 45.0239)
 rotation = -3.14159
 scale = Vector2(0.134468, -0.134468)
 texture = ExtResource("12_g7e0h")
@@ -302,15 +302,15 @@ texture = ExtResource("14_4q3ba")
 [node name="Label" type="Label" parent="StartButton"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -65.0
-offset_top = -24.0
-offset_right = 463.0
-offset_bottom = 102.0
+offset_left = -39.0
+offset_top = -15.0
+offset_right = 424.0
+offset_bottom = 96.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("6_wxhqh")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 55
 text = "Start Game"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -320,8 +320,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-37, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartButton/Area2D"]
-visible = false
-position = Vector2(228.5, 50)
+position = Vector2(229, 49.5)
 shape = SubResource("RectangleShape2D_dxj7p")
 
 [node name="Camera2D" type="Camera2D" parent="."]

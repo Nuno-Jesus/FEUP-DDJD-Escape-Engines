@@ -21,8 +21,9 @@ func _on_remove_player_area_body_entered(body):
 	
 	finishedPlayers+=1
 	
+	# update finished player count
+	hudNode._updateFinishedPlayers()
+	
 	if finishedPlayers == hudNode._get_needed_players():
 		Signals.emit_signal("end_game")
 	
-	# update finished player count
-	hudNode._updateFinishedPlayers()

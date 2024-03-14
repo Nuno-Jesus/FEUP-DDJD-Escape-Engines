@@ -38,6 +38,7 @@ func _ready():
 	$PlayerCount/Finished.set("theme_override_colors/font_color", red)
 
 	$Time/Timer.stop()
+	process_mode = Node.PROCESS_MODE_INHERIT
 
 	currPowerUp = null
 
