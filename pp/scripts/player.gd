@@ -113,6 +113,7 @@ func _on_input_event(viewport, event, shape_idx):
 		if isStuck or hud_node.currPowerUp == null:
 			return
 
+		$PowerupSound.play()
 		currPowerUp = hud_node.currPowerUp
 		hud_node._decrease_powerup_count()
 		
