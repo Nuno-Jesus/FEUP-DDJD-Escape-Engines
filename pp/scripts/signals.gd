@@ -12,3 +12,6 @@ signal platform_body_is_mechanical
 # gear
 signal gear_spotted_engineer
 signal gear_exiting_engineer
+
+# end game
+signal end_game

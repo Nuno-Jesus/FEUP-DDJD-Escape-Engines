@@ -1,28 +1,34 @@
 [gd_scene load_steps=19 format=3 uid="uid://bgd5dq8dt4rk7"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_ss5hf"]
-[ext_resource type="Texture2D" uid="uid://dsi3s34cxna1m" path="res://art/player/walk/walk_01.png" id="1_vgvyx"]
+[ext_resource type="Texture2D" uid="uid://c8w0sq30dlys" path="res://art/player/walk/walk_01.png" id="1_vgvyx"]
 [ext_resource type="FontFile" uid="uid://b1ya3qpy408dm" path="res://fonts/Xolonium-Regular.ttf" id="2_1icu5"]
-[ext_resource type="Texture2D" uid="uid://cmlkgyjh5ware" path="res://art/player/dead.png" id="3_tgfwg"]
-[ext_resource type="Texture2D" uid="uid://k2m4qqqk643y" path="res://art/checkpoints/finish.png" id="4_o2lxs"]
+[ext_resource type="Texture2D" uid="uid://by371nbxomwkb" path="res://art/player/dead.png" id="3_tgfwg"]
+[ext_resource type="Texture2D" uid="uid://bbhhrrk3caogp" path="res://art/checkpoints/finish.png" id="4_o2lxs"]
 [ext_resource type="Script" path="res://scripts/powerup.gd" id="6_1l406"]
-[ext_resource type="Texture2D" uid="uid://wnsd2xq132jk" path="res://art/powerups/eletrical/plug.png" id="7_xnmyj"]
-[ext_resource type="Texture2D" uid="uid://bpvu6p2qjk2m8" path="res://art/powerups/eletrical/plug-pressed.png" id="8_og7gm"]
-[ext_resource type="Texture2D" uid="uid://cqul33oybo1wi" path="res://art/powerups/eletrical/plug-disabled.png" id="9_fa35u"]
-[ext_resource type="Texture2D" uid="uid://b1yo4v13uins" path="res://art/powerups/mechanical/gear.png" id="10_878qu"]
-[ext_resource type="Texture2D" uid="uid://bdxjejibs48bg" path="res://art/powerups/mechanical/gear-pressed.png" id="11_j5nvl"]
-[ext_resource type="Texture2D" uid="uid://dxrsb761k6ngm" path="res://art/powerups/mechanical/gear-disabled.png" id="12_cs12f"]
-[ext_resource type="Texture2D" uid="uid://bui26kiq6o7fg" path="res://art/powerups/civil/expand.png" id="13_07lu5"]
-[ext_resource type="Texture2D" uid="uid://rtws78bhyr15" path="res://art/powerups/chemical/shrink.png" id="13_rg5t5"]
-[ext_resource type="Texture2D" uid="uid://b2djpoc6smwu2" path="res://art/powerups/civil/expand-pressed.png" id="14_fhp8x"]
-[ext_resource type="Texture2D" uid="uid://caphxrfsmunhg" path="res://art/powerups/chemical/shrink-pressed.png" id="14_kpc44"]
-[ext_resource type="Texture2D" uid="uid://3v0jdar5u3ix" path="res://art/powerups/civil/expand-disabled.png" id="15_1nxqj"]
-[ext_resource type="Texture2D" uid="uid://dx7tffkst5i56" path="res://art/powerups/chemical/shrink-disabled.png" id="15_fujxr"]
+[ext_resource type="Texture2D" uid="uid://deivsxu1y4a3l" path="res://art/powerups/eletrical/plug.png" id="7_xnmyj"]
+[ext_resource type="Texture2D" uid="uid://dqbkvvyy3xbpg" path="res://art/powerups/eletrical/plug-pressed.png" id="8_og7gm"]
+[ext_resource type="Texture2D" uid="uid://bwuieghtkym86" path="res://art/powerups/eletrical/plug-disabled.png" id="9_fa35u"]
+[ext_resource type="Texture2D" uid="uid://bhnunj6nimke4" path="res://art/powerups/mechanical/gear.png" id="10_878qu"]
+[ext_resource type="Texture2D" uid="uid://dwvphvdttnwrt" path="res://art/powerups/mechanical/gear-pressed.png" id="11_j5nvl"]
+[ext_resource type="Texture2D" uid="uid://bjnu41qt6tfsw" path="res://art/powerups/mechanical/gear-disabled.png" id="12_cs12f"]
+[ext_resource type="Texture2D" uid="uid://cbs4fqohoay1h" path="res://art/powerups/civil/expand.png" id="13_07lu5"]
+[ext_resource type="Texture2D" uid="uid://bpt5nb55s5s8b" path="res://art/powerups/chemical/shrink.png" id="13_rg5t5"]
+[ext_resource type="Texture2D" uid="uid://bhta5ojf4tuq3" path="res://art/powerups/civil/expand-pressed.png" id="14_fhp8x"]
+[ext_resource type="Texture2D" uid="uid://meqvtmbpxe6x" path="res://art/powerups/chemical/shrink-pressed.png" id="14_kpc44"]
+[ext_resource type="Texture2D" uid="uid://b04nt07x8l3p5" path="res://art/powerups/civil/expand-disabled.png" id="15_1nxqj"]
+[ext_resource type="Texture2D" uid="uid://cdgclorv3j56a" path="res://art/powerups/chemical/shrink-disabled.png" id="15_fujxr"]
 
 [node name="HUD" type="CanvasLayer"]
 scale = Vector2(0.75, 0.75)
 transform = Transform2D(0.75, 0, 0, 0.75, 0, 0)
 script = ExtResource("1_ss5hf")
+powerupsCount = {
+"Eletrical": 4,
+"Mechanical": 2,
+"Physical_Expand": 1,
+"Physical_Shrink": 3
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -87,10 +93,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Finished" type="Label" parent="PlayerCount"]
-offset_left = 274.667
-offset_top = 841.213
-offset_right = 346.667
-offset_bottom = 955.213
+offset_left = 278.667
+offset_top = 870.667
+offset_right = 350.667
+offset_bottom = 931.667
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
@@ -102,15 +108,31 @@ text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Slash" type="Label" parent="PlayerCount"]
+offset_left = 354.667
+offset_top = 870.667
+offset_right = 379.667
+offset_bottom = 931.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_1icu5")
+theme_override_font_sizes/font_size = 50
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Needed" type="Label" parent="PlayerCount"]
-offset_left = 347.667
-offset_top = 841.213
-offset_right = 483.667
-offset_bottom = 956.213
+offset_left = 382.667
+offset_top = 870.667
+offset_right = 454.667
+offset_bottom = 931.667
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1icu5")
 theme_override_font_sizes/font_size = 50
-text = "/ 08"
+text = "08"
 horizontal_alignment = 1
 vertical_alignment = 1
 

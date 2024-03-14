@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # CONSTANTS
-const neededPlayers = 8
+@export var neededPlayers = 8
 const red = Color(1.0, 0.0, 0.0, 1.0)
 const green = Color(0.0, 0.5, 0.0, 1.0)
 
@@ -31,7 +31,7 @@ var currPowerUpName = null # Will have format: "Eletrical, ..."
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$PlayerCount/InScene.text = "00"
-	$PlayerCount/Needed.text = "/ 0" + str(neededPlayers)
+	$PlayerCount/Needed.text = _format_number(neededPlayers)
 	$PlayerCount/Dead.text = "00"
 
 	# Change text color to red
@@ -85,7 +85,7 @@ func _format_time(time: float) -> String:
 	return _format_number(mins) + ":" + _format_number(secs)
 
 # only 1 powerup can be active at a time
-func _on_PowerupButton_pressed(button: TextureButton, state: bool):
+func _on_PowerupButton_pressed(button: TextureButton, state: bool):	
 	var powerup = button.name
 	
 	print("Powerup: ", powerup)
@@ -147,3 +147,6 @@ func _decrease_player_count():
 	
 	deathPlayerCount+=1
 	$PlayerCount/Dead.text = _format_number(deathPlayerCount)
+
+func _get_needed_players():
+	return neededPlayers
