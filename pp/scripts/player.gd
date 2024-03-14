@@ -44,9 +44,7 @@ func _ready():
 	Signals.connect("platform_spotted_engineer", _on_trying_to_activate_gear)
 	Signals.connect("gear_spotted_engineer", _on_trying_to_enter_gear)
 	Signals.connect("gear_exiting_engineer", _on_trying_to_exit_gear)
-	
-	$ProgressBar.visible = false
-	$Thinking.visible = false
+
 
 func _on_trying_to_fix_door(name, door_name):
 	if name != self.name:
@@ -135,9 +133,7 @@ func _on_trying_to_activate_gear(name):
 	
 	# does not have powerup, but it's still on top of platform
 	if currPowerUp != Macros.PowerUp.MECHANICAL:
-		needHintCount+=1
-		
-		print("Need hint: ", needHintCount)
+		needHintCount += 1
 		
 		if (needHintCount >= 8):
 			$Thinking.visible = true
@@ -167,21 +163,21 @@ func _on_power_ups_timer_timeout():
 
 func _on_area_2d_body_entered(body):
 	isStuck = true
+	if currPowerUp == Macros.PowerUp.PHYSICAL_EXPAND and $AnimationPlayer.is_playing:
+		$AnimationPlayer.pause()
 	
 func _on_area_2d_body_exited(body):
 	isStuck = false
+	if $AnimationPlayer.assigned_animation == "expand":
+		$AnimationPlayer.play()
 	
 func _on_trying_to_enter_gear(name):
-	if name != self.name:
-		return
-	
-	onGear = true
+	if name == self.name:
+		onGear = true
 
 func _on_trying_to_exit_gear(name):
-	if name != self.name:
-		return
-	
-	onGear = false
+	if name == self.name:
+		onGear = false
 
 func _check_is_dead():
 	if (position.y > get_viewport().size.y):

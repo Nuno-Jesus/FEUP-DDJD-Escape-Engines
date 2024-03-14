@@ -362,6 +362,7 @@ value = 1.0
 show_percentage = false
 
 [node name="Thinking" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-1, -28)
 texture = ExtResource("49_m5ils")
 

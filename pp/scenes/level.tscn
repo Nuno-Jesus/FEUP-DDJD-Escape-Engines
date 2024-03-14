@@ -3571,6 +3571,12 @@ rotation = 3.14159
 scale = Vector2(-0.322, 0.319)
 texture = ExtResource("13_c43d7")
 
+[node name="Front Clouds 3" type="Sprite2D" parent="Sky"]
+position = Vector2(28.2546, -174.016)
+rotation = 4.71239
+scale = Vector2(-0.322, 0.319)
+texture = ExtResource("13_c43d7")
+
 [editable path="Gear"]
 [editable path="Sensor"]
 [editable path="SpawnPlatform"]
