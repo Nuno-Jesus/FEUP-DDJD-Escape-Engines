@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://bcn7kawnpg5aj"]
 
 [ext_resource type="Script" path="res://scripts/exit.gd" id="1_couhc"]
-[ext_resource type="Texture2D" uid="uid://bay0bujbawug6" path="res://art/exit/exit_default_01.png" id="2_7sq4q"]
-[ext_resource type="Texture2D" uid="uid://0wnenwh078e8" path="res://art/exit/exit_default_02.png" id="3_8lu7b"]
-[ext_resource type="Texture2D" uid="uid://ipd3xo85lclc" path="res://art/exit/exit_default_03.png" id="4_872m6"]
-[ext_resource type="Texture2D" uid="uid://cu2mvmu508s2o" path="res://art/exit/exit_default_04.png" id="5_q6trv"]
-[ext_resource type="Texture2D" uid="uid://nvpk6nbwlnji" path="res://art/exit/exit_default_05.png" id="6_b1kv8"]
-[ext_resource type="Texture2D" uid="uid://bivwmvl12w0ky" path="res://art/exit/exit_default_06.png" id="7_nv2ao"]
-[ext_resource type="Texture2D" uid="uid://dh0d0de285q5v" path="res://art/exit/exit_default_07.png" id="8_0x5f8"]
-[ext_resource type="Texture2D" uid="uid://ddfq5g8x803p3" path="res://art/exit/exit_default_08.png" id="9_u6wc7"]
-[ext_resource type="Texture2D" uid="uid://bi24o8jhxdg6e" path="res://art/exit/exit_default_09.png" id="10_30xih"]
+[ext_resource type="Texture2D" uid="uid://bmqntnn3fmj0q" path="res://art/exit/exit_default_01.png" id="2_7sq4q"]
+[ext_resource type="Texture2D" uid="uid://0onh5k3blb7x" path="res://art/exit/exit_default_02.png" id="3_8lu7b"]
+[ext_resource type="Texture2D" uid="uid://d1863hfa4kme3" path="res://art/exit/exit_default_03.png" id="4_872m6"]
+[ext_resource type="Texture2D" uid="uid://17db22ijablr" path="res://art/exit/exit_default_04.png" id="5_q6trv"]
+[ext_resource type="Texture2D" uid="uid://bphmc0ihdv7yb" path="res://art/exit/exit_default_05.png" id="6_b1kv8"]
+[ext_resource type="Texture2D" uid="uid://d3umfx2su6eda" path="res://art/exit/exit_default_06.png" id="7_nv2ao"]
+[ext_resource type="Texture2D" uid="uid://brd7bhogtwmx0" path="res://art/exit/exit_default_07.png" id="8_0x5f8"]
+[ext_resource type="Texture2D" uid="uid://cehfk860422l1" path="res://art/exit/exit_default_08.png" id="9_u6wc7"]
+[ext_resource type="Texture2D" uid="uid://d2u6qwbbpqmgj" path="res://art/exit/exit_default_09.png" id="10_30xih"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xujr2"]
 animations = [{
@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhoic"]
-size = Vector2(2.66668, 10.6667)
+size = Vector2(4.00003, 10.6667)
 
 [node name="Exit" type="Node2D"]
 z_index = -1
@@ -65,7 +65,7 @@ metadata/_edit_lock_ = true
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4.00001, 0)
+position = Vector2(-7.33335, 0)
 shape = SubResource("RectangleShape2D_xhoic")
 debug_color = Color(0.988235, 0, 0.309804, 0.419608)
 
