@@ -1,12 +1,56 @@
-[gd_scene load_steps=13 format=3 uid="uid://e7sp4hcep7l8"]
+[gd_scene load_steps=20 format=3 uid="uid://e7sp4hcep7l8"]
 
 [ext_resource type="Script" path="res://scripts/sensor.gd" id="1_5o6r4"]
-[ext_resource type="Texture2D" uid="uid://djj46l330c40k" path="res://art/sensor.png" id="2_xft7f"]
+[ext_resource type="Texture2D" uid="uid://dgkrls330mfs5" path="res://art/sensor/tile000.png" id="3_a2beq"]
 [ext_resource type="FontFile" uid="uid://b1ya3qpy408dm" path="res://fonts/Xolonium-Regular.ttf" id="3_qjma7"]
-[ext_resource type="Texture2D" uid="uid://bolxxq85yns0r" path="res://art/Terrain (16x16).png" id="4_nnfgj"]
+[ext_resource type="Texture2D" uid="uid://ce4g7gpipi3qx" path="res://art/sensor/tile001.png" id="4_27l0r"]
+[ext_resource type="Texture2D" uid="uid://c1oibvnensn13" path="res://art/sensor/laser.png" id="4_etqhi"]
+[ext_resource type="Texture2D" uid="uid://cv2ne5gtfmjku" path="res://art/Terrain (16x16).png" id="4_nnfgj"]
+[ext_resource type="Texture2D" uid="uid://br43gurn6coli" path="res://art/sensor/tile002.png" id="5_7sbcd"]
+[ext_resource type="Texture2D" uid="uid://r4rb4wexebeh" path="res://art/sensor/tile003.png" id="6_hxe70"]
+[ext_resource type="Texture2D" uid="uid://drc8f4e1uytwn" path="res://art/sensor/tile004.png" id="7_j0is8"]
+[ext_resource type="Texture2D" uid="uid://dwnotdslavjr2" path="res://art/sensor/tile005.png" id="8_gk4lx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f11mq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a2beq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_27l0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7sbcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hxe70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j0is8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gk4lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j0is8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hxe70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7sbcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_27l0r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twv33"]
-size = Vector2(4.99997, 27)
+size = Vector2(3.99999, 27)
 
 [sub_resource type="Curve2D" id="Curve2D_ff6yh"]
 _data = {
@@ -184,7 +228,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_udm48"]
 resource_name = "close"
-length = 0.5
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -192,7 +236,7 @@ tracks/0/path = NodePath("Gate/Path2D/PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(2.37841, 2.07053),
 "update": 0,
 "values": [0.0, 1.0]
@@ -207,12 +251,16 @@ _data = {
 [node name="Sensor" type="Node2D"]
 script = ExtResource("1_5o6r4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.210051, -92)
-rotation = 3.14159
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("2_xft7f")
-flip_h = true
+[node name="Laser" type="Sprite2D" parent="."]
+position = Vector2(7.62939e-06, -37)
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("4_etqhi")
+
+[node name="Sensor" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -88)
+scale = Vector2(1.75, 1.75)
+sprite_frames = SubResource("SpriteFrames_f11mq")
+frame_progress = 0.945285
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-18.7899, 9)
