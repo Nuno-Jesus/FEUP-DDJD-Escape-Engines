@@ -17,6 +17,7 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		$ColorRect.visible = false
 		$StartButton.visible = false
 		$StartButton/Label.visible = false
+		$StartButton/DecorationSprites.visible = false
 		$ColorRect.visible = false
 		
 		$HUD/Time/Timer.start()

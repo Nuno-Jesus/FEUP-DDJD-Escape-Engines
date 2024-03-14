@@ -1,24 +1,23 @@
-[gd_scene load_steps=20 format=3 uid="uid://bgd5dq8dt4rk7"]
+[gd_scene load_steps=19 format=3 uid="uid://bgd5dq8dt4rk7"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_ss5hf"]
-[ext_resource type="Texture2D" uid="uid://bx2y6iuw38dfp" path="res://art/player/walk/walk_01.png" id="1_vgvyx"]
+[ext_resource type="Texture2D" uid="uid://dsi3s34cxna1m" path="res://art/player/walk/walk_01.png" id="1_vgvyx"]
 [ext_resource type="FontFile" uid="uid://b1ya3qpy408dm" path="res://fonts/Xolonium-Regular.ttf" id="2_1icu5"]
-[ext_resource type="Texture2D" uid="uid://c77lslljsv365" path="res://art/player/dead.png" id="3_tgfwg"]
-[ext_resource type="Texture2D" uid="uid://dt7vo7x04bc8u" path="res://art/checkpoints/finish.png" id="4_o2lxs"]
-[ext_resource type="Texture2D" uid="uid://c6sqewe7mx1m1" path="res://art/clock.png" id="5_d7hah"]
+[ext_resource type="Texture2D" uid="uid://cmlkgyjh5ware" path="res://art/player/dead.png" id="3_tgfwg"]
+[ext_resource type="Texture2D" uid="uid://k2m4qqqk643y" path="res://art/checkpoints/finish.png" id="4_o2lxs"]
 [ext_resource type="Script" path="res://scripts/powerup.gd" id="6_1l406"]
-[ext_resource type="Texture2D" uid="uid://dq30k5tlaerou" path="res://art/powerups/eletrical/plug.png" id="7_xnmyj"]
-[ext_resource type="Texture2D" uid="uid://7chsemf1v1c2" path="res://art/powerups/eletrical/plug-pressed.png" id="8_og7gm"]
-[ext_resource type="Texture2D" uid="uid://b70wrx6brlncn" path="res://art/powerups/eletrical/plug-disabled.png" id="9_fa35u"]
-[ext_resource type="Texture2D" uid="uid://baxx2jcdatl57" path="res://art/powerups/mechanical/gear.png" id="10_878qu"]
-[ext_resource type="Texture2D" uid="uid://bvrvv8w4kpdue" path="res://art/powerups/mechanical/gear-pressed.png" id="11_j5nvl"]
-[ext_resource type="Texture2D" uid="uid://b3dl347am3ufn" path="res://art/powerups/mechanical/gear-disabled.png" id="12_cs12f"]
-[ext_resource type="Texture2D" uid="uid://ckmt74tdhhbgr" path="res://art/powerups/civil/expand.png" id="13_07lu5"]
-[ext_resource type="Texture2D" uid="uid://bplrgpjk38wee" path="res://art/powerups/chemical/shrink.png" id="13_rg5t5"]
-[ext_resource type="Texture2D" uid="uid://c5fw7cns5j48t" path="res://art/powerups/civil/expand-pressed.png" id="14_fhp8x"]
-[ext_resource type="Texture2D" uid="uid://tkag6ax2fvsj" path="res://art/powerups/chemical/shrink-pressed.png" id="14_kpc44"]
-[ext_resource type="Texture2D" uid="uid://cc1x51bd4rodh" path="res://art/powerups/civil/expand-disabled.png" id="15_1nxqj"]
-[ext_resource type="Texture2D" uid="uid://dett1rhe1q7sl" path="res://art/powerups/chemical/shrink-disabled.png" id="15_fujxr"]
+[ext_resource type="Texture2D" uid="uid://wnsd2xq132jk" path="res://art/powerups/eletrical/plug.png" id="7_xnmyj"]
+[ext_resource type="Texture2D" uid="uid://bpvu6p2qjk2m8" path="res://art/powerups/eletrical/plug-pressed.png" id="8_og7gm"]
+[ext_resource type="Texture2D" uid="uid://cqul33oybo1wi" path="res://art/powerups/eletrical/plug-disabled.png" id="9_fa35u"]
+[ext_resource type="Texture2D" uid="uid://b1yo4v13uins" path="res://art/powerups/mechanical/gear.png" id="10_878qu"]
+[ext_resource type="Texture2D" uid="uid://bdxjejibs48bg" path="res://art/powerups/mechanical/gear-pressed.png" id="11_j5nvl"]
+[ext_resource type="Texture2D" uid="uid://dxrsb761k6ngm" path="res://art/powerups/mechanical/gear-disabled.png" id="12_cs12f"]
+[ext_resource type="Texture2D" uid="uid://bui26kiq6o7fg" path="res://art/powerups/civil/expand.png" id="13_07lu5"]
+[ext_resource type="Texture2D" uid="uid://rtws78bhyr15" path="res://art/powerups/chemical/shrink.png" id="13_rg5t5"]
+[ext_resource type="Texture2D" uid="uid://b2djpoc6smwu2" path="res://art/powerups/civil/expand-pressed.png" id="14_fhp8x"]
+[ext_resource type="Texture2D" uid="uid://caphxrfsmunhg" path="res://art/powerups/chemical/shrink-pressed.png" id="14_kpc44"]
+[ext_resource type="Texture2D" uid="uid://3v0jdar5u3ix" path="res://art/powerups/civil/expand-disabled.png" id="15_1nxqj"]
+[ext_resource type="Texture2D" uid="uid://dx7tffkst5i56" path="res://art/powerups/chemical/shrink-disabled.png" id="15_fujxr"]
 
 [node name="HUD" type="CanvasLayer"]
 scale = Vector2(0.75, 0.75)
@@ -125,20 +124,15 @@ texture = ExtResource("4_o2lxs")
 
 [node name="Timer" type="Timer" parent="Time"]
 
-[node name="Clock" type="Sprite2D" parent="Time"]
-position = Vector2(1485.33, 900)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_d7hah")
-
 [node name="TimeString" type="Label" parent="Time"]
 anchors_preset = -1
 anchor_left = 0.336
 anchor_top = 0.183
 anchor_right = 0.336
 anchor_bottom = 0.183
-offset_left = 1081.92
+offset_left = 1029.92
 offset_top = 716.24
-offset_right = 1273.92
+offset_right = 1221.92
 offset_bottom = 824.24
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
