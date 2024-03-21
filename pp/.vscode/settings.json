@@ -1,3 +1,5 @@
 {
-  "godotTools.editorPath.godot4": "c:\\Users\\veris\\Downloads\\Godot\\Godot_v4.2.1-stable_win64.exe"
+  "godotTools.editorPath.godot4": "c:\\Users\\veris\\Downloads\\Godot\\Godot_v4.2.1-stable_win64.exe",
+  "spellright.language": ["en", "pt"],
+  "spellright.documentTypes": ["markdown", "latex", "plaintext"]
 }
