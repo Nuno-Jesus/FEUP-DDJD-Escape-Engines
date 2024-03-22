@@ -19,12 +19,21 @@ Installation is not required. Instead, follow the steps below:
 
 ## How to play
 
+### Map Features
+
+| Image | Name | Description |
+| --- | --- | --- |
+|<PLATFORM AND BUTTON IMAGE> | `Electric Platfrom`/`Button` | When fixed, the button will trigger the movement of the respective eletric platform. |
+|<GEAR AND ACTIVATION PLATFORM IMAGE> |`Gear`/`Activation Platform`| A gear will remain still until the activation platform is triggered.|
+|<EXIT IMAGE>| Exit | This is where you should lead the hoodied characters to.|
+
+
 ### Powerups
 
 | Ability | Effect | Description |
 | --- | --- | --- |
-| <img src="../art/powerups/eletrical/plug.png" width=50/> | <img src="../art/player/eletric_fix/eletric_fixing_05.png" width=50/> |Use the power of the electricity near a locked button to move a nearby platform. |
-| <img src="../art/powerups/mechanical/gear.png" width=50/> | <img src="../art/player/mechanical_idle/mechanical_idle_02.png" width=50/> | Only those with this power-up standing on an activation platform can trigger the rotation of a gear |
+| <img src="../art/powerups/eletrical/plug.png" width=50/> | <img src="../art/player/eletric_fix/eletric_fixing_05.png" width=50/> |Use the power of the electricity near a locked button to move the respective `Eletric Platform`. |
+| <img src="../art/powerups/mechanical/gear.png" width=50/> | <img src="../art/player/mechanical_idle/mechanical_idle_02.png" width=50/> | Only those with this power-up standing on an `Activation Platform` can trigger the rotation of a `Gear`. |
 | <img src="../art/powerups/chemical/shrink.png" width=50/> | <img src="../art/player/walk/walk_02.png" width=30/> | Reduce your size to fit in tight spots. |
 | <img src="../art/powerups/civil/expand.png" width=50/> | <img src="../art/player/walk/walk_02.png" width=60/> | Get bigger to cross over gaps in the map. |
 
