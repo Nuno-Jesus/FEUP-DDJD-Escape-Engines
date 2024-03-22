@@ -8,6 +8,15 @@ Escape Engines, based on the Lemmings game, features the escape journey of small
 
 ## Installation
 
+Installation is not required. Instead, follow the steps below:
+- **1.** Locate the `DDJD-PP-G06-Escape Engines-game.zip` file and extract its contents.
+- **2.** Depending on the operating system, follow one of the following steps
+- **2.1 Windows**
+- - Double click on the `Escape Engines.exe` file to run the game.
+- **2.2 Linux**
+- - Open a terminal and execute `./escape_engines`
+
+
 ## How to play
 
 ### Powerups
