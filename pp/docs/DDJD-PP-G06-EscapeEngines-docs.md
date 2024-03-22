@@ -41,6 +41,19 @@ Other controls include:
 
 ## Credits/Resources
 
+[Hooded Protagonist Sprites](https://penzilla.itch.io/hooded-protagonist) - the sprites for the main characters
+
+[Wastelands Tileset](https://quintino-pixels.itch.io/wasteland-plataformer-tileset) - tileset for the cave side of the level
+
+[tileset_used_for_the_grass](???)
+
+[Kings and Pigs Tileset](https://pixelfrog-assets.itch.io/kings-and-pigs) - used for the eletric platforms
+
+[Sky with clouds](https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set) - used for the sky
+
+[Pixel Portal SpriteSheet](https://grappe.itch.io/pixelportal) - sprite sheet for both the spawn and exit animations
+
+
 ## Group Members
 
 | Name | Contact |
