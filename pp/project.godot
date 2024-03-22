@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="pp"
+config/name="Escape Engines"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://art/player/walk/walk_03.png"
@@ -24,6 +24,7 @@ Macros="*res://scripts/macros.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/resizable=false
 
 [editor]
 
