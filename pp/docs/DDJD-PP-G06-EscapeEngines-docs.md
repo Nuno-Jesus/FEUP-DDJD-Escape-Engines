@@ -19,13 +19,17 @@ Installation is not required. Instead, follow the steps below:
 
 ## How to play
 
+### Goal
+The hoodies will be spawned in a defined spot in the map. The goal is to lead them to the exit, using the available power-ups to clear their path.
+
 ### Map Features
 
 | Image | Name | Description |
 | --- | --- | --- |
+|<EXIT IMAGE>| Exit | This is where you should lead the hoodied characters to.|
 |<PLATFORM AND BUTTON IMAGE> | `Electric Platfrom`/`Button` | When fixed, the button will trigger the movement of the respective eletric platform. |
 |<GEAR AND ACTIVATION PLATFORM IMAGE> |`Gear`/`Activation Platform`| A gear will remain still until the activation platform is triggered.|
-|<EXIT IMAGE>| Exit | This is where you should lead the hoodied characters to.|
+|<SENSOR IMAGE>|Sensor|If the sensors detects the passage of N hoodies, it closes the area, denying any further passage.|
 
 
 ### Powerups
