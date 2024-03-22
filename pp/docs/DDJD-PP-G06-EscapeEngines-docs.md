@@ -9,6 +9,7 @@ Escape Engines, based on the Lemmings game, features the escape journey of small
 ## Installation
 
 Installation is not required. Instead, follow the steps below:
+
 - **1.** Locate the `DDJD-PP-G06-Escape Engines-game.zip` file and extract its contents.
 - **2.** Depending on the operating system, follow one of the following steps
 - **2.1 Windows**
@@ -16,21 +17,20 @@ Installation is not required. Instead, follow the steps below:
 - **2.2 Linux**
 - - Open a terminal and execute `./escape_engines`
 
-
 ## How to play
 
 ### Goal
+
 The hoodies will be spawned in a defined spot in the map. The goal is to lead them to the exit, using the available power-ups to clear their path.
 
 ### Map Features
 
 | Image | Name | Description |
 | --- | --- | --- |
-|<EXIT IMAGE>| Exit | This is where you should lead the hoodied characters to.|
-|<PLATFORM AND BUTTON IMAGE> | `Electric Platfrom`/`Button` | When fixed, the button will trigger the movement of the respective eletric platform. |
-|<GEAR AND ACTIVATION PLATFORM IMAGE> |`Gear`/`Activation Platform`| A gear will remain still until the activation platform is triggered.|
-|<SENSOR IMAGE>|Sensor|If the sensors detects the passage of N hoodies, it closes the area, denying any further passage.|
-
+|<p align=center><img src="../screenshots/exit.png" width=90> </p>| Exit | This is where you should lead the hoodied characters to.|
+|<img src="../screenshots/button.png">  </p>| `Electric Platfrom`/`Button` | When fixed, the button will trigger the movement of the respective eletric platform. |
+|<p align=center><img src="../screenshots/platform.png">  </p>|`Gear`/`Activation Platform`| A gear will remain still until the activation platform is triggered.|
+|<p align=center><img src="../screenshots/sensor.png" width=90> </p>|Sensor|If the sensors detects the passage of N hoodies, it closes the area, denying any further passage.|
 
 ### Powerups
 
@@ -58,7 +58,7 @@ Other controls include:
 
 [Wastelands Tileset](https://quintino-pixels.itch.io/wasteland-plataformer-tileset) - tileset for the cave side of the level
 
-[tileset_used_for_the_grass](???)
+[Pixel Adventure Tileset](https://pixelfrog-assets.itch.io/pixel-adventure-1) - used for the floor and walls of the level
 
 [Kings and Pigs Tileset](https://pixelfrog-assets.itch.io/kings-and-pigs) - used for the eletric platforms
 
@@ -66,10 +66,9 @@ Other controls include:
 
 [Pixel Portal SpriteSheet](https://grappe.itch.io/pixelportal) - sprite sheet for both the spawn and exit animations
 
-
 ## Group Members
 
 | Name | Contact |
 | --- | --- |
 | Carlos Veríssimo | <up201907716@up.pt>
-| Nuno Jesus | <up20190547@up.pt>
+| Nuno Jesus | <up201905477@up.pt>
