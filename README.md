@@ -12,7 +12,7 @@ If you wish to play the game without downloading any files, you can check the [g
 
 Installation is not required. Instead, follow the steps below:
 
-- **1.** Locate the `DDJD-PP-G06-Escape Engines-game.zip` file and extract its contents.
+- **1.** Locate the [DDJD-PP-G06-Escape Engines-game.zip](https://github.com/carlosverissimo3001/Escape-Engines/blob/main/DDJD-PP-G06-Escape%20Engines-game.zip) file and extract its contents.
 - **2.** Depending on the operating system, follow one of the following steps
 - **2.1 Windows**
   - Double-click on the `Escape Engines.exe` file to run the game.
@@ -23,22 +23,22 @@ Installation is not required. Instead, follow the steps below:
 
 ### Goal
 
-The hoodies will be spawned in a defined spot in the map. The goal is to lead them to the exit, using the available power-ups to clear their path.
+The hoodies will be spawned in a defined spot on the map. The goal is to lead them to the exit, using the available power-ups to clear their path.
 
 ### Map Features
 
 | Image | Name | Description |
 | --- | --- | --- |
 |<p align=center><img src="screenshots/exit.png" width=90> </p>| Exit | This is where you should lead the hoodied characters to.|
-|<img src="screenshots/button.png">  </p>| `Electric Platfrom`/`Button` | When fixed, the button will trigger the movement of the respective eletric platform. |
+|<img src="screenshots/button.png">  </p>| `Electric Platform`/`Button` | When fixed, the button will trigger the movement of the respective electric platform. |
 |<p align=center><img src="screenshots/platform.png">  </p>|`Gear`/`Activation Platform`| A gear will remain still until the activation platform is triggered.|
-|<p align=center><img src="screenshots/sensor.png" width=90> </p>|Sensor|If the sensors detects the passage of N hoodies, it closes the area, denying any further passage.|
+|<p align=center><img src="screenshots/sensor.png" width=90> </p>|Sensor|If the sensor detects the passage of N hoodies, it closes the area, denying any further passage.|
 
 ### Powerups
 
 | Ability | Effect | Description |
 | --- | --- | --- |
-| <img src="art/powerups/eletrical/plug.png" width=50/> | <img src="art/player/eletric_fix/eletric_fixing_05.png" width=50/> |Use the power of the electricity near a locked button to move the respective `Eletric Platform`. |
+| <img src="art/powerups/eletrical/plug.png" width=50/> | <img src="art/player/eletric_fix/eletric_fixing_05.png" width=50/> |Use the power of the electricity near a locked button to move the respective `Electric Platform`. |
 | <img src="art/powerups/mechanical/gear.png" width=50/> | <img src="art/player/mechanical_idle/mechanical_idle_02.png" width=50/> | Only those with this power-up standing on an `Activation Platform` can trigger the rotation of a `Gear`. |
 | <img src="art/powerups/chemical/shrink.png" width=50/> | <img src="art/player/walk/walk_02.png" width=30/> | Reduce your size to fit in tight spots. |
 | <img src="art/powerups/civil/expand.png" width=50/> | <img src="art/player/walk/walk_02.png" width=60/> | Get bigger to cross over gaps in the map. |
