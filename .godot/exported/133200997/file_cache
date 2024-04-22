@@ -1,0 +1,11 @@
+res://scenes/eletric_platform.tscn::5c4283fb903e984f6885435885b7624c::1710444230::res://.godot/exported/133200997/export-223da756f22d2b4f68c48bf5b1e1f746-eletric_platform.scn
+res://scenes/exit.tscn::27431de3a6e867a3d3e5c2951582d4f9::1710444558::res://.godot/exported/133200997/export-23d6056f259081a094af0e91b1896a04-exit.scn
+res://scenes/gear.tscn::854b4ac4c90961768f7ffb88e585ed7e::1710452570::res://.godot/exported/133200997/export-bc4149565ab95a06d3f433b9073d508d-gear.scn
+res://scenes/hud.tscn::4b5988f125fb6b5ad0ac36cdf2b586f0::1710452570::res://.godot/exported/133200997/export-38bf74ff262409a94a41206b2b776d33-hud.scn
+res://scenes/level.tscn::e72d6acbb1666cb8375371f2d9ed3da6::1710452570::res://.godot/exported/133200997/export-a0631f9feb269b9ee464fe0e4794e617-level.scn
+res://scenes/main.tscn::146bc8c80fae631df0c1683102e845a8::1710452569::res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+res://scenes/platform.tscn::193b2547b328bec0d75d75f952f237a3::1710444558::res://.godot/exported/133200997/export-cc2f727180cd42d9c13434cb55b1ce69-platform.scn
+res://scenes/player.tscn::2a81f7d9516122a87bf1bff48848bcbe::1710452570::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
+res://scenes/sensor.tscn::436635d2c105bbf931d4aee4a44dcb1d::1710444558::res://.godot/exported/133200997/export-f03a446080abbdbb83a715313975be55-sensor.scn
+res://scenes/spawner.tscn::9d20d6f7a372cfacf81cb7c8bc51e43f::1710444230::res://.godot/exported/133200997/export-c003b31af2e0ca5030eda5db94aeddff-spawner.scn
+res://unused/test.tscn::479fc363ae65eef5f345808aa0460654::1710444230::res://.godot/exported/133200997/export-c4e8b26c171fc3bd852790aeef47b31c-test.scn
