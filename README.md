@@ -1,4 +1,4 @@
-# Escape Engines - Documentation
+# Escape Engines
 
 ## About
 
