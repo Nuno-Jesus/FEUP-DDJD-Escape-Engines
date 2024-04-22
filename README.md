@@ -1,21 +1,23 @@
-# Escape Engines - Documentation
+# Escape Engines
 
 ## About
 
-Escape Engines is a platformer game developed as part of the preliminary project of the [Digital Games Design and Development course](https://itch.io/jam/ddjd-feup-2024-preliminary-projects)
+Escape Engines is a platformer game developed as part of the preliminary project of the [Digital Games Design and Development course](https://itch.io/jam/ddjd-feup-2024-preliminary-projects).
 
-Escape Engines, based on the Lemmings game, features the escape journey of small lemmings. To successfully escape, they must acquire the powers of engineering, toggling engines, or even shaping themselves to fit in the environment!
+Based on the Lemmings game, Escape Engines features the escape journey of small lemmings. To successfully escape, they must acquire the powers of engineering, toggling engines, or even shaping themselves to fit in the environment!
 
 ## Installation
+
+If you wish to play the game without downloading any files, you can check the [game's itch.io page](https://carlosverissimo3001.itch.io/escape-engines). If not, please follow the steps below.
 
 Installation is not required. Instead, follow the steps below:
 
 - **1.** Locate the `DDJD-PP-G06-Escape Engines-game.zip` file and extract its contents.
 - **2.** Depending on the operating system, follow one of the following steps
 - **2.1 Windows**
-- - Double click on the `Escape Engines.exe` file to run the game.
+  - Double-click on the `Escape Engines.exe` file to run the game.
 - **2.2 Linux**
-- - Open a terminal and execute `./escape_engines`
+  - Open a terminal and execute `./escape_engines`
 
 ## How to play
 
@@ -54,7 +56,7 @@ Other controls include:
 
 ## Demo
 
-[![Escape Engines Demo](https://img.youtube.com/vi/1J9Q6J9Z9ZI/0.jpg)](https://youtu.be/u2JZSuJJU1Q?si=-8HG43ztF0D4xF9w)
+[![Escape Engines Demo](https://img.itch.zone/aW1hZ2UvMjU3ODU3Mi8xNTM4NzYyMS5wbmc=/original/ih3foD.png)](https://youtu.be/u2JZSuJJU1Q?si=-8HG43ztF0D4xF9w)
 
 ## Credits/Resources
 
@@ -72,7 +74,7 @@ Other controls include:
 
 ## Group Members
 
-| Name | Contact |
-| --- | --- |
-| Carlos Veríssimo | <up201907716@up.pt>
-| Nuno Jesus | <up201905477@up.pt>
+| Name | Contact | GitHub
+| --- | --- | --- |
+| Carlos Veríssimo | <up201907716@up.pt> | [carlosverissimo3001](https://github.com/carlosverissimo3001)
+| Nuno Jesus | <up201905477@up.pt> | [Nuno-Jesus](https://github.com/Nuno-Jesus)
